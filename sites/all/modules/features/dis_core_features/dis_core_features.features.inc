@@ -11,6 +11,9 @@ function dis_core_features_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "feeds" && $api == "feeds_importer_default") {
     return array("version" => "1");
   }
+  if ($module == "feeds_tamper" && $api == "feeds_tamper_default") {
+    return array("version" => "2");
+  }
   if ($module == "page_manager" && $api == "pages_default") {
     return array("version" => "1");
   }
@@ -523,7 +526,13 @@ function dis_core_features_user_default_roles_plus() {
       'cancel account' => TRUE,
       'change layouts in place editing' => TRUE,
       'change own username' => TRUE,
+      'clear associate_executive_mapping_importer feeds' => TRUE,
+      'clear business_associate_importer feeds' => TRUE,
+      'clear company_executive_importer feeds' => TRUE,
+      'clear company_importer feeds' => TRUE,
+      'clear division_importer feeds' => TRUE,
       'clear outward_invoice_importer feeds' => TRUE,
+      'clear transporter_importer feeds' => TRUE,
       'create article content' => TRUE,
       'create associate_executive_mapping content' => TRUE,
       'create business_associate content' => TRUE,
@@ -616,17 +625,35 @@ function dis_core_features_user_default_roles_plus() {
       'edit terms in 3' => TRUE,
       'edit terms in 4' => TRUE,
       'generate features' => TRUE,
+      'import associate_executive_mapping_importer feeds' => TRUE,
+      'import business_associate_importer feeds' => TRUE,
+      'import company_executive_importer feeds' => TRUE,
+      'import company_importer feeds' => TRUE,
+      'import division_importer feeds' => TRUE,
       'import outward_invoice_importer feeds' => TRUE,
+      'import transporter_importer feeds' => TRUE,
       'manage features' => TRUE,
       'notify of path changes' => TRUE,
       'revert revisions' => TRUE,
       'select account cancellation method' => TRUE,
       'send arbitrary files' => TRUE,
       'switch shortcut sets' => TRUE,
+      'tamper associate_executive_mapping_importer' => TRUE,
+      'tamper business_associate_importer' => TRUE,
+      'tamper company_executive_importer' => TRUE,
+      'tamper company_importer' => TRUE,
+      'tamper division_importer' => TRUE,
       'tamper outward_invoice_importer' => TRUE,
+      'tamper transporter_importer' => TRUE,
       'unique_field_perm_admin' => TRUE,
       'unique_field_perm_bypass' => TRUE,
+      'unlock associate_executive_mapping_importer feeds' => TRUE,
+      'unlock business_associate_importer feeds' => TRUE,
+      'unlock company_executive_importer feeds' => TRUE,
+      'unlock company_importer feeds' => TRUE,
+      'unlock division_importer feeds' => TRUE,
       'unlock outward_invoice_importer feeds' => TRUE,
+      'unlock transporter_importer feeds' => TRUE,
       'use bulk exporter' => TRUE,
       'use ipe with page manager' => TRUE,
       'use page manager' => TRUE,

@@ -503,9 +503,63 @@ function dis_core_features_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'clear associate_executive_mapping_importer feeds'.
+  $permissions['clear associate_executive_mapping_importer feeds'] = array(
+    'name' => 'clear associate_executive_mapping_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'clear business_associate_importer feeds'.
+  $permissions['clear business_associate_importer feeds'] = array(
+    'name' => 'clear business_associate_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'clear company_executive_importer feeds'.
+  $permissions['clear company_executive_importer feeds'] = array(
+    'name' => 'clear company_executive_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'clear company_importer feeds'.
+  $permissions['clear company_importer feeds'] = array(
+    'name' => 'clear company_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'clear division_importer feeds'.
+  $permissions['clear division_importer feeds'] = array(
+    'name' => 'clear division_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'clear outward_invoice_importer feeds'.
   $permissions['clear outward_invoice_importer feeds'] = array(
     'name' => 'clear outward_invoice_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'clear transporter_importer feeds'.
+  $permissions['clear transporter_importer feeds'] = array(
+    'name' => 'clear transporter_importer feeds',
     'roles' => array(
       'administrator' => 'administrator',
     ),
@@ -1552,6 +1606,51 @@ function dis_core_features_user_default_permissions() {
     'module' => 'features',
   );
 
+  // Exported permission: 'import associate_executive_mapping_importer feeds'.
+  $permissions['import associate_executive_mapping_importer feeds'] = array(
+    'name' => 'import associate_executive_mapping_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'import business_associate_importer feeds'.
+  $permissions['import business_associate_importer feeds'] = array(
+    'name' => 'import business_associate_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'import company_executive_importer feeds'.
+  $permissions['import company_executive_importer feeds'] = array(
+    'name' => 'import company_executive_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'import company_importer feeds'.
+  $permissions['import company_importer feeds'] = array(
+    'name' => 'import company_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'import division_importer feeds'.
+  $permissions['import division_importer feeds'] = array(
+    'name' => 'import division_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'import outward_invoice_importer feeds'.
   $permissions['import outward_invoice_importer feeds'] = array(
     'name' => 'import outward_invoice_importer feeds',
@@ -1562,6 +1661,15 @@ function dis_core_features_user_default_permissions() {
       'Distribution Executive' => 'Distribution Executive',
       'Distribution Supervisor' => 'Distribution Supervisor',
       'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'import transporter_importer feeds'.
+  $permissions['import transporter_importer feeds'] = array(
+    'name' => 'import transporter_importer feeds',
+    'roles' => array(
       'administrator' => 'administrator',
     ),
     'module' => 'feeds',
@@ -1621,9 +1729,63 @@ function dis_core_features_user_default_permissions() {
     'module' => 'shortcut',
   );
 
+  // Exported permission: 'tamper associate_executive_mapping_importer'.
+  $permissions['tamper associate_executive_mapping_importer'] = array(
+    'name' => 'tamper associate_executive_mapping_importer',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds_tamper',
+  );
+
+  // Exported permission: 'tamper business_associate_importer'.
+  $permissions['tamper business_associate_importer'] = array(
+    'name' => 'tamper business_associate_importer',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds_tamper',
+  );
+
+  // Exported permission: 'tamper company_executive_importer'.
+  $permissions['tamper company_executive_importer'] = array(
+    'name' => 'tamper company_executive_importer',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds_tamper',
+  );
+
+  // Exported permission: 'tamper company_importer'.
+  $permissions['tamper company_importer'] = array(
+    'name' => 'tamper company_importer',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds_tamper',
+  );
+
+  // Exported permission: 'tamper division_importer'.
+  $permissions['tamper division_importer'] = array(
+    'name' => 'tamper division_importer',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds_tamper',
+  );
+
   // Exported permission: 'tamper outward_invoice_importer'.
   $permissions['tamper outward_invoice_importer'] = array(
     'name' => 'tamper outward_invoice_importer',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds_tamper',
+  );
+
+  // Exported permission: 'tamper transporter_importer'.
+  $permissions['tamper transporter_importer'] = array(
+    'name' => 'tamper transporter_importer',
     'roles' => array(
       'administrator' => 'administrator',
     ),
@@ -1648,9 +1810,63 @@ function dis_core_features_user_default_permissions() {
     'module' => 'unique_field',
   );
 
+  // Exported permission: 'unlock associate_executive_mapping_importer feeds'.
+  $permissions['unlock associate_executive_mapping_importer feeds'] = array(
+    'name' => 'unlock associate_executive_mapping_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'unlock business_associate_importer feeds'.
+  $permissions['unlock business_associate_importer feeds'] = array(
+    'name' => 'unlock business_associate_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'unlock company_executive_importer feeds'.
+  $permissions['unlock company_executive_importer feeds'] = array(
+    'name' => 'unlock company_executive_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'unlock company_importer feeds'.
+  $permissions['unlock company_importer feeds'] = array(
+    'name' => 'unlock company_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'unlock division_importer feeds'.
+  $permissions['unlock division_importer feeds'] = array(
+    'name' => 'unlock division_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'unlock outward_invoice_importer feeds'.
   $permissions['unlock outward_invoice_importer feeds'] = array(
     'name' => 'unlock outward_invoice_importer feeds',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'unlock transporter_importer feeds'.
+  $permissions['unlock transporter_importer feeds'] = array(
+    'name' => 'unlock transporter_importer feeds',
     'roles' => array(
       'administrator' => 'administrator',
     ),

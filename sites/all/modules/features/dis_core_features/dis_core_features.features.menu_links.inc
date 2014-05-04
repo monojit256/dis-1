@@ -157,6 +157,23 @@ function dis_core_features_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_master-data:master-data',
   );
+  // Exported menu link: main-menu_admin-home:admin-home
+  $menu_links['main-menu_admin-home:admin-home'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'admin-home',
+    'router_path' => 'admin-home',
+    'link_title' => 'Admin Home',
+    'options' => array(
+      'identifier' => 'main-menu_admin-home:admin-home',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 0,
+    'weight' => -46,
+    'customized' => 1,
+  );
   // Exported menu link: main-menu_goods-inward:goods-inward
   $menu_links['main-menu_goods-inward:goods-inward'] = array(
     'menu_name' => 'main-menu',
@@ -207,6 +224,132 @@ function dis_core_features_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -50,
     'customized' => 1,
+  );
+  // Exported menu link: main-menu_import-associate-executive-mappings:import/associate_executive_mapping_importer
+  $menu_links['main-menu_import-associate-executive-mappings:import/associate_executive_mapping_importer'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'import/associate_executive_mapping_importer',
+    'router_path' => 'import/%',
+    'link_title' => 'Import Associate Executive Mappings',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_import-associate-executive-mappings:import/associate_executive_mapping_importer',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -46,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_admin-home:admin-home',
+  );
+  // Exported menu link: main-menu_import-business-associates:import/business_associate_importer
+  $menu_links['main-menu_import-business-associates:import/business_associate_importer'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'import/business_associate_importer',
+    'router_path' => 'import/%',
+    'link_title' => 'Import Business Associates',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_import-business-associates:import/business_associate_importer',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_admin-home:admin-home',
+  );
+  // Exported menu link: main-menu_import-companies:import/company_importer
+  $menu_links['main-menu_import-companies:import/company_importer'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'import/company_importer',
+    'router_path' => 'import/%',
+    'link_title' => 'Import Companies',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_import-companies:import/company_importer',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_admin-home:admin-home',
+  );
+  // Exported menu link: main-menu_import-company-executives:import/company_executive_importer
+  $menu_links['main-menu_import-company-executives:import/company_executive_importer'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'import/company_executive_importer',
+    'router_path' => 'import/%',
+    'link_title' => 'Import Company Executives',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_import-company-executives:import/company_executive_importer',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -47,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_admin-home:admin-home',
+  );
+  // Exported menu link: main-menu_import-divisions:import/division_importer
+  $menu_links['main-menu_import-divisions:import/division_importer'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'import/division_importer',
+    'router_path' => 'import/%',
+    'link_title' => 'Import Divisions',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_import-divisions:import/division_importer',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_admin-home:admin-home',
+  );
+  // Exported menu link: main-menu_import-transporters:import/transporter_importer
+  $menu_links['main-menu_import-transporters:import/transporter_importer'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'import/transporter_importer',
+    'router_path' => 'import/%',
+    'link_title' => 'Import Transporters',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_import-transporters:import/transporter_importer',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -45,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_admin-home:admin-home',
   );
   // Exported menu link: main-menu_manage-invoices:manage-invoices
   $menu_links['main-menu_manage-invoices:manage-invoices'] = array(
@@ -507,9 +650,16 @@ function dis_core_features_menu_default_menu_links() {
   t('Add Division');
   t('Add Outward Invoice');
   t('Add Transporter');
+  t('Admin Home');
   t('Goods Inward');
   t('Goods Outward');
   t('Home');
+  t('Import Associate Executive Mappings');
+  t('Import Business Associates');
+  t('Import Companies');
+  t('Import Company Executives');
+  t('Import Divisions');
+  t('Import Transporters');
   t('Manage Invoices');
   t('Master Data');
   t('Outward Register');
