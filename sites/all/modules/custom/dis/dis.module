@@ -1,0 +1,289 @@
+<?php
+
+/**
+ * Implementation of hook_menu()
+ */
+function dis_menu() {
+
+    $items = array();
+
+	$items['add-associate-executive-mapping'] = array(
+        'title' => 'Add Associate Executive Mapping - Select Company and Associate Type',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('add_associate_executive_mapping_form'),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+        'file' => 'dis.menu.inc',
+    ); 	
+
+    $items['add-outward-invoice'] = array(
+        'title' => 'Add Outward Invoice- Select Company and Invoice Type',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('add_outward_invoice_form'),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+        'file' => 'dis.menu.inc',
+    );  
+   
+    return $items;
+}
+
+
+/**
+ * Implementation of hook_form_BASE_FORM_ID_alter() - BASE ID = outward_invoice_node_form
+ * This hook used to set the default value of outward type and disbale the field in add/edit forms of Outward Invoice type
+ */
+function dis_form_outward_invoice_node_form_alter(&$form, &$form_state, $form_id){
+   
+    if(array_key_exists('field_outward_type', $_GET)){
+        $outward_type = $_GET['field_outward_type'];
+        if($outward_type == 'Sales Invoice' || $outward_type == 'Stock Transfer Out' || $outward_type == 'Purchase Return'){
+            $form['field_outward_type']['und']['#default_value'][0] = $outward_type;
+            $form['field_outward_type']['und']['#disabled'] = TRUE;
+        }
+    }
+}
+
+/*
+ * Function to return the financial year and quarter for a given date
+ * Compatible with 'Set Quarter and FY' Rules Action
+ */
+
+function dis_get_quarter_financialyear($invoice_date) {
+
+    //$invoice_date = date("d-m-Y",$invoice_date);
+    //$date = format_date($invoice_date, 'custom', 'd-m-Y');
+    $d = date_parse($invoice_date);
+    $month = $d['month'];
+    $year = $d['year'];
+
+    //Determine quarter
+    if ($month == '1' || $month == '2' || $month == '3')
+        $quarter = 'Q4';
+    elseif ($month == '4' || $month == '5' || $month == '6')
+        $quarter = 'Q1';
+    elseif ($month == '7' || $month == '8' || $month == '9')
+        $quarter = 'Q2';
+    else
+        $quarter = 'Q3';
+
+    //Determine Financial Year
+    if ($quarter == 'Q4') {
+        $first_year = $year - 1;
+        $second_year = $year % 100;
+        $financial_year = $first_year . '-' . $second_year;
+    } else {
+        $first_year = $year;
+        $second_year = ($year + 1) % 100;
+        $financial_year = $first_year . '-' . $second_year;
+    }
+
+    //Fetch Entity ID for Financial Year
+    $fy_query = new EntityFieldQuery();
+    $fy_query->entityCondition('entity_type', 'taxonomy_term')
+            ->entityCondition('bundle', 'financial_year')
+            ->propertyCondition('name', $financial_year);
+    $fy_result = $fy_query->execute();
+    $fy_id = array_shift($fy_result['taxonomy_term'])->tid;
+
+    return array(
+        'quarter' => $quarter,
+        'financial_year' => $fy_id,
+    );
+}
+
+
+/**
+ * Implement hook_feeds_after_parse()
+ * 
+ * Check the value imported by Outward Invoice Importer
+ */
+
+function dis_feeds_after_parse($source, $result) {
+    $items = array();
+    $items_new = array();
+    $items = $result->items;
+    $id = $source->id;
+
+    if ($id == "outward_invoice_importer") {
+
+        foreach ($items as $key => $item) {
+
+            //Prefix part of every status message pertaining to each Feeds item
+            $message = $item['company'] . '-' . $item['division'] . '-' . $item['consignee'] . '-' . $item['invoice no'];
+
+            //Check if the Company code provided in Feeds item exists
+            //If so, fetch Entity ID of the Company            
+            $company_query = new EntityFieldQuery();
+            $company_query->entityCondition('entity_type', 'node')
+                    ->entityCondition('bundle', 'company')
+                    ->propertyCondition('title', $item['company']);
+            $company_result = $company_query->execute();
+            if (empty($company_result)) {
+                drupal_set_message($message . ': Importing failed - Invalid Company Code', $type = "error");
+                continue;
+            } else {
+                $company_id = array_shift($company_result['node'])->nid;
+            }
+
+            //Check if the Division code provided in Feeds item exists and belongs to
+            //the same Company provided above
+            //If so, fetch Entity ID of the Division            
+            $division_query = new EntityFieldQuery();
+            $division_query->entityCondition('entity_type', 'node')
+                    ->entityCondition('bundle', 'division')
+                    ->propertyCondition('title', $item['division'])
+                    ->fieldCondition('field_company', 'target_id', $company_id, '=');
+            $division_result = $division_query->execute();
+            if (empty($division_result)) {
+                drupal_set_message($message . ': Importing failed - Invalid Division Code', $type = "error");
+                continue;
+            } else {
+                $division_id = array_shift($division_result['node'])->nid;
+            }
+
+            //Determine Associate Type from Outward Type
+            //If invalid Ouwtad type, throw error
+            if($item['outward type'] == "Sales Invoice"){
+                $associate_type = "Customer";
+            } elseif ($item['outward type'] == "Purchase Return"){
+                $associate_type = "Supplier";
+            } elseif ($item['outward type'] == "Stock Transfer Out"){
+                $associate_type = "Branch";
+            } else {
+                drupal_set_message($message . ': Importing failed - Invalid Outward Type', $type = "error");
+                continue;
+            }
+
+            //Check if the Consignee provided in Feeds item exists and belongs to
+            //the same Company provided above and have Associate Type corresponding to
+            //the Outward Type provided in feed
+            //If so, fetch Entity ID of the Consignee 
+            $customer_query = new EntityFieldQuery();
+            $customer_query->entityCondition('entity_type', 'node')
+                    ->entityCondition('bundle', 'business_associate')
+                    ->propertyCondition('status', 1)
+                    ->propertyCondition('title', $item['consignee'])
+                    ->fieldCondition('field_associate_type', 'value', $associate_type, '=')
+                    ->fieldCondition('field_company', 'target_id', $company_id, '=');
+            $customer_result = $customer_query->execute();
+            if (empty($customer_result)) {
+                drupal_set_message($message . ': Importing failed - Invalid Customer', $type = "error");
+                continue;
+            } else {
+                $customer_id = array_shift(array_shift($customer_result))->nid;
+            }
+
+            //Check if any of Invoice No, Invoice Date or Invoice Value is empty
+            if (empty($item['invoice no']) || empty($item['invoice date']) || !is_numeric($item['invoice value'])) {
+                drupal_set_message($message . ': Importing failed - One or more of Invoice No, Invoice Date or Invoice Value is missing', $type = "status");
+                continue;
+            }
+
+            //Check if Invoice Date is valid
+            $date = date_parse($item['invoice date']);
+            if (!checkdate($date["month"], $date["day"], $date["year"])) {
+                drupal_set_message($message . ': Importing failed - Invoice Date is invalid', $type = "error");
+                continue;
+            }
+
+            //Check if Invoice No already exists for this Company in this Financial Year
+            $quarter_fy = dis_get_quarter_financialyear($item['invoice date']);
+            $fy_id = $quarter_fy['financial_year'];
+            $invoice_query = new EntityFieldQuery();
+            $invoice_query->entityCondition('entity_type', 'node')
+                    ->entityCondition('bundle', 'outward_invoice')
+                    ->propertyCondition('status', 1)
+                    ->fieldCondition('field_outward_type', 'value', $item['outward type'], '=')
+                    ->fieldCondition('field_company', 'target_id', $company_id, '=')
+                    ->fieldCondition('field_financial_year', 'target_id', $fy_id, '=')
+                    ->fieldCondition('field_invoice_no', 'value', $item['invoice no'], '=');
+            $invoice_result = $invoice_query->execute();
+            if (!empty($invoice_result)) {
+                drupal_set_message($message . ': Importing failed - Invoice No already exists', $type = "error");
+                continue;
+            }
+
+            //Update Entity IDs in each Feed item            
+            $item['company'] = $company_id;
+            $item['division'] = $division_id;
+            $item['consignee'] = $customer_id;
+
+
+            //Check if there are duplicate entries in the imported file
+            $duplicate = FALSE;
+            foreach ($items_new as $item_new) {
+                if ($item['company'] == $item_new['company'] &&
+                        $item['invoice no'] == $item_new['invoice no'] &&
+                        $item['invoice date'] == $item_new['invoice date']) {
+                    $duplicate = TRUE;
+                }
+            }
+
+            //Add feed item to new feeds list if not duplicate
+            if ($duplicate == FALSE) {
+                $items_new[] = $item;
+                drupal_set_message($message . ': Importing successful', $type = "status");
+            } else {
+                drupal_set_message($message . ': Importing failed: Duplicate Entry in Import file', $type = "error");
+            }
+        }
+
+        $result->items = $items_new;
+    }
+}
+
+/**
+ * Implementation of hook_form_BASE_FORM_ID_alter() - BASE ID = outward_invoice_node_form
+ * This hook used to set the default value of outward type and disbale the field in add/edit forms of Outward Invoice type
+ */
+function dis_form_views_form_update_dispatch_page_alter(&$form, &$form_state, $form_id){
+   
+    if($form_state['step'] == 'views_bulk_operations_config_form'){
+
+    //Alter the field Dispatch Date
+    $form['parameter']['dispatch_date']['settings']['dispatch_date']['#type'] = 'date_popup';
+    $form['parameter']['dispatch_date']['settings']['dispatch_date']['#date_format'] = 'd-m-Y';
+    $form['parameter']['dispatch_date']['settings']['dispatch_date']['#description'] = '';
+
+    //Alter the field Dispatch Mode
+    $form['parameter']['dispatch_mode']['settings']['dispatch_mode']['#type'] = "select";
+
+    $mode_query = new EntityFieldQuery();
+    $mode_query->entityCondition('entity_type', 'taxonomy_term')
+                    ->entityCondition('bundle', 'dispatch_mode');                   
+    $mode_result = $mode_query->execute();
+    if (!empty($mode_result['taxonomy_term'])) {
+      $modes = entity_load('taxonomy_term', array_keys($mode_result['taxonomy_term']));
+    }
+    $options = array();
+    foreach($modes as $mode){
+        $options[$mode->tid] = $mode->name;
+    }
+    $form['parameter']['dispatch_mode']['settings']['dispatch_mode']['#options'] = $options;
+    $form['parameter']['dispatch_mode']['settings']['dispatch_mode']['#description'] = "";
+    unset( $form['parameter']['dispatch_mode']['settings']['help']);
+
+    //Alter the field Vehcicle No
+    $form['parameter']['vehicle_no']['settings']['vehicle_no']['#type'] = "textfield";
+    unset( $form['parameter']['vehicle_no']['settings']['help']);
+}
+}
+
+/**
+ * Implements hook_element_info_alter() 
+ * To remove the description from data_popup
+ */
+function dis_element_info_alter(&$type) {
+  if (isset($type['date_popup'])) {
+    $type['date_popup']['#process'][] = 'dis_date_popup_process_alter';
+  }
+}
+
+/**
+ * Function to remove the description from date_popup * 
+ */
+ function dis_date_popup_process_alter(&$element, &$form_state, $context) {
+  unset($element['date']['#description']);
+  return $element;
+}

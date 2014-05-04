@@ -1,0 +1,96 @@
+<?php
+
+/*
+ * Implement hook_feeds_after_parse()
+ */
+function dis_migration_feeds_after_parse($source, $result) {
+    $items = array();
+    $items_new = array();
+    $items = $result->items;
+    $id = $source->id;
+
+    if ($id == "associate_executive_mapping_importer") {
+        
+        foreach ($items as $key => $item) {
+
+            //Prefix part of every status message pertaining to each Feeds item
+            $message = $item['company'] . '-' . $item['division'] . '-' . $item['associate'] . '-' . $item['executives'];
+
+            //Fetch Entity ID of Company
+            $company_query = new EntityFieldQuery();
+            $company_query->entityCondition('entity_type', 'node')
+                    ->entityCondition('bundle', 'company')
+                    ->fieldCondition('field_company_name', 'value', $item['company'], '=');
+            $company_result = $company_query->execute();
+            if (empty($company_result)) {
+                drupal_set_message($message . ': Importing failed - Invalid Company', $type = "status");
+                continue;
+            } else {
+                $company_id = array_shift($company_result['node'])->nid;
+            }
+
+            //Fetch Entity ID of Division        
+            $division_query = new EntityFieldQuery();
+            $division_query->entityCondition('entity_type', 'node')
+                    ->entityCondition('bundle', 'division')
+                    ->fieldCondition('field_company', 'target_id', $company_id, '=')
+                    ->fieldCondition('field_division_name', 'value', $item['division'], '=');
+            $division_result = $division_query->execute();
+            if (empty($division_result)) {
+                drupal_set_message($message . ': Importing failed - Invalid Division', $type = "status");
+                continue;
+            } else {
+                $division_id = array_shift($division_result['node'])->nid;
+            }
+
+                        
+            //Fetch Entity ID of the Associate 
+            $customer_query = new EntityFieldQuery();
+            $customer_query->entityCondition('entity_type', 'node')
+                    ->entityCondition('bundle', 'business_associate')
+                    ->propertyCondition('status', 1)
+                    ->fieldCondition('field_company', 'target_id', $company_id, '=')
+                    ->fieldCondition('field_associate_type', 'value', 'Customer', '=')
+                    ->fieldCondition('field_name', 'value', $item['associate'], '=');
+            $customer_result = $customer_query->execute();
+            if (empty($customer_result)) {
+                drupal_set_message($message . ': Importing failed - Invalid Customer', $type = "status");
+                continue;
+            } else {
+                $customer_id = array_shift(array_shift($customer_result))->nid;
+            }
+
+            //Fetch Entity IDs of the Executives
+            $executives = explode(',', $item['executives']);
+            $executive_ids = array();
+            foreach ($executives as $executive){
+                $executive_query = new EntityFieldQuery();
+                $executive_query->entityCondition('entity_type', 'node')
+                    ->entityCondition('bundle', 'company_executive')
+                    ->propertyCondition('status', 1)
+                    ->fieldCondition('field_company', 'target_id', $company_id, '=')
+                    ->fieldCondition('field_name', 'value', $executive, '=');
+                $executive_result = $executive_query->execute();
+                if (empty($executive_result)) {
+                    drupal_set_message($message . ': Importing failed - Invalid Customer', $type = "status");
+                    continue;
+                } else {
+                    $executive_ids[] = array_shift(array_shift($executive_result))->nid;
+                }
+            }
+            
+
+
+           
+
+            //Update Entity IDs in each Feed item  
+            $item['division'] = $division_id;
+            $item['associate'] = $customer_id;
+            $item['executives'] = $executive_ids;
+
+            $items_new[] = $item;
+        }
+
+        $result->items = $items_new;
+    }
+}
