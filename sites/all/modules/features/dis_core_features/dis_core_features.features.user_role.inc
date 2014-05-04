@@ -70,5 +70,11 @@ function dis_core_features_user_default_roles() {
     'weight' => 11,
   );
 
+  // Exported role: administrator.
+  $roles['administrator'] = array(
+    'name' => 'administrator',
+    'weight' => 13,
+  );
+
   return $roles;
 }
