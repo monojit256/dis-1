@@ -55,7 +55,13 @@ blockquote { background:transparent url('images/blockquote.png') no-repeat top l
 */
 #header { clear:both; }
 
-#header-inside { margin: 0 auto; padding:40px 0; overflow:hidden; } 
+
+/* Custom change
+#header-inside { margin: 0 auto; padding:40px 0; overflow:hidden; }*/
+#header-inside { margin: 0 auto; padding:10px 40px; overflow:hidden; } 
+
+/*Custom change - Added header-inside-right custom css*/
+#header-inside-right {float: right; }
 
 #header-menu { clear:both; }
 
@@ -67,7 +73,8 @@ blockquote { background:transparent url('images/blockquote.png') no-repeat top l
 
 #banner  { clear:both; border-bottom:1px solid #fcfcfc; overflow: hidden; }
 
-#content { clear:both; overflow:hidden; }
+/* Custom change - Min-height as 400 px added */
+#content { clear:both; overflow:hidden; min-height: 400px;}
 
 #content-inside { padding:30px 0 60px; } 
 
@@ -81,7 +88,10 @@ blockquote { background:transparent url('images/blockquote.png') no-repeat top l
 
 .meta-data { font-size:75%; text-transform:uppercase; color:#545454; margin:5px 0 20px 0; display:block; overflow:hidden; clear:both; }
 
-#footer { clear:both; overflow:hidden; padding:20px 0 50px 0;}
+
+/* Custom change
+#footer { clear:both; overflow:hidden; padding:20px 0 50px 0;}*/
+#footer { clear:both; overflow:hidden;}
 
 #footer-inside { } 
 
@@ -95,13 +105,18 @@ blockquote { background:transparent url('images/blockquote.png') no-repeat top l
 
 .node.node-teaser { margin-bottom:60px; }
 
-#footer-bottom { clear:both; overflow:hidden; padding:40px 0; }
+/*Custom change
+#footer-bottom { clear:both; overflow:hidden; padding:40px 0; }*/
+#footer-bottom { clear:both; overflow:hidden;}
 
 #footer-bottom-inside { } 
 
 #footer-bottom-left { }
 
-#footer-bottom-right { }
+#footer-bottom-right {
+ /* Custom change - Added top padding */
+padding-top: 15px;
+ }
 
 /*
 * Sidebar Blocks - Menus
@@ -268,8 +283,10 @@ text-transform:uppercase; font-family: Myriad Pro,"Lucida Grande","Lucida Sans U
 #footer .block ul.menu li a { display: block; padding:5px; }
 
 /* 
-* Footer-bottom menu 
+** Footer-bottom menu 
 */
+
+
 ul.secondary-menu, #footer-bottom ul.menu { padding:0; margin:0 0 10px 0; display:block; overflow:hidden; }
 
 ul.secondary-menu li, #footer-bottom ul.menu li { display:block; float:left; list-style-type:none; overflow:hidden; padding:0 10px; margin:0; }
@@ -544,3 +561,9 @@ ul.primary, ul.tabs { clear:both; margin:10px 0 35px 0; white-space: normal }
 ul.primary li, ul.tabs li { padding:10px 0; line-height:130%; }
 
 ul.primary li a, ul.tabs li a { margin:0; padding: 4px 1em; display: inline-block; }
+
+
+/**
+ * Custom changes for Secondary Menu place in Header Right
+ */
+ ul.secondary-menu {float:right;}

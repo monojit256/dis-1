@@ -21,9 +21,12 @@ body {
 ----------------------------------------------------------------------------------------------------*/
 
 .container_12 {
-  margin-left: auto;
+  /*Custom change
+  margin-left: auto;*/
+  margin-left: 20px;
   margin-right: auto;
-  width: 960px;
+  /*Custom CHange - No need to restrict the horizontal width of the side. So commenting width
+  width: 960px; */
 }
 
 /* `Grid >> Global
