@@ -2,7 +2,7 @@
 /**
  * Implements hook_install().
  */
-function dis_profile_install(){
+function dis_install(){
   // Any themes without keys here will get numeric keys and so will be enabled,
   // but not placed into variables.
   $enable = array(
