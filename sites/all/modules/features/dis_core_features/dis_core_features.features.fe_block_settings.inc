@@ -21,16 +21,10 @@ function dis_core_features_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'corporateclean' => array(
+      'dis_theme' => array(
         'region' => 'navigation',
         'status' => 1,
-        'theme' => 'corporateclean',
+        'theme' => 'dis_theme',
         'weight' => 0,
       ),
       'seven' => array(
@@ -53,17 +47,11 @@ function dis_core_features_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
+      'dis_theme' => array(
         'region' => 'help',
         'status' => 1,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'corporateclean' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'corporateclean',
-        'weight' => 0,
+        'theme' => 'dis_theme',
+        'weight' => 5,
       ),
       'seven' => array(
         'region' => 'help',
@@ -85,16 +73,10 @@ function dis_core_features_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
+      'dis_theme' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'corporateclean' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'corporateclean',
+        'theme' => 'dis_theme',
         'weight' => 0,
       ),
       'seven' => array(
@@ -117,16 +99,10 @@ function dis_core_features_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
+      'dis_theme' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'corporateclean' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'corporateclean',
+        'theme' => 'dis_theme',
         'weight' => 0,
       ),
       'seven' => array(
@@ -149,16 +125,10 @@ function dis_core_features_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'bartik' => array(
-        'region' => 'sidebar_first',
-        'status' => 1,
-        'theme' => 'bartik',
-        'weight' => 0,
-      ),
-      'corporateclean' => array(
+      'dis_theme' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'corporateclean',
+        'theme' => 'dis_theme',
         'weight' => 0,
       ),
       'seven' => array(

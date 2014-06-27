@@ -141,15 +141,6 @@ function dis_core_features_user_default_permissions() {
     'module' => 'taxonomy_access_fix',
   );
 
-  // Exported permission: 'add terms in tags'.
-  $permissions['add terms in tags'] = array(
-    'name' => 'add terms in tags',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'taxonomy_access_fix',
-  );
-
   // Exported permission: 'add terms in transporter_type'.
   $permissions['add terms in transporter_type'] = array(
     'name' => 'add terms in transporter_type',
@@ -566,15 +557,6 @@ function dis_core_features_user_default_permissions() {
     'module' => 'feeds',
   );
 
-  // Exported permission: 'create article content'.
-  $permissions['create article content'] = array(
-    'name' => 'create article content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create associate_executive_mapping content'.
   $permissions['create associate_executive_mapping content'] = array(
     'name' => 'create associate_executive_mapping content',
@@ -730,15 +712,6 @@ function dis_core_features_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create page content'.
-  $permissions['create page content'] = array(
-    'name' => 'create page content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create receipt_details content'.
   $permissions['create receipt_details content'] = array(
     'name' => 'create receipt_details content',
@@ -781,15 +754,6 @@ function dis_core_features_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'shortcut',
-  );
-
-  // Exported permission: 'delete any article content'.
-  $permissions['delete any article content'] = array(
-    'name' => 'delete any article content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
   );
 
   // Exported permission: 'delete any associate_executive_mapping content'.
@@ -910,15 +874,6 @@ function dis_core_features_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any page content'.
-  $permissions['delete any page content'] = array(
-    'name' => 'delete any page content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete any receipt_details content'.
   $permissions['delete any receipt_details content'] = array(
     'name' => 'delete any receipt_details content',
@@ -938,15 +893,6 @@ function dis_core_features_user_default_permissions() {
     'roles' => array(
       'DIS Administrator' => 'DIS Administrator',
       'Master Maintainer' => 'Master Maintainer',
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own article content'.
-  $permissions['delete own article content'] = array(
-    'name' => 'delete own article content',
-    'roles' => array(
       'administrator' => 'administrator',
     ),
     'module' => 'node',
@@ -1070,15 +1016,6 @@ function dis_core_features_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete own page content'.
-  $permissions['delete own page content'] = array(
-    'name' => 'delete own page content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete own receipt_details content'.
   $permissions['delete own receipt_details content'] = array(
     'name' => 'delete own receipt_details content',
@@ -1116,7 +1053,6 @@ function dis_core_features_user_default_permissions() {
   $permissions['delete terms in dispatch_mode'] = array(
     'name' => 'delete terms in dispatch_mode',
     'roles' => array(
-      'DIS Administrator' => 'DIS Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'taxonomy',
@@ -1132,15 +1068,6 @@ function dis_core_features_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'delete terms in tags'.
-  $permissions['delete terms in tags'] = array(
-    'name' => 'delete terms in tags',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'delete terms in transporter_type'.
   $permissions['delete terms in transporter_type'] = array(
     'name' => 'delete terms in transporter_type',
@@ -1149,15 +1076,6 @@ function dis_core_features_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit any article content'.
-  $permissions['edit any article content'] = array(
-    'name' => 'edit any article content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
   );
 
   // Exported permission: 'edit any associate_executive_mapping content'.
@@ -1288,15 +1206,6 @@ function dis_core_features_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit any page content'.
-  $permissions['edit any page content'] = array(
-    'name' => 'edit any page content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit any receipt_details content'.
   $permissions['edit any receipt_details content'] = array(
     'name' => 'edit any receipt_details content',
@@ -1357,15 +1266,6 @@ function dis_core_features_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'mimemail',
-  );
-
-  // Exported permission: 'edit own article content'.
-  $permissions['edit own article content'] = array(
-    'name' => 'edit own article content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
   );
 
   // Exported permission: 'edit own associate_executive_mapping content'.
@@ -1523,15 +1423,6 @@ function dis_core_features_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'edit own page content'.
-  $permissions['edit own page content'] = array(
-    'name' => 'edit own page content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'edit own receipt_details content'.
   $permissions['edit own receipt_details content'] = array(
     'name' => 'edit own receipt_details content',
@@ -1562,7 +1453,6 @@ function dis_core_features_user_default_permissions() {
   $permissions['edit terms in dispatch_mode'] = array(
     'name' => 'edit terms in dispatch_mode',
     'roles' => array(
-      'DIS Administrator' => 'DIS Administrator',
       'administrator' => 'administrator',
     ),
     'module' => 'taxonomy',
@@ -1573,15 +1463,6 @@ function dis_core_features_user_default_permissions() {
     'name' => 'edit terms in financial_year',
     'roles' => array(
       'DIS Administrator' => 'DIS Administrator',
-      'administrator' => 'administrator',
-    ),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in tags'.
-  $permissions['edit terms in tags'] = array(
-    'name' => 'edit terms in tags',
-    'roles' => array(
       'administrator' => 'administrator',
     ),
     'module' => 'taxonomy',
@@ -1999,24 +1880,6 @@ function dis_core_features_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'panels',
-  );
-
-  // Exported permission: 'use text format filtered_html'.
-  $permissions['use text format filtered_html'] = array(
-    'name' => 'use text format filtered_html',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'filter',
-  );
-
-  // Exported permission: 'use text format full_html'.
-  $permissions['use text format full_html'] = array(
-    'name' => 'use text format full_html',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'filter',
   );
 
   // Exported permission: 'view field_financial_year'.

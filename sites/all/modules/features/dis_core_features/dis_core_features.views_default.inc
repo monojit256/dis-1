@@ -45,6 +45,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['arguments']['field_company_target_id']['table'] = 'field_data_field_company';
   $handler->display->display_options['arguments']['field_company_target_id']['field'] = 'field_company_target_id';
   $handler->display->display_options['arguments']['field_company_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_company_target_id']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['field_company_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_company_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_company_target_id']['summary_options']['items_per_page'] = '25';
@@ -53,6 +54,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['arguments']['field_associate_type_value']['table'] = 'field_data_field_associate_type';
   $handler->display->display_options['arguments']['field_associate_type_value']['field'] = 'field_associate_type_value';
   $handler->display->display_options['arguments']['field_associate_type_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_associate_type_value']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['field_associate_type_value']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_associate_type_value']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_associate_type_value']['summary_options']['items_per_page'] = '25';
@@ -180,6 +182,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['arguments']['field_company_target_id']['table'] = 'field_data_field_company';
   $handler->display->display_options['arguments']['field_company_target_id']['field'] = 'field_company_target_id';
   $handler->display->display_options['arguments']['field_company_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_company_target_id']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['field_company_target_id']['default_argument_skip_url'] = TRUE;
   $handler->display->display_options['arguments']['field_company_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_company_target_id']['summary']['format'] = 'default_summary';
@@ -250,6 +253,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['arguments']['field_company_target_id']['table'] = 'field_data_field_company';
   $handler->display->display_options['arguments']['field_company_target_id']['field'] = 'field_company_target_id';
   $handler->display->display_options['arguments']['field_company_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_company_target_id']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['field_company_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_company_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_company_target_id']['summary_options']['items_per_page'] = '25';
@@ -2504,11 +2508,10 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_division_name']['field'] = 'field_division_name';
   $handler->display->display_options['fields']['field_division_name']['relationship'] = 'field_division_target_id';
   $handler->display->display_options['fields']['field_division_name']['label'] = 'Division';
-  /* Field: Content: field_executives */
+  /* Field: Content: Executives */
   $handler->display->display_options['fields']['field_executives']['id'] = 'field_executives';
   $handler->display->display_options['fields']['field_executives']['table'] = 'field_data_field_executives';
   $handler->display->display_options['fields']['field_executives']['field'] = 'field_executives';
-  $handler->display->display_options['fields']['field_executives']['label'] = 'Executives';
   $handler->display->display_options['fields']['field_executives']['settings'] = array(
     'link' => 0,
   );
