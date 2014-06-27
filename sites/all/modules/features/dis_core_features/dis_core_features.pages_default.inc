@@ -511,7 +511,10 @@ function dis_core_features_default_page_manager_pages() {
   $page->admin_title = 'Admin Home';
   $page->admin_description = '';
   $page->path = 'admin-home';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Admin Home',
@@ -574,7 +577,10 @@ function dis_core_features_default_page_manager_pages() {
   $page->admin_title = 'Goods Inward';
   $page->admin_description = '';
   $page->path = 'goods-inward';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Goods Inward',
@@ -637,7 +643,10 @@ function dis_core_features_default_page_manager_pages() {
   $page->admin_title = 'Goods Outward';
   $page->admin_description = '';
   $page->path = 'goods-outward';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Goods Outward',
@@ -700,7 +709,10 @@ function dis_core_features_default_page_manager_pages() {
   $page->admin_title = 'Master Data';
   $page->admin_description = '';
   $page->path = 'master-data';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Master Data',
