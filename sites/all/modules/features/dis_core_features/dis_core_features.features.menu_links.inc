@@ -27,7 +27,7 @@ function dis_core_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -40,
+    'weight' => -46,
     'customized' => 1,
     'parent_identifier' => 'main-menu_master-data:master-data',
   );
@@ -48,7 +48,7 @@ function dis_core_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -44,
+    'weight' => -48,
     'customized' => 1,
     'parent_identifier' => 'main-menu_master-data:master-data',
   );
@@ -69,7 +69,7 @@ function dis_core_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -42,
+    'weight' => -47,
     'customized' => 1,
     'parent_identifier' => 'main-menu_master-data:master-data',
   );
@@ -111,7 +111,7 @@ function dis_core_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -49,
     'customized' => 1,
     'parent_identifier' => 'main-menu_master-data:master-data',
   );
@@ -153,7 +153,7 @@ function dis_core_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -46,
+    'weight' => -45,
     'customized' => 1,
     'parent_identifier' => 'main-menu_master-data:master-data',
   );

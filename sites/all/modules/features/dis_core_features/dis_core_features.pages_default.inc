@@ -646,6 +646,7 @@ function dis_core_features_default_page_manager_pages() {
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
+    'logic' => 'and',
   );
   $page->menu = array(
     'type' => 'normal',

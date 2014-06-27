@@ -2622,7 +2622,10 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['path'] = 'view-edit-associate-executive-mapping';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'View/Edit Associate Executive Mapping';
-  $handler->display->display_options['menu']['name'] = 'menu-master-data-menu';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['view_edit_associate_executive_mapping'] = $view;
 
   $view = new view();
@@ -2717,7 +2720,10 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['path'] = 'view-edit-business-associate';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'View/Edit Business Associate';
-  $handler->display->display_options['menu']['name'] = 'menu-master-data-menu';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['view_edit_business_associate'] = $view;
 
   $view = new view();
@@ -2802,7 +2808,10 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['path'] = 'view-edit-company';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'View/Edit Company';
-  $handler->display->display_options['menu']['name'] = 'menu-master-data-menu';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['view_edit_company'] = $view;
 
   $view = new view();
@@ -2891,7 +2900,10 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['path'] = 'view-edit-company-executive';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'View/Edit Company Executive';
-  $handler->display->display_options['menu']['name'] = 'menu-master-data-menu';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['view_edit_company_executive'] = $view;
 
   $view = new view();
@@ -2976,7 +2988,10 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['path'] = 'view-edit-division';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'View/Edit Division';
-  $handler->display->display_options['menu']['name'] = 'menu-master-data-menu';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['view_edit_division'] = $view;
 
   $view = new view();
@@ -3062,7 +3077,10 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['path'] = 'view-edit-transporter';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'View/Edit Transporter';
-  $handler->display->display_options['menu']['name'] = 'menu-master-data-menu';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['view_edit_transporter'] = $view;
 
   return $export;
