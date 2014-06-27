@@ -27,7 +27,7 @@ function dis_core_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -46,
+    'weight' => -42,
     'customized' => 1,
     'parent_identifier' => 'main-menu_master-data:master-data',
   );
@@ -48,7 +48,7 @@ function dis_core_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -48,
+    'weight' => -46,
     'customized' => 1,
     'parent_identifier' => 'main-menu_master-data:master-data',
   );
@@ -69,7 +69,7 @@ function dis_core_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -47,
+    'weight' => -44,
     'customized' => 1,
     'parent_identifier' => 'main-menu_master-data:master-data',
   );
@@ -111,7 +111,7 @@ function dis_core_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -49,
+    'weight' => -48,
     'customized' => 1,
     'parent_identifier' => 'main-menu_master-data:master-data',
   );
@@ -153,7 +153,7 @@ function dis_core_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => -45,
+    'weight' => -40,
     'customized' => 1,
     'parent_identifier' => 'main-menu_master-data:master-data',
   );
@@ -351,6 +351,27 @@ function dis_core_features_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_admin-home:admin-home',
   );
+  // Exported menu link: main-menu_manage-invoices:manage-invoices
+  $menu_links['main-menu_manage-invoices:manage-invoices'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'manage-invoices',
+    'router_path' => 'manage-invoices',
+    'link_title' => 'Manage Invoices',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_manage-invoices:manage-invoices',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_goods-outward:goods-outward',
+  );
   // Exported menu link: main-menu_master-data:master-data
   $menu_links['main-menu_master-data:master-data'] = array(
     'menu_name' => 'main-menu',
@@ -367,6 +388,132 @@ function dis_core_features_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -49,
     'customized' => 1,
+  );
+  // Exported menu link: main-menu_outward-register:outward-register
+  $menu_links['main-menu_outward-register:outward-register'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'outward-register',
+    'router_path' => 'outward-register',
+    'link_title' => 'Outward Register',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_outward-register:outward-register',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -42,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_goods-outward:goods-outward',
+  );
+  // Exported menu link: main-menu_update-delivery-confirmation:update-delivery-confirmation
+  $menu_links['main-menu_update-delivery-confirmation:update-delivery-confirmation'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'update-delivery-confirmation',
+    'router_path' => 'update-delivery-confirmation',
+    'link_title' => 'Update Delivery Confirmation',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_update-delivery-confirmation:update-delivery-confirmation',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -43,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_goods-outward:goods-outward',
+  );
+  // Exported menu link: main-menu_update-dispatch:update-dispatch
+  $menu_links['main-menu_update-dispatch:update-dispatch'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'update-dispatch',
+    'router_path' => 'update-dispatch',
+    'link_title' => 'Update Dispatch',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_update-dispatch:update-dispatch',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -46,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_goods-outward:goods-outward',
+  );
+  // Exported menu link: main-menu_update-lr-details:update-lr-details
+  $menu_links['main-menu_update-lr-details:update-lr-details'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'update-lr-details',
+    'router_path' => 'update-lr-details',
+    'link_title' => 'Update LR Details',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_update-lr-details:update-lr-details',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -45,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_goods-outward:goods-outward',
+  );
+  // Exported menu link: main-menu_update-lr-value:update-lr-value
+  $menu_links['main-menu_update-lr-value:update-lr-value'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'update-lr-value',
+    'router_path' => 'update-lr-value',
+    'link_title' => 'Update LR Value',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_update-lr-value:update-lr-value',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -44,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_goods-outward:goods-outward',
+  );
+  // Exported menu link: main-menu_update-packing:update-packing
+  $menu_links['main-menu_update-packing:update-packing'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'update-packing',
+    'router_path' => 'update-packing',
+    'link_title' => 'Update Packing',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_update-packing:update-packing',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -47,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_goods-outward:goods-outward',
   );
   // Exported menu link: main-menu_upload-outward-invoices:import/outward_invoice_importer
   $menu_links['main-menu_upload-outward-invoices:import/outward_invoice_importer'] = array(
@@ -389,6 +536,132 @@ function dis_core_features_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_goods-outward:goods-outward',
   );
+  // Exported menu link: main-menu_viewedit-associate-executive-mapping:view-edit-associate-executive-mapping
+  $menu_links['main-menu_viewedit-associate-executive-mapping:view-edit-associate-executive-mapping'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'view-edit-associate-executive-mapping',
+    'router_path' => 'view-edit-associate-executive-mapping',
+    'link_title' => 'View/Edit Associate Executive Mapping',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_viewedit-associate-executive-mapping:view-edit-associate-executive-mapping',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -41,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_master-data:master-data',
+  );
+  // Exported menu link: main-menu_viewedit-business-associate:view-edit-business-associate
+  $menu_links['main-menu_viewedit-business-associate:view-edit-business-associate'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'view-edit-business-associate',
+    'router_path' => 'view-edit-business-associate',
+    'link_title' => 'View/Edit Business Associate',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_viewedit-business-associate:view-edit-business-associate',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -45,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_master-data:master-data',
+  );
+  // Exported menu link: main-menu_viewedit-company-executive:view-edit-company-executive
+  $menu_links['main-menu_viewedit-company-executive:view-edit-company-executive'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'view-edit-company-executive',
+    'router_path' => 'view-edit-company-executive',
+    'link_title' => 'View/Edit Company Executive',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_viewedit-company-executive:view-edit-company-executive',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -43,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_master-data:master-data',
+  );
+  // Exported menu link: main-menu_viewedit-company:view-edit-company
+  $menu_links['main-menu_viewedit-company:view-edit-company'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'view-edit-company',
+    'router_path' => 'view-edit-company',
+    'link_title' => 'View/Edit Company',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_viewedit-company:view-edit-company',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_master-data:master-data',
+  );
+  // Exported menu link: main-menu_viewedit-division:view-edit-division
+  $menu_links['main-menu_viewedit-division:view-edit-division'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'view-edit-division',
+    'router_path' => 'view-edit-division',
+    'link_title' => 'View/Edit Division',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_viewedit-division:view-edit-division',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -47,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_master-data:master-data',
+  );
+  // Exported menu link: main-menu_viewedit-transporter:view-edit-transporter
+  $menu_links['main-menu_viewedit-transporter:view-edit-transporter'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'view-edit-transporter',
+    'router_path' => 'view-edit-transporter',
+    'link_title' => 'View/Edit Transporter',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_viewedit-transporter:view-edit-transporter',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -39,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_master-data:master-data',
+  );
   // Translatables
   // Included for use with string extractors like potx.
   t('Add Associate Executive Mapping');
@@ -408,8 +681,21 @@ function dis_core_features_menu_default_menu_links() {
   t('Import Company Executives');
   t('Import Divisions');
   t('Import Transporters');
+  t('Manage Invoices');
   t('Master Data');
+  t('Outward Register');
+  t('Update Delivery Confirmation');
+  t('Update Dispatch');
+  t('Update LR Details');
+  t('Update LR Value');
+  t('Update Packing');
   t('Upload Outward Invoices');
+  t('View/Edit Associate Executive Mapping');
+  t('View/Edit Business Associate');
+  t('View/Edit Company');
+  t('View/Edit Company Executive');
+  t('View/Edit Division');
+  t('View/Edit Transporter');
 
 
   return $menu_links;
