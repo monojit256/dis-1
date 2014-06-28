@@ -24,7 +24,15 @@ function dis_menu() {
         'type' => MENU_CALLBACK,
         'file' => 'dis.menu.inc',
     );  
-   
+
+    $items['add-inward-invoice'] = array(
+        'title' => 'Add Inward Invoice- Select Company and Invoice Type',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('add_inward_invoice_form'),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+        'file' => 'dis.menu.inc',
+    );     
     return $items;
 }
 
