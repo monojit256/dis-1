@@ -43,11 +43,10 @@ function add_associate_executive_mapping_form($form, &$form_state) {
 function add_associate_executive_mapping_form_submit($form, &$form_state) {
 
     $form_state['redirect'] = array(
-        'node/add/associate-executive-mapping/',
+        'node/add/associate-executive-mapping/'.$form_state['input']['field_company']['und'].'/'.$form_state['input']['field_associate_type']['und'],
         array(
             'query' => array(
-                'field_company' => $form_state['input']['field_company']['und'],
-                'field_associate_type' => $form_state['input']['field_associate_type']['und']
+                'field_company' => $form_state['input']['field_company']['und']
             )
         )
     );
