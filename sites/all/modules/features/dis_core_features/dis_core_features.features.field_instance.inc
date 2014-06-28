@@ -43,7 +43,7 @@ function dis_core_features_field_default_field_instances() {
         'prepopulate' => array(
           'action' => 'disable',
           'action_on_edit' => 1,
-          'fallback' => 'form_error',
+          'fallback' => 'none',
           'providers' => array(
             'og_context' => FALSE,
             'url' => 1,
@@ -149,7 +149,7 @@ function dis_core_features_field_default_field_instances() {
         'prepopulate' => array(
           'action' => 'disable',
           'action_on_edit' => 1,
-          'fallback' => 'form_error',
+          'fallback' => 'none',
           'providers' => array(
             'og_context' => FALSE,
             'url' => 1,

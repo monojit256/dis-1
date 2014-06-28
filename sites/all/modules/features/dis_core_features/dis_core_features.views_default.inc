@@ -45,7 +45,8 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['arguments']['field_company_target_id']['table'] = 'field_data_field_company';
   $handler->display->display_options['arguments']['field_company_target_id']['field'] = 'field_company_target_id';
   $handler->display->display_options['arguments']['field_company_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_company_target_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_company_target_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_company_target_id']['default_argument_options']['index'] = '3';
   $handler->display->display_options['arguments']['field_company_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_company_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_company_target_id']['summary_options']['items_per_page'] = '25';
@@ -54,7 +55,8 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['arguments']['field_associate_type_value']['table'] = 'field_data_field_associate_type';
   $handler->display->display_options['arguments']['field_associate_type_value']['field'] = 'field_associate_type_value';
   $handler->display->display_options['arguments']['field_associate_type_value']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_associate_type_value']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_associate_type_value']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_associate_type_value']['default_argument_options']['index'] = '4';
   $handler->display->display_options['arguments']['field_associate_type_value']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_associate_type_value']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_associate_type_value']['summary_options']['items_per_page'] = '25';
@@ -182,7 +184,8 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['arguments']['field_company_target_id']['table'] = 'field_data_field_company';
   $handler->display->display_options['arguments']['field_company_target_id']['field'] = 'field_company_target_id';
   $handler->display->display_options['arguments']['field_company_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_company_target_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_company_target_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_company_target_id']['default_argument_options']['index'] = '3';
   $handler->display->display_options['arguments']['field_company_target_id']['default_argument_skip_url'] = TRUE;
   $handler->display->display_options['arguments']['field_company_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_company_target_id']['summary']['format'] = 'default_summary';
@@ -253,7 +256,8 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['arguments']['field_company_target_id']['table'] = 'field_data_field_company';
   $handler->display->display_options['arguments']['field_company_target_id']['field'] = 'field_company_target_id';
   $handler->display->display_options['arguments']['field_company_target_id']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_company_target_id']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_company_target_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_company_target_id']['default_argument_options']['index'] = '3';
   $handler->display->display_options['arguments']['field_company_target_id']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_company_target_id']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_company_target_id']['summary_options']['items_per_page'] = '25';
@@ -2554,7 +2558,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = 'Edit';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Edit';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/[nid]/edit?field_company=[nid_3]&field_associate_type=[field_associate_type]';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/[nid]/edit/[nid_3]/[field_associate_type]?field_company=[nid_3]';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -2664,6 +2668,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Associate';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Company Name */
