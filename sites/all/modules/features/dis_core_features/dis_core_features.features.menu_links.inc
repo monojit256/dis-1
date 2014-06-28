@@ -115,6 +115,27 @@ function dis_core_features_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_master-data:master-data',
   );
+  // Exported menu link: main-menu_add-inward-invoice:add-inward-invoice
+  $menu_links['main-menu_add-inward-invoice:add-inward-invoice'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'add-inward-invoice',
+    'router_path' => 'add-inward-invoice',
+    'link_title' => 'Add Inward Invoice',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_add-inward-invoice:add-inward-invoice',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_goods-inward:goods-inward',
+  );
   // Exported menu link: main-menu_add-outward-invoice:add-outward-invoice
   $menu_links['main-menu_add-outward-invoice:add-outward-invoice'] = array(
     'menu_name' => 'main-menu',
@@ -186,7 +207,7 @@ function dis_core_features_menu_default_menu_links() {
     'module' => 'system',
     'hidden' => 0,
     'external' => 0,
-    'has_children' => 0,
+    'has_children' => 1,
     'expanded' => 0,
     'weight' => -48,
     'customized' => 1,
@@ -669,6 +690,7 @@ function dis_core_features_menu_default_menu_links() {
   t('Add Company');
   t('Add Company Executive');
   t('Add Division');
+  t('Add Inward Invoice');
   t('Add Outward Invoice');
   t('Add Transporter');
   t('Admin Home');

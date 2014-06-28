@@ -221,6 +221,7 @@ features[menu_links][] = main-menu_add-business-associate:node/add/business-asso
 features[menu_links][] = main-menu_add-company-executive:node/add/company-executive
 features[menu_links][] = main-menu_add-company:node/add/company
 features[menu_links][] = main-menu_add-division:node/add/division
+features[menu_links][] = main-menu_add-inward-invoice:add-inward-invoice
 features[menu_links][] = main-menu_add-outward-invoice:add-outward-invoice
 features[menu_links][] = main-menu_add-transporter:node/add/transporter
 features[menu_links][] = main-menu_admin-home:admin-home
