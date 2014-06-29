@@ -83,6 +83,13 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_transporter';
+  $strongarm->value = '[node:field-name]';
+  $export['ant_pattern_transporter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'ant_php_associate_executive_mapping';
   $strongarm->value = 0;
   $export['ant_php_associate_executive_mapping'] = $strongarm;
@@ -114,6 +121,20 @@ function dis_core_features_strongarm() {
   $strongarm->name = 'ant_php_division';
   $strongarm->value = 0;
   $export['ant_php_division'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_transporter';
+  $strongarm->value = 0;
+  $export['ant_php_transporter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_transporter';
+  $strongarm->value = '1';
+  $export['ant_transporter'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -185,6 +206,13 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_transporter';
+  $strongarm->value = array();
+  $export['menu_options_transporter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_associate_executive_mapping';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_associate_executive_mapping'] = $strongarm;
@@ -216,6 +244,13 @@ function dis_core_features_strongarm() {
   $strongarm->name = 'menu_parent_division';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_division'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_transporter';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_transporter'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -265,6 +300,15 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_transporter';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_transporter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_associate_executive_mapping';
   $strongarm->value = '0';
   $export['node_preview_associate_executive_mapping'] = $strongarm;
@@ -300,6 +344,13 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_transporter';
+  $strongarm->value = '0';
+  $export['node_preview_transporter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_associate_executive_mapping';
   $strongarm->value = 0;
   $export['node_submitted_associate_executive_mapping'] = $strongarm;
@@ -331,6 +382,13 @@ function dis_core_features_strongarm() {
   $strongarm->name = 'node_submitted_division';
   $strongarm->value = 0;
   $export['node_submitted_division'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_transporter';
+  $strongarm->value = 0;
+  $export['node_submitted_transporter'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -531,6 +589,13 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_comp_transporter';
+  $strongarm->value = 'each';
+  $export['unique_field_comp_transporter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'unique_field_fields_associate_executive_mapping';
   $strongarm->value = array(
     0 => 'field_associate',
@@ -581,6 +646,15 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_fields_transporter';
+  $strongarm->value = array(
+    0 => 'field_name',
+  );
+  $export['unique_field_fields_transporter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'unique_field_scope_associate_executive_mapping';
   $strongarm->value = 'type';
   $export['unique_field_scope_associate_executive_mapping'] = $strongarm;
@@ -616,6 +690,13 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_scope_transporter';
+  $strongarm->value = 'type';
+  $export['unique_field_scope_transporter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'unique_field_show_matches_associate_executive_mapping';
   $strongarm->value = array();
   $export['unique_field_show_matches_associate_executive_mapping'] = $strongarm;
@@ -647,6 +728,13 @@ function dis_core_features_strongarm() {
   $strongarm->name = 'unique_field_show_matches_division';
   $strongarm->value = array();
   $export['unique_field_show_matches_division'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_show_matches_transporter';
+  $strongarm->value = array();
+  $export['unique_field_show_matches_transporter'] = $strongarm;
 
   return $export;
 }
