@@ -192,7 +192,7 @@ function dis_core_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 1,
     'expanded' => 0,
-    'weight' => -46,
+    'weight' => -45,
     'customized' => 1,
   );
   // Exported menu link: main-menu_goods-inward:goods-inward
@@ -408,6 +408,23 @@ function dis_core_features_menu_default_menu_links() {
     'has_children' => 1,
     'expanded' => 0,
     'weight' => -49,
+    'customized' => 1,
+  );
+  // Exported menu link: main-menu_miscellaneous:miscellaneous
+  $menu_links['main-menu_miscellaneous:miscellaneous'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'miscellaneous',
+    'router_path' => 'miscellaneous',
+    'link_title' => 'Miscellaneous',
+    'options' => array(
+      'identifier' => 'main-menu_miscellaneous:miscellaneous',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -46,
     'customized' => 1,
   );
   // Exported menu link: main-menu_outward-register:outward-register
@@ -705,6 +722,7 @@ function dis_core_features_menu_default_menu_links() {
   t('Import Transporters');
   t('Manage Invoices');
   t('Master Data');
+  t('Miscellaneous');
   t('Outward Register');
   t('Update Delivery Confirmation');
   t('Update Dispatch');
