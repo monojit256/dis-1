@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * Implementation of hook_menu()
+ */
+function dis_pdc_menu() {
+
+    $items = array();
+
+	$items['add-pdc'] = array(
+        'title' => 'Add PDC - Select Company',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('add_pdc_form'),
+        'access callback' => TRUE,
+        'type' => MENU_CALLBACK,
+        'file' => 'dis_pdc.menu.inc',
+    ); 	
+
+    return $items;
+}
+
+
+/**
+ * Implementation of hook_form_BASE_FORMID_alter
+ */
+function dis_pdc_form_views_form_utilize_pdc_page_alter(&$form, $form_state, $form_id){
+
+    if ($form_state['step'] == 'views_bulk_operations_config_form') {
+
+
+            //Alter Cheque Date field
+            $form['parameter']['cheque_date']['settings']['cheque_date']['#type'] = 'date_popup';
+            $form['parameter']['cheque_date']['settings']['cheque_date']['#date_format'] = 'd-m-Y';
+            $form['parameter']['cheque_date']['settings']['cheque_date']['#description'] = '';
+
+            //Alter Cheque Amount field
+            $form['parameter']['cheque_amount']['settings']['cheque_amount']['#size'] = 20;
+            $form['parameter']['cheque_amount']['settings']['cheque_amount']['#field_prefix'] = 'Rs. ';
+
+            //Alter Deposit Date field
+            $form['parameter']['deposit_date']['settings']['deposit_date']['#type'] = 'date_popup';
+            $form['parameter']['deposit_date']['settings']['deposit_date']['#date_format'] = 'd-m-Y';
+            $form['parameter']['deposit_date']['settings']['deposit_date']['#description'] = '';
+
+            //Alter Invoices field
+           // $form['parameter']['invoices']['settings']['invoices']['#type'] = 'entityreference_view_widget';
+         //   $form['parameter']['deposit_date']['settings']['deposit_date']['#date_format'] = 'd-m-Y';
+           // $form['parameter']['deposit_date']['settings']['deposit_date']['#description'] = '';
+/*
+            //Alter Cheque No field
+            $form['parameter']['cheque_no']['settings']['cheque_no']['#type'] = 'textfield';
+            $form['parameter']['cheque_no']['settings']['cheque_no']['#size'] = 6;
+            $form['parameter']['cheque_no']['settings']['cheque_no']['#maxlength'] = 6;
+            unset($form['parameter']['cheque_no']['switch_button']);
+            unset($form['parameter']['cheque_no']['settings']['help']);
+
+            //Alter Cheque Value field
+            $form['parameter']['cheque_value']['settings']['cheque_value']['#size'] = 20;
+            $form['parameter']['cheque_value']['settings']['cheque_value']['#field_prefix'] = 'Rs. ';
+
+            //Alter Remarks Field
+            $form['parameter']['remarks']['settings']['remarks']['#default_value'] = 'None';
+            unset($form['parameter']['remarks']['settings']['help']);*/
+        }
+
+}

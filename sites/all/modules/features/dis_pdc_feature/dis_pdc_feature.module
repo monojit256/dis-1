@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the DIS PDC Feature feature.
+ */
+
+include_once 'dis_pdc_feature.features.inc';
