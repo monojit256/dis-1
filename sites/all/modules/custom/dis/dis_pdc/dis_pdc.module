@@ -41,26 +41,6 @@ function dis_pdc_form_views_form_utilize_pdc_page_alter(&$form, $form_state, $fo
             $form['parameter']['deposit_date']['settings']['deposit_date']['#type'] = 'date_popup';
             $form['parameter']['deposit_date']['settings']['deposit_date']['#date_format'] = 'd-m-Y';
             $form['parameter']['deposit_date']['settings']['deposit_date']['#description'] = '';
-
-            //Alter Invoices field
-           // $form['parameter']['invoices']['settings']['invoices']['#type'] = 'entityreference_view_widget';
-         //   $form['parameter']['deposit_date']['settings']['deposit_date']['#date_format'] = 'd-m-Y';
-           // $form['parameter']['deposit_date']['settings']['deposit_date']['#description'] = '';
-/*
-            //Alter Cheque No field
-            $form['parameter']['cheque_no']['settings']['cheque_no']['#type'] = 'textfield';
-            $form['parameter']['cheque_no']['settings']['cheque_no']['#size'] = 6;
-            $form['parameter']['cheque_no']['settings']['cheque_no']['#maxlength'] = 6;
-            unset($form['parameter']['cheque_no']['switch_button']);
-            unset($form['parameter']['cheque_no']['settings']['help']);
-
-            //Alter Cheque Value field
-            $form['parameter']['cheque_value']['settings']['cheque_value']['#size'] = 20;
-            $form['parameter']['cheque_value']['settings']['cheque_value']['#field_prefix'] = 'Rs. ';
-
-            //Alter Remarks Field
-            $form['parameter']['remarks']['settings']['remarks']['#default_value'] = 'None';
-            unset($form['parameter']['remarks']['settings']['help']);*/
         }
 
 }
