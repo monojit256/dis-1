@@ -592,6 +592,7 @@ features[variable][] = node_submitted_division
 features[variable][] = node_submitted_outward_invoice
 features[variable][] = node_submitted_packing
 features[variable][] = node_submitted_transporter
+features[variable][] = page_manager_node_edit_disabled
 features[variable][] = pathauto_node_associate_executive_mapping_pattern
 features[variable][] = pathauto_node_business_associate_pattern
 features[variable][] = pathauto_node_company_executive_pattern
