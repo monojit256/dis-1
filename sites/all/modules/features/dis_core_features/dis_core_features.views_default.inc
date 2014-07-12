@@ -351,7 +351,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_invoice_date']['table'] = 'field_data_field_invoice_date';
   $handler->display->display_options['fields']['field_invoice_date']['field'] = 'field_invoice_date';
   $handler->display->display_options['fields']['field_invoice_date']['settings'] = array(
-    'format_type' => 'dis_date_type',
+    'format_type' => 'short',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -409,7 +409,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = 'Edit';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Edit';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/[nid]/edit?field_company=[nid_1]&field_associate_type=[field_associate_type]';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/[nid]/edit/[nid_1]/[field_associate_type]?field_company=[nid_1]';
   /* Field: Content: Delete link */
   $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
@@ -747,7 +747,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_invoice_date']['table'] = 'field_data_field_invoice_date';
   $handler->display->display_options['fields']['field_invoice_date']['field'] = 'field_invoice_date';
   $handler->display->display_options['fields']['field_invoice_date']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'short',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -787,7 +787,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_packing_date']['field'] = 'field_packing_date';
   $handler->display->display_options['fields']['field_packing_date']['relationship'] = 'reverse_field_outward_invoices_node';
   $handler->display->display_options['fields']['field_packing_date']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'short',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -816,7 +816,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_dispatch_date']['field'] = 'field_dispatch_date';
   $handler->display->display_options['fields']['field_dispatch_date']['relationship'] = 'reverse_field_packing_node';
   $handler->display->display_options['fields']['field_dispatch_date']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'short',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -833,7 +833,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_lr_date']['field'] = 'field_lr_date';
   $handler->display->display_options['fields']['field_lr_date']['relationship'] = 'reverse_field_packing_node';
   $handler->display->display_options['fields']['field_lr_date']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'short',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -970,7 +970,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_dispatch_date']['table'] = 'field_data_field_dispatch_date';
   $handler->display->display_options['fields']['field_dispatch_date']['field'] = 'field_dispatch_date';
   $handler->display->display_options['fields']['field_dispatch_date']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'short',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -989,7 +989,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_lr_date']['table'] = 'field_data_field_lr_date';
   $handler->display->display_options['fields']['field_lr_date']['field'] = 'field_lr_date';
   $handler->display->display_options['fields']['field_lr_date']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'short',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',

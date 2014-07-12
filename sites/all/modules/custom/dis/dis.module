@@ -50,6 +50,10 @@ function dis_form_outward_invoice_node_form_alter(&$form, &$form_state, $form_id
             $form['field_outward_type']['und']['#disabled'] = TRUE;
         }
     }
+
+    if(array_key_exists('#node_edit_form', $form) && $form['#node_edit_form'] == TRUE){
+        $form['field_outward_type']['und']['#disabled'] = TRUE;
+    }
 }
 
 /*

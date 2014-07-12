@@ -87,12 +87,11 @@ function add_outward_invoice_form_submit($form, &$form_state) {
     }
 
     $form_state['redirect'] = array(
-        'node/add/outward-invoice/',
+        'node/add/outward-invoice/'.$form_state['input']['field_company']['und'].'/'.$associate_type,
         array(
             'query' => array(
                 'field_company' => $form_state['input']['field_company']['und'],
-                'field_outward_type' => $form_state['input']['field_outward_type']['und'],
-                'field_associate_type' => $associate_type
+                'field_outward_type' => $form_state['input']['field_outward_type']['und']
             )
         )
     );

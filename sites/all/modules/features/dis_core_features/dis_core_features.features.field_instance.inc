@@ -1318,7 +1318,7 @@ function dis_core_features_field_default_field_instances() {
     'label' => 'Delivery Date',
     'required' => 1,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -1329,9 +1329,10 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
+        'no_fieldset' => 1,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -1542,7 +1543,7 @@ function dis_core_features_field_default_field_instances() {
     'label' => 'Dispatch Date',
     'required' => 1,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -1553,9 +1554,10 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
+        'no_fieldset' => 1,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -1643,7 +1645,7 @@ function dis_core_features_field_default_field_instances() {
     'label' => 'LR Date',
     'required' => 0,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -1654,9 +1656,10 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
+        'no_fieldset' => 1,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -2359,7 +2362,7 @@ function dis_core_features_field_default_field_instances() {
   $field_instances['node-outward_invoice-field_company'] = array(
     'bundle' => 'outward_invoice',
     'default_value' => NULL,
-    'default_value_function' => '',
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2386,7 +2389,15 @@ function dis_core_features_field_default_field_instances() {
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'status' => 0,
+          'action' => 'disable',
+          'action_on_edit' => 1,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => FALSE,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
         ),
       ),
       'user_register_form' => FALSE,
@@ -2396,7 +2407,7 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 32,
+      'weight' => 2,
     ),
   );
 
@@ -2441,7 +2452,7 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 36,
+      'weight' => 5,
     ),
   );
 
@@ -2486,7 +2497,7 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 34,
+      'weight' => 4,
     ),
   );
 
@@ -2534,7 +2545,7 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 41,
+      'weight' => 10,
     ),
   );
 
@@ -2569,7 +2580,7 @@ function dis_core_features_field_default_field_instances() {
     'label' => 'Invoice Date',
     'required' => 1,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -2580,14 +2591,15 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
+        'no_fieldset' => 1,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 38,
+      'weight' => 7,
     ),
   );
 
@@ -2627,7 +2639,7 @@ function dis_core_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 37,
+      'weight' => 6,
     ),
   );
 
@@ -2673,7 +2685,7 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 39,
+      'weight' => 8,
     ),
   );
 
@@ -2710,7 +2722,7 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 35,
+      'weight' => 3,
     ),
   );
 
@@ -2747,7 +2759,7 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 40,
+      'weight' => 9,
     ),
   );
 
@@ -2775,7 +2787,7 @@ function dis_core_features_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_remarks',
     'label' => 'Remarks',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 0,
       'user_register_form' => FALSE,
@@ -2787,7 +2799,7 @@ function dis_core_features_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 43,
+      'weight' => 12,
     ),
   );
 
@@ -2828,7 +2840,7 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 42,
+      'weight' => 11,
     ),
   );
 
@@ -2882,7 +2894,7 @@ function dis_core_features_field_default_field_instances() {
   $field_instances['node-packing-field_company'] = array(
     'bundle' => 'packing',
     'default_value' => NULL,
-    'default_value_function' => '',
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2909,7 +2921,15 @@ function dis_core_features_field_default_field_instances() {
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'status' => 0,
+          'action' => 'disable',
+          'action_on_edit' => 1,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => FALSE,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
         ),
       ),
       'user_register_form' => FALSE,
@@ -2927,7 +2947,7 @@ function dis_core_features_field_default_field_instances() {
   $field_instances['node-packing-field_outward_invoices'] = array(
     'bundle' => 'packing',
     'default_value' => NULL,
-    'default_value_function' => '',
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -2954,7 +2974,15 @@ function dis_core_features_field_default_field_instances() {
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
-          'status' => 0,
+          'action' => 'disable',
+          'action_on_edit' => 1,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => FALSE,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
         ),
       ),
       'user_register_form' => FALSE,
@@ -3003,7 +3031,7 @@ function dis_core_features_field_default_field_instances() {
     'label' => 'Packing Date',
     'required' => 1,
     'settings' => array(
-      'default_value' => 'now',
+      'default_value' => 'blank',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
@@ -3014,9 +3042,10 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
+        'no_fieldset' => 1,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
