@@ -2596,6 +2596,39 @@ function dis_core_features_views_default_views() {
     2 => array(),
     3 => array(),
   );
+  /* Filter criterion: Content: Division (field_division) */
+  $handler->display->display_options['filters']['field_division_target_id']['id'] = 'field_division_target_id';
+  $handler->display->display_options['filters']['field_division_target_id']['table'] = 'field_data_field_division';
+  $handler->display->display_options['filters']['field_division_target_id']['field'] = 'field_division_target_id';
+  $handler->display->display_options['filters']['field_division_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['operator_id'] = 'field_division_target_id_op';
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['label'] = 'Division';
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['operator'] = 'field_division_target_id_op';
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['identifier'] = 'field_division_target_id';
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  $handler->display->display_options['filters']['field_division_target_id']['group_info']['label'] = 'Division (field_division)';
+  $handler->display->display_options['filters']['field_division_target_id']['group_info']['identifier'] = 'field_division_target_id';
+  $handler->display->display_options['filters']['field_division_target_id']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['field_division_target_id']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
   /* Filter criterion: Content: Transporter Name (field_name) */
   $handler->display->display_options['filters']['field_name_value']['id'] = 'field_name_value';
   $handler->display->display_options['filters']['field_name_value']['table'] = 'field_data_field_name';
@@ -2604,14 +2637,49 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['field_name_value']['operator'] = 'starts';
   $handler->display->display_options['filters']['field_name_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_name_value']['expose']['operator_id'] = 'field_name_value_op';
-  $handler->display->display_options['filters']['field_name_value']['expose']['label'] = 'Associate';
+  $handler->display->display_options['filters']['field_name_value']['expose']['label'] = 'Associate Name';
   $handler->display->display_options['filters']['field_name_value']['expose']['operator'] = 'field_name_value_op';
   $handler->display->display_options['filters']['field_name_value']['expose']['identifier'] = 'field_name_value';
   $handler->display->display_options['filters']['field_name_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    4 => 0,
+    10 => 0,
+    6 => 0,
     3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Transporter Name (field_name) */
+  $handler->display->display_options['filters']['field_name_value_1']['id'] = 'field_name_value_1';
+  $handler->display->display_options['filters']['field_name_value_1']['table'] = 'field_data_field_name';
+  $handler->display->display_options['filters']['field_name_value_1']['field'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value_1']['relationship'] = 'field_executives_target_id';
+  $handler->display->display_options['filters']['field_name_value_1']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_name_value_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_name_value_1']['expose']['operator_id'] = 'field_name_value_1_op';
+  $handler->display->display_options['filters']['field_name_value_1']['expose']['label'] = 'Executive Name';
+  $handler->display->display_options['filters']['field_name_value_1']['expose']['operator'] = 'field_name_value_1_op';
+  $handler->display->display_options['filters']['field_name_value_1']['expose']['identifier'] = 'field_name_value_1';
+  $handler->display->display_options['filters']['field_name_value_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
   );
 
   /* Display: Page */
