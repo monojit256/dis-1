@@ -425,6 +425,152 @@ function dis_core_features_feeds_importer_default() {
   $feeds_importer = new stdClass();
   $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
   $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'delivery_importer';
+  $feeds_importer->config = array(
+    'name' => 'Delivery Importer',
+    'description' => '',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsFileFetcher',
+      'config' => array(
+        'allowed_extensions' => 'txt csv tsv xml opml',
+        'direct' => FALSE,
+        'directory' => 'public://feeds',
+        'allowed_schemes' => array(
+          0 => 'public',
+        ),
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsCSVParser',
+      'config' => array(
+        'delimiter' => ',',
+        'no_headers' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsNodeProcessor',
+      'config' => array(
+        'expire' => '-1',
+        'author' => 0,
+        'authorize' => 1,
+        'mappings' => array(
+          0 => array(
+            'source' => 'Company',
+            'target' => 'field_company:label',
+            'unique' => FALSE,
+          ),
+          1 => array(
+            'source' => 'Dispatch Nid',
+            'target' => 'field_dispatch:etid',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'Delivery Date',
+            'target' => 'field_delivery_date:start',
+            'unique' => FALSE,
+          ),
+        ),
+        'update_existing' => '0',
+        'input_format' => 'plain_text',
+        'skip_hash_check' => 0,
+        'bundle' => 'delivery_confirmation',
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+  $export['delivery_importer'] = $feeds_importer;
+
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'dispatch_importer';
+  $feeds_importer->config = array(
+    'name' => 'Dispatch Importer',
+    'description' => '',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsFileFetcher',
+      'config' => array(
+        'allowed_extensions' => 'txt csv tsv xml opml',
+        'direct' => FALSE,
+        'directory' => 'public://feeds',
+        'allowed_schemes' => array(
+          0 => 'public',
+        ),
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsCSVParser',
+      'config' => array(
+        'delimiter' => ',',
+        'no_headers' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsNodeProcessor',
+      'config' => array(
+        'expire' => '-1',
+        'author' => 0,
+        'authorize' => 1,
+        'mappings' => array(
+          0 => array(
+            'source' => 'Company',
+            'target' => 'field_company:label',
+            'unique' => FALSE,
+          ),
+          1 => array(
+            'source' => 'LR Date',
+            'target' => 'field_dispatch_date:start',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'Dispatch Mode',
+            'target' => 'field_dispatch_mode:label',
+            'unique' => FALSE,
+          ),
+          3 => array(
+            'source' => 'LR No',
+            'target' => 'field_lr_no',
+            'unique' => FALSE,
+          ),
+          4 => array(
+            'source' => 'LR Date',
+            'target' => 'field_lr_date:start',
+            'unique' => FALSE,
+          ),
+          5 => array(
+            'source' => 'LR Value',
+            'target' => 'field_lr_value',
+            'unique' => FALSE,
+          ),
+          6 => array(
+            'source' => 'Packing Nid',
+            'target' => 'field_packing:etid',
+            'unique' => FALSE,
+          ),
+        ),
+        'update_existing' => '0',
+        'input_format' => 'plain_text',
+        'skip_hash_check' => 0,
+        'bundle' => 'dispatch',
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+  $export['dispatch_importer'] = $feeds_importer;
+
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
   $feeds_importer->id = 'division_importer';
   $feeds_importer->config = array(
     'name' => 'Division Importer',
@@ -567,6 +713,79 @@ function dis_core_features_feeds_importer_default() {
     'process_in_background' => 0,
   );
   $export['outward_invoice_importer'] = $feeds_importer;
+
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'packing_importer';
+  $feeds_importer->config = array(
+    'name' => 'Packing Importer',
+    'description' => '',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsFileFetcher',
+      'config' => array(
+        'allowed_extensions' => 'txt csv tsv xml opml',
+        'direct' => FALSE,
+        'directory' => 'public://feeds',
+        'allowed_schemes' => array(
+          0 => 'public',
+        ),
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsCSVParser',
+      'config' => array(
+        'delimiter' => ',',
+        'no_headers' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsNodeProcessor',
+      'config' => array(
+        'expire' => '-1',
+        'author' => 0,
+        'authorize' => 1,
+        'mappings' => array(
+          0 => array(
+            'source' => 'Company',
+            'target' => 'field_company:label',
+            'unique' => FALSE,
+          ),
+          1 => array(
+            'source' => 'Cases',
+            'target' => 'field_cases',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'Transporter',
+            'target' => 'field_transporter:label',
+            'unique' => FALSE,
+          ),
+          3 => array(
+            'source' => 'Packing Date',
+            'target' => 'field_packing_date:start',
+            'unique' => FALSE,
+          ),
+          4 => array(
+            'source' => 'Invoice Nids',
+            'target' => 'field_outward_invoices:etid',
+            'unique' => FALSE,
+          ),
+        ),
+        'update_existing' => '0',
+        'input_format' => 'plain_text',
+        'skip_hash_check' => 0,
+        'bundle' => 'packing',
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+  $export['packing_importer'] = $feeds_importer;
 
   $feeds_importer = new stdClass();
   $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */

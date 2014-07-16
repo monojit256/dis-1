@@ -530,6 +530,20 @@ function dis_core_features_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'clear delivery_importer feeds'.
+  $permissions['clear delivery_importer feeds'] = array(
+    'name' => 'clear delivery_importer feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'clear dispatch_importer feeds'.
+  $permissions['clear dispatch_importer feeds'] = array(
+    'name' => 'clear dispatch_importer feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'clear division_importer feeds'.
   $permissions['clear division_importer feeds'] = array(
     'name' => 'clear division_importer feeds',
@@ -545,6 +559,13 @@ function dis_core_features_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
     ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'clear packing_importer feeds'.
+  $permissions['clear packing_importer feeds'] = array(
+    'name' => 'clear packing_importer feeds',
+    'roles' => array(),
     'module' => 'feeds',
   );
 
@@ -1523,6 +1544,20 @@ function dis_core_features_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'import delivery_importer feeds'.
+  $permissions['import delivery_importer feeds'] = array(
+    'name' => 'import delivery_importer feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'import dispatch_importer feeds'.
+  $permissions['import dispatch_importer feeds'] = array(
+    'name' => 'import dispatch_importer feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'import division_importer feeds'.
   $permissions['import division_importer feeds'] = array(
     'name' => 'import division_importer feeds',
@@ -1544,6 +1579,13 @@ function dis_core_features_user_default_permissions() {
       'Master Maintainer' => 'Master Maintainer',
       'administrator' => 'administrator',
     ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'import packing_importer feeds'.
+  $permissions['import packing_importer feeds'] = array(
+    'name' => 'import packing_importer feeds',
+    'roles' => array(),
     'module' => 'feeds',
   );
 
@@ -1646,6 +1688,20 @@ function dis_core_features_user_default_permissions() {
     'module' => 'feeds_tamper',
   );
 
+  // Exported permission: 'tamper delivery_importer'.
+  $permissions['tamper delivery_importer'] = array(
+    'name' => 'tamper delivery_importer',
+    'roles' => array(),
+    'module' => 'feeds_tamper',
+  );
+
+  // Exported permission: 'tamper dispatch_importer'.
+  $permissions['tamper dispatch_importer'] = array(
+    'name' => 'tamper dispatch_importer',
+    'roles' => array(),
+    'module' => 'feeds_tamper',
+  );
+
   // Exported permission: 'tamper division_importer'.
   $permissions['tamper division_importer'] = array(
     'name' => 'tamper division_importer',
@@ -1661,6 +1717,13 @@ function dis_core_features_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
     ),
+    'module' => 'feeds_tamper',
+  );
+
+  // Exported permission: 'tamper packing_importer'.
+  $permissions['tamper packing_importer'] = array(
+    'name' => 'tamper packing_importer',
+    'roles' => array(),
     'module' => 'feeds_tamper',
   );
 
@@ -1727,6 +1790,20 @@ function dis_core_features_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'unlock delivery_importer feeds'.
+  $permissions['unlock delivery_importer feeds'] = array(
+    'name' => 'unlock delivery_importer feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'unlock dispatch_importer feeds'.
+  $permissions['unlock dispatch_importer feeds'] = array(
+    'name' => 'unlock dispatch_importer feeds',
+    'roles' => array(),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'unlock division_importer feeds'.
   $permissions['unlock division_importer feeds'] = array(
     'name' => 'unlock division_importer feeds',
@@ -1742,6 +1819,13 @@ function dis_core_features_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
     ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'unlock packing_importer feeds'.
+  $permissions['unlock packing_importer feeds'] = array(
+    'name' => 'unlock packing_importer feeds',
+    'roles' => array(),
     'module' => 'feeds',
   );
 

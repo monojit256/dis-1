@@ -330,6 +330,48 @@ function dis_core_features_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_admin-home:admin-home',
   );
+  // Exported menu link: main-menu_import-delivery-confirmation:import/delivery_importer
+  $menu_links['main-menu_import-delivery-confirmation:import/delivery_importer'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'import/delivery_importer',
+    'router_path' => 'import/%',
+    'link_title' => 'Import Delivery Confirmation',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_import-delivery-confirmation:import/delivery_importer',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -42,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_admin-home:admin-home',
+  );
+  // Exported menu link: main-menu_import-dispatch:import/dispatch_importer
+  $menu_links['main-menu_import-dispatch:import/dispatch_importer'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'import/dispatch_importer',
+    'router_path' => 'import/%',
+    'link_title' => 'Import Dispatch',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_import-dispatch:import/dispatch_importer',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -43,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_admin-home:admin-home',
+  );
   // Exported menu link: main-menu_import-divisions:import/division_importer
   $menu_links['main-menu_import-divisions:import/division_importer'] = array(
     'menu_name' => 'main-menu',
@@ -351,6 +393,27 @@ function dis_core_features_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_admin-home:admin-home',
   );
+  // Exported menu link: main-menu_import-packing:import/packing_importer
+  $menu_links['main-menu_import-packing:import/packing_importer'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'import/packing_importer',
+    'router_path' => 'import/%',
+    'link_title' => 'Import Packing',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_import-packing:import/packing_importer',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -44,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_admin-home:admin-home',
+  );
   // Exported menu link: main-menu_import-transporters:import/transporter_importer
   $menu_links['main-menu_import-transporters:import/transporter_importer'] = array(
     'menu_name' => 'main-menu',
@@ -369,6 +432,27 @@ function dis_core_features_menu_default_menu_links() {
     'has_children' => 0,
     'expanded' => 0,
     'weight' => -45,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_admin-home:admin-home',
+  );
+  // Exported menu link: main-menu_imported-outward-invoices:imported-outward-invoices
+  $menu_links['main-menu_imported-outward-invoices:imported-outward-invoices'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'imported-outward-invoices',
+    'router_path' => 'imported-outward-invoices',
+    'link_title' => 'Imported Outward Invoices',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_imported-outward-invoices:imported-outward-invoices',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -41,
     'customized' => 1,
     'parent_identifier' => 'main-menu_admin-home:admin-home',
   );
@@ -718,8 +802,12 @@ function dis_core_features_menu_default_menu_links() {
   t('Import Business Associates');
   t('Import Companies');
   t('Import Company Executives');
+  t('Import Delivery Confirmation');
+  t('Import Dispatch');
   t('Import Divisions');
+  t('Import Packing');
   t('Import Transporters');
+  t('Imported Outward Invoices');
   t('Manage Invoices');
   t('Master Data');
   t('Miscellaneous');
