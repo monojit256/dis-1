@@ -107,7 +107,7 @@ function dis_feeds_after_parse($source, $result) {
             $company_query = new EntityFieldQuery();
             $company_query->entityCondition('entity_type', 'node')
                     ->entityCondition('bundle', 'company')
-                    ->propertyCondition('title', $item['company']);
+                    ->fieldCondition('field_company_name', 'value', $item['company'], '=');
             $company_result = $company_query->execute();
             if (empty($company_result)) {
                 drupal_set_message($message . ': Importing failed - Invalid Company Code', $type = "error");
@@ -122,8 +122,8 @@ function dis_feeds_after_parse($source, $result) {
             $division_query = new EntityFieldQuery();
             $division_query->entityCondition('entity_type', 'node')
                     ->entityCondition('bundle', 'division')
-                    ->propertyCondition('title', $item['division'])
-                    ->fieldCondition('field_company', 'target_id', $company_id, '=');
+                    ->fieldCondition('field_company', 'target_id', $company_id, '=')
+                    ->fieldCondition('field_division_name', 'value', $item['division'], '=');
             $division_result = $division_query->execute();
             if (empty($division_result)) {
                 drupal_set_message($message . ': Importing failed - Invalid Division Code', $type = "error");
