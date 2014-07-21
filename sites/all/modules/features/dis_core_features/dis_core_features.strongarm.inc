@@ -112,7 +112,7 @@ function dis_core_features_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ant_pattern_dispatch';
-  $strongarm->value = '';
+  $strongarm->value = 'Dispatch';
   $export['ant_pattern_dispatch'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -941,9 +941,7 @@ function dis_core_features_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'unique_field_fields_dispatch';
-  $strongarm->value = array(
-    0 => 'field_packing',
-  );
+  $strongarm->value = array();
   $export['unique_field_fields_dispatch'] = $strongarm;
 
   $strongarm = new stdClass();

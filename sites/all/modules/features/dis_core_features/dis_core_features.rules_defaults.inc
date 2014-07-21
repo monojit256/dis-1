@@ -288,7 +288,7 @@ function dis_core_features_default_rules_configuration() {
         { "mimemail" : {
             "key" : "lr_email",
             "to" : [ "recipients" ],
-            "subject" : "[node:field-packing:field-outward-invoices:0:field-consignee:field-name]: [node:field-packing:field-cases] c\\/s dispatched through [mode:field-packing:field-transporter] LR No [node:field-lr-no] dt: [node:field-lr-date]",
+            "subject" : "[node:field-packing:field-outward-invoices:0:field-consignee:field-name]: [node:field-packing:field-cases] c\\/s dispatched through [node:field-packing:field-transporter] LR No [node:field-lr-no] dt: [node:field-lr-date]",
             "body" : "The above consignment has been dispatched. \\r\\n\\r\\nPlease acknowledge its receipt. In case of any issues, please contact us.\\r\\n\\r\\nThanks\\r\\nApollo Medi-Services Pvt Ltd\\r\\n\\r\\n\\u003Ci\\u003EThis is a system generated email. Please do not reply to this email.\\u003C\\/i\\u003E",
             "language" : [ "" ]
           }
