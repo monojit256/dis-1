@@ -225,7 +225,11 @@
             <?php endif; ?>
             <?php print render($title_suffix); ?>
             
-            <?php if ($tabs): ?><?php print render($tabs); ?><?php endif; ?>
+
+            <?php if ($tabs): ?><?php
+                //Custom Change: Disabled the tabs (View/Edit tabs) on all pages
+                //print render($tabs); 
+            ?><?php endif; ?>
             
             <?php print render($page['content']); ?>
             
