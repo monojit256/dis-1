@@ -197,7 +197,10 @@
         <div id="main" class="grid_12">    
         <?php } ?>
             
-            <?php if (theme_get_setting('breadcrumb_display','corporateclean')): print $breadcrumb; endif; ?>
+            <?php 
+            //Custom Change: Disabled Breadcrum display from code 
+            /*if (theme_get_setting('breadcrumb_display','corporateclean')): print $breadcrumb; endif; */
+            ?>
             
             <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
        
