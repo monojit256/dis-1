@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the DIS Print/PDF Feature feature.
+ */
+
+include_once 'dis_print_pdf_feature.features.inc';
