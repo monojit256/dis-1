@@ -23,9 +23,9 @@ function dis_pdc_menu() {
 /**
  * Implementation of hook_form_BASE_FORMID_alter
  */
-function dis_pdc_form_views_form_utilize_pdc_page_alter(&$form, $form_state, $form_id){
+function dis_pdc_form_views_form_pdc_register_page_alter(&$form, $form_state, $form_id){
 
-    if ($form_state['step'] == 'views_bulk_operations_config_form') {
+    if ($form_state['step'] == 'views_bulk_operations_config_form' && $form_state['input']['op'] == 'Utilize PDC') {
 
 
             //Alter Cheque Date field
