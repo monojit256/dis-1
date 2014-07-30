@@ -163,6 +163,8 @@ function dis_core_features_user_default_roles_plus() {
       'import outward_invoice_importer feeds' => TRUE,
       'use Rules component rules_redirect_edit_invoice' => TRUE,
       'use Rules component rules_set_invoice_reversed' => TRUE,
+      'view field_pdc_status' => TRUE,
+      'view own field_pdc_status' => TRUE,
     ),
   );
 
@@ -194,6 +196,8 @@ function dis_core_features_user_default_roles_plus() {
       'import outward_invoice_importer feeds' => TRUE,
       'use Rules component rules_redirect_edit_invoice' => TRUE,
       'use Rules component rules_set_invoice_reversed' => TRUE,
+      'view field_pdc_status' => TRUE,
+      'view own field_pdc_status' => TRUE,
     ),
   );
 
@@ -276,6 +280,8 @@ function dis_core_features_user_default_roles_plus() {
       'use Rules component rules_set_invoice_reversed' => TRUE,
       'use Rules component rules_update_dispatch' => TRUE,
       'use Rules component rules_update_packing' => TRUE,
+      'view field_pdc_status' => TRUE,
+      'view own field_pdc_status' => TRUE,
     ),
   );
 
@@ -333,6 +339,8 @@ function dis_core_features_user_default_roles_plus() {
       'use Rules component rules_set_invoice_reversed' => TRUE,
       'use Rules component rules_update_dispatch' => TRUE,
       'use Rules component rules_update_packing' => TRUE,
+      'view field_pdc_status' => TRUE,
+      'view own field_pdc_status' => TRUE,
     ),
   );
 
@@ -376,6 +384,8 @@ function dis_core_features_user_default_roles_plus() {
       'use Rules component rules_set_invoice_reversed' => TRUE,
       'use Rules component rules_update_dispatch' => TRUE,
       'use Rules component rules_update_packing' => TRUE,
+      'view field_pdc_status' => TRUE,
+      'view own field_pdc_status' => TRUE,
     ),
   );
 
@@ -465,6 +475,8 @@ function dis_core_features_user_default_roles_plus() {
       'use Rules component rules_set_invoice_reversed' => TRUE,
       'use Rules component rules_update_dispatch' => TRUE,
       'use Rules component rules_update_packing' => TRUE,
+      'view field_pdc_status' => TRUE,
+      'view own field_pdc_status' => TRUE,
     ),
   );
 
@@ -541,6 +553,7 @@ function dis_core_features_user_default_roles_plus() {
       'create dispatch content' => TRUE,
       'create division content' => TRUE,
       'create field_financial_year' => TRUE,
+      'create field_pdc_status' => TRUE,
       'create field_quarter' => TRUE,
       'create field_status' => TRUE,
       'create inward_invoice content' => TRUE,
@@ -591,6 +604,7 @@ function dis_core_features_user_default_roles_plus() {
       'edit any receipt_details content' => TRUE,
       'edit any transporter content' => TRUE,
       'edit field_financial_year' => TRUE,
+      'edit field_pdc_status' => TRUE,
       'edit field_quarter' => TRUE,
       'edit field_status' => TRUE,
       'edit mimemail user settings' => TRUE,
@@ -602,6 +616,7 @@ function dis_core_features_user_default_roles_plus() {
       'edit own dispatch content' => TRUE,
       'edit own division content' => TRUE,
       'edit own field_financial_year' => TRUE,
+      'edit own field_pdc_status' => TRUE,
       'edit own field_quarter' => TRUE,
       'edit own field_status' => TRUE,
       'edit own inward_invoice content' => TRUE,
@@ -651,9 +666,11 @@ function dis_core_features_user_default_roles_plus() {
       'use panels locks' => TRUE,
       'use PHP for title patterns' => TRUE,
       'view field_financial_year' => TRUE,
+      'view field_pdc_status' => TRUE,
       'view field_quarter' => TRUE,
       'view field_status' => TRUE,
       'view own field_financial_year' => TRUE,
+      'view own field_pdc_status' => TRUE,
       'view own field_quarter' => TRUE,
       'view own field_status' => TRUE,
       'view own unpublished content' => TRUE,
