@@ -84,7 +84,7 @@ function dis_pdc_feature_default_rules_configuration() {
       "LABEL" : "Utilize PDC",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules" ],
+      "REQUIRES" : [ "rules", "rules_conditional" ],
       "USES VARIABLES" : {
         "pdc" : { "label" : "PDC", "type" : "node" },
         "cheque_date" : { "label" : "Cheque Date", "type" : "date" },
@@ -93,42 +93,59 @@ function dis_pdc_feature_default_rules_configuration() {
       },
       "IF" : [
         { "entity_has_field" : { "entity" : [ "pdc" ], "field" : "field_company" } },
-        { "entity_has_field" : { "entity" : [ "pdc" ], "field" : "field_customer" } }
+        { "entity_has_field" : { "entity" : [ "pdc" ], "field" : "field_customer" } },
+        { "entity_has_field" : { "entity" : [ "pdc" ], "field" : "field_pdc_status" } }
       ],
       "DO" : [
-        { "entity_create" : {
-            "USING" : {
-              "type" : "node",
-              "param_type" : "pdc_utilization",
-              "param_title" : [ "pdc:title" ],
-              "param_author" : [ "site:current-user" ]
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "data_is" : { "data" : [ "pdc:field-pdc-status" ], "value" : "Unused" } },
+              "DO" : [
+                { "entity_create" : {
+                    "USING" : {
+                      "type" : "node",
+                      "param_type" : "pdc_utilization",
+                      "param_title" : [ "pdc:title" ],
+                      "param_author" : [ "site:current-user" ]
+                    },
+                    "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
+                  }
+                },
+                { "data_set" : {
+                    "data" : [ "entity-created:field-company" ],
+                    "value" : [ "pdc:field-company" ]
+                  }
+                },
+                { "data_set" : { "data" : [ "entity-created:field-pdc" ], "value" : [ "pdc" ] } },
+                { "data_set" : {
+                    "data" : [ "entity-created:field-cheque-date" ],
+                    "value" : [ "cheque-date" ]
+                  }
+                },
+                { "data_set" : {
+                    "data" : [ "entity-created:field-cheque-amount" ],
+                    "value" : [ "cheque-amount" ]
+                  }
+                },
+                { "data_set" : {
+                    "data" : [ "entity-created:field-deposit-date" ],
+                    "value" : [ "deposit-date" ]
+                  }
+                },
+                { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } },
+                { "redirect" : { "url" : "map-pdc-invoices\\/[pdc:field-company:nid]\\/[pdc:field-customer:nid]?pdc=[entity-created:nid]\\u0026destination=pdc-register" } }
+              ]
             },
-            "PROVIDE" : { "entity_created" : { "entity_created" : "Created entity" } }
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-company" ],
-            "value" : [ "pdc:field-company" ]
-          }
-        },
-        { "data_set" : { "data" : [ "entity-created:field-pdc" ], "value" : [ "pdc" ] } },
-        { "data_set" : {
-            "data" : [ "entity-created:field-cheque-date" ],
-            "value" : [ "cheque-date" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-cheque-amount" ],
-            "value" : [ "cheque-amount" ]
-          }
-        },
-        { "data_set" : {
-            "data" : [ "entity-created:field-deposit-date" ],
-            "value" : [ "deposit-date" ]
-          }
-        },
-        { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } },
-        { "redirect" : { "url" : "map-pdc-invoices\\/[pdc:field-company:nid]\\/[pdc:field-customer:nid]?pdc=[entity-created:nid]\\u0026destination=pdc-register" } }
+            { "ELSE" : [
+                { "drupal_message" : {
+                    "message" : "The selected PDC has already been utilized. Please select another PDC.",
+                    "type" : "error"
+                  }
+                }
+              ]
+            }
+          ]
+        }
       ]
     }
   }');
