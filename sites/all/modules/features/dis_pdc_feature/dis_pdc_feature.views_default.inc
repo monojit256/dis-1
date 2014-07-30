@@ -336,6 +336,26 @@ function dis_pdc_feature_views_default_views() {
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['sorts']['title']['order'] = 'DESC';
+  /* Contextual filter: Content: Company (field_company) */
+  $handler->display->display_options['arguments']['field_company_target_id']['id'] = 'field_company_target_id';
+  $handler->display->display_options['arguments']['field_company_target_id']['table'] = 'field_data_field_company';
+  $handler->display->display_options['arguments']['field_company_target_id']['field'] = 'field_company_target_id';
+  $handler->display->display_options['arguments']['field_company_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_company_target_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_company_target_id']['default_argument_options']['index'] = '0';
+  $handler->display->display_options['arguments']['field_company_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_company_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_company_target_id']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Content: Consignee (field_consignee) */
+  $handler->display->display_options['arguments']['field_consignee_target_id']['id'] = 'field_consignee_target_id';
+  $handler->display->display_options['arguments']['field_consignee_target_id']['table'] = 'field_data_field_consignee';
+  $handler->display->display_options['arguments']['field_consignee_target_id']['field'] = 'field_consignee_target_id';
+  $handler->display->display_options['arguments']['field_consignee_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_consignee_target_id']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['field_consignee_target_id']['default_argument_options']['index'] = '1';
+  $handler->display->display_options['arguments']['field_consignee_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_consignee_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_consignee_target_id']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -385,7 +405,7 @@ function dis_pdc_feature_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
   $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
-  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '1';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 1;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
@@ -432,6 +452,12 @@ function dis_pdc_feature_views_default_views() {
       'override_label' => 0,
       'label' => '',
     ),
+    'rules_component::rules_map_invoices_to_pdc' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
     'action::views_bulk_operations_modify_action' => array(
       'selected' => 0,
       'postpone_processing' => 0,
@@ -474,6 +500,13 @@ function dis_pdc_feature_views_default_views() {
       'skip_confirmation' => 0,
       'override_label' => 0,
       'label' => '',
+    ),
+    'rules_component::rules_redirect_edit_pdc' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 1,
+      'label' => 'Edit PDC Details',
     ),
     'action::node_unpromote_action' => array(
       'selected' => 0,
@@ -533,6 +566,13 @@ function dis_pdc_feature_views_default_views() {
     'rules_component::rules_update_packing' => array(
       'selected' => 0,
       'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_utilize_pdc' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
       'override_label' => 0,
       'label' => '',
     ),
@@ -599,15 +639,15 @@ function dis_pdc_feature_views_default_views() {
     'multiple_to' => '',
   );
   /* Field: Content: Invoices */
-  $handler->display->display_options['fields']['field_outward_invoices']['id'] = 'field_outward_invoices';
-  $handler->display->display_options['fields']['field_outward_invoices']['table'] = 'field_data_field_outward_invoices';
-  $handler->display->display_options['fields']['field_outward_invoices']['field'] = 'field_outward_invoices';
-  $handler->display->display_options['fields']['field_outward_invoices']['relationship'] = 'reverse_field_pdc_node';
-  $handler->display->display_options['fields']['field_outward_invoices']['settings'] = array(
-    'link' => 0,
+  $handler->display->display_options['fields']['field_pdc_invoices']['id'] = 'field_pdc_invoices';
+  $handler->display->display_options['fields']['field_pdc_invoices']['table'] = 'field_data_field_pdc_invoices';
+  $handler->display->display_options['fields']['field_pdc_invoices']['field'] = 'field_pdc_invoices';
+  $handler->display->display_options['fields']['field_pdc_invoices']['relationship'] = 'reverse_field_pdc_node';
+  $handler->display->display_options['fields']['field_pdc_invoices']['settings'] = array(
+    'link' => 1,
   );
-  $handler->display->display_options['fields']['field_outward_invoices']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_outward_invoices']['multi_type'] = 'ul';
+  $handler->display->display_options['fields']['field_pdc_invoices']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_pdc_invoices']['multi_type'] = 'ul';
   /* Field: Content: Remarks */
   $handler->display->display_options['fields']['field_remarks']['id'] = 'field_remarks';
   $handler->display->display_options['fields']['field_remarks']['table'] = 'field_data_field_remarks';

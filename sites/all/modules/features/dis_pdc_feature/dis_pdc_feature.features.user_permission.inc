@@ -10,6 +10,15 @@
 function dis_pdc_feature_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'create field_pdc_status'.
+  $permissions['create field_pdc_status'] = array(
+    'name' => 'create field_pdc_status',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'create pdc content'.
   $permissions['create pdc content'] = array(
     'name' => 'create pdc content',
@@ -66,6 +75,24 @@ function dis_pdc_feature_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit field_pdc_status'.
+  $permissions['edit field_pdc_status'] = array(
+    'name' => 'edit field_pdc_status',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit own field_pdc_status'.
+  $permissions['edit own field_pdc_status'] = array(
+    'name' => 'edit own field_pdc_status',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'edit own pdc content'.
   $permissions['edit own pdc content'] = array(
     'name' => 'edit own pdc content',
@@ -78,6 +105,36 @@ function dis_pdc_feature_user_default_permissions() {
     'name' => 'edit own pdc_utilization content',
     'roles' => array(),
     'module' => 'node',
+  );
+
+  // Exported permission: 'view field_pdc_status'.
+  $permissions['view field_pdc_status'] = array(
+    'name' => 'view field_pdc_status',
+    'roles' => array(
+      'Billing Executive' => 'Billing Executive',
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Executive' => 'Distribution Executive',
+      'Distribution Supervisor' => 'Distribution Supervisor',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_pdc_status'.
+  $permissions['view own field_pdc_status'] = array(
+    'name' => 'view own field_pdc_status',
+    'roles' => array(
+      'Billing Executive' => 'Billing Executive',
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Executive' => 'Distribution Executive',
+      'Distribution Supervisor' => 'Distribution Supervisor',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
   );
 
   return $permissions;

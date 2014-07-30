@@ -28,10 +28,10 @@ function dis_pdc_feature_default_rules_configuration() {
         },
         { "CONDITIONAL" : [
             {
-              "IF" : { "entity_has_field" : { "entity" : [ "entity-fetched" ], "field" : "field_outward_invoices" } },
+              "IF" : { "entity_has_field" : { "entity" : [ "entity-fetched" ], "field" : "field_pdc_invoices" } },
               "DO" : [
                 { "data_set" : {
-                    "data" : [ "entity-fetched:field-outward-invoices" ],
+                    "data" : [ "entity-fetched:field-pdc-invoices" ],
                     "value" : [ "invoices" ]
                   }
                 }
@@ -41,6 +41,43 @@ function dis_pdc_feature_default_rules_configuration() {
         },
         { "entity_save" : { "data" : [ "entity-fetched" ] } }
       ]
+    }
+  }');
+  $items['rules_pdc_status_rule_utilization_creation'] = entity_import('rules_config', '{ "rules_pdc_status_rule_utilization_creation" : {
+      "LABEL" : "PDC Status Rule - Utilization Creation",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "node_insert--pdc_utilization" : { "bundle" : "pdc_utilization" } },
+      "IF" : [
+        { "entity_has_field" : { "entity" : [ "node:field-pdc" ], "field" : "field_pdc_status" } }
+      ],
+      "DO" : [
+        { "data_set" : { "data" : [ "node:field-pdc:field-pdc-status" ], "value" : "Utilized" } }
+      ]
+    }
+  }');
+  $items['rules_pdc_status_rule_utilization_deletion'] = entity_import('rules_config', '{ "rules_pdc_status_rule_utilization_deletion" : {
+      "LABEL" : "PDC Status Rule - Utilization Deletion",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "node_delete--pdc_utilization" : { "bundle" : "pdc_utilization" } },
+      "IF" : [
+        { "entity_has_field" : { "entity" : [ "node:field-pdc" ], "field" : "field_pdc_status" } }
+      ],
+      "DO" : [
+        { "data_set" : { "data" : [ "node:field-pdc:field-pdc-status" ], "value" : "Unused" } }
+      ]
+    }
+  }');
+  $items['rules_redirect_edit_pdc'] = entity_import('rules_config', '{ "rules_redirect_edit_pdc" : {
+      "LABEL" : "Redirect Edit PDC",
+      "PLUGIN" : "action set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "dis_pdc" ],
+      "USES VARIABLES" : { "pdc" : { "label" : "PDC", "type" : "node" } },
+      "ACTION SET" : [ { "dis_pdc_ruleaction_redirect_edit_pdc" : { "pdc" : [ "pdc" ] } } ]
     }
   }');
   $items['rules_utilize_pdc'] = entity_import('rules_config', '{ "rules_utilize_pdc" : {
@@ -91,7 +128,7 @@ function dis_pdc_feature_default_rules_configuration() {
           }
         },
         { "entity_save" : { "data" : [ "entity-created" ], "immediate" : 1 } },
-        { "redirect" : { "url" : "map-pdc-invoices\\/[pdc:field-company:nid]\\/[pdc:field-customer:nid]?pdc=[entity-created:nid]\\u0026destination=utilize-pdc" } }
+        { "redirect" : { "url" : "map-pdc-invoices\\/[pdc:field-company:nid]\\/[pdc:field-customer:nid]?pdc=[entity-created:nid]\\u0026destination=pdc-register" } }
       ]
     }
   }');

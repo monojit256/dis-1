@@ -254,6 +254,52 @@ function dis_pdc_feature_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_pdc_invoices'
+  $field_bases['field_pdc_invoices'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_pdc_invoices',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'node' => array(
+        'columns' => array(
+          'target_id' => 'nid',
+        ),
+        'table' => 'node',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'outward_invoice' => 'outward_invoice',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_pdc_status'
   $field_bases['field_pdc_status'] = array(
     'active' => 1,
@@ -262,7 +308,7 @@ function dis_pdc_feature_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_pdc_status',
     'field_permissions' => array(
-      'type' => 0,
+      'type' => 2,
     ),
     'foreign keys' => array(),
     'indexes' => array(
@@ -275,7 +321,7 @@ function dis_pdc_feature_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         'Unused' => 'Unused',
-        'Presented' => 'Presented',
+        'Utilized' => 'Utilized',
         'Realised' => 'Realised',
         'Dishonoured' => 'Dishonoured',
         'Returned to Customer' => 'Returned to Customer',
