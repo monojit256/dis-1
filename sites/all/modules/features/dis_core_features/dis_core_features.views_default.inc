@@ -2501,7 +2501,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_invoice_date']['table'] = 'field_data_field_invoice_date';
   $handler->display->display_options['fields']['field_invoice_date']['field'] = 'field_invoice_date';
   $handler->display->display_options['fields']['field_invoice_date']['settings'] = array(
-    'format_type' => 'dis_date_type',
+    'format_type' => 'long',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',

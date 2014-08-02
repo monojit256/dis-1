@@ -3047,7 +3047,7 @@ function dis_core_features_field_default_field_instances() {
     'label' => 'Packing Date',
     'required' => 1,
     'settings' => array(
-      'default_value' => 'blank',
+      'default_value' => 'now',
       'default_value2' => 'same',
       'default_value_code' => '',
       'default_value_code2' => '',
