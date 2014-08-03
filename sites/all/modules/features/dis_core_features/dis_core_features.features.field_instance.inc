@@ -271,7 +271,7 @@ function dis_core_features_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -308,7 +308,7 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -353,7 +353,7 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -393,7 +393,7 @@ function dis_core_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -476,6 +476,46 @@ function dis_core_features_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-business_associate-field_fax'
+  $field_instances['node-business_associate-field_fax'] = array(
+    'bundle' => 'business_associate',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_fax',
+    'label' => 'Fax',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-business_associate-field_mobile'
   $field_instances['node-business_associate-field_mobile'] = array(
     'bundle' => 'business_associate',
@@ -512,7 +552,7 @@ function dis_core_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -539,7 +579,7 @@ function dis_core_features_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_name',
-    'label' => 'Associate Name',
+    'label' => 'Name',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -552,7 +592,7 @@ function dis_core_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -592,7 +632,7 @@ function dis_core_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -1034,7 +1074,7 @@ function dis_core_features_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -1079,7 +1119,7 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -1118,7 +1158,47 @@ function dis_core_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 8,
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance: 'node-company_executive-field_fax'
+  $field_instances['node-company_executive-field_fax'] = array(
+    'bundle' => 'company_executive',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_fax',
+    'label' => 'Fax',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 6,
     ),
   );
 
@@ -1158,7 +1238,7 @@ function dis_core_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 4,
     ),
   );
 
@@ -1185,7 +1265,7 @@ function dis_core_features_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_name',
-    'label' => 'Executive Name',
+    'label' => 'Name',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -1198,7 +1278,7 @@ function dis_core_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -1238,7 +1318,7 @@ function dis_core_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 5,
     ),
   );
 
@@ -3620,7 +3700,7 @@ function dis_core_features_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -3660,7 +3740,7 @@ function dis_core_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -3703,6 +3783,46 @@ function dis_core_features_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-transporter-field_fax'
+  $field_instances['node-transporter-field_fax'] = array(
+    'bundle' => 'transporter',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_fax',
+    'label' => 'Fax',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-transporter-field_mobile'
   $field_instances['node-transporter-field_mobile'] = array(
     'bundle' => 'transporter',
@@ -3739,7 +3859,7 @@ function dis_core_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 6,
     ),
   );
 
@@ -3766,7 +3886,7 @@ function dis_core_features_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_name',
-    'label' => 'Transporter Name',
+    'label' => 'Name',
     'required' => 1,
     'settings' => array(
       'text_processing' => 0,
@@ -3779,7 +3899,7 @@ function dis_core_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -3859,7 +3979,7 @@ function dis_core_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -3907,7 +4027,7 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 2,
     ),
   );
 
@@ -3915,7 +4035,6 @@ function dis_core_features_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Address');
   t('Associate');
-  t('Associate Name');
   t('Associate Type');
   t('Cases');
   t('Company');
@@ -3931,8 +4050,8 @@ function dis_core_features_field_default_field_instances() {
   t('Division');
   t('Division Name');
   t('Email');
-  t('Executive Name');
   t('Executives');
+  t('Fax');
   t('Financial Year');
   t('Invoice Date');
   t('Invoice No');
@@ -3945,6 +4064,7 @@ function dis_core_features_field_default_field_instances() {
   t('LR No');
   t('LR Value');
   t('Mobile No');
+  t('Name');
   t('Outward Type');
   t('Packing');
   t('Packing Date');
@@ -3956,7 +4076,6 @@ function dis_core_features_field_default_field_instances() {
   t('TIN');
   t('Tracking URL');
   t('Transporter');
-  t('Transporter Name');
   t('Transporter Type');
   t('Vehicle No / Delivery Person');
 

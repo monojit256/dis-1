@@ -30,13 +30,13 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Transporter Name */
+  /* Field: Content: Name */
   $handler->display->display_options['fields']['field_name']['id'] = 'field_name';
   $handler->display->display_options['fields']['field_name']['table'] = 'field_data_field_name';
   $handler->display->display_options['fields']['field_name']['field'] = 'field_name';
   $handler->display->display_options['fields']['field_name']['label'] = '';
   $handler->display->display_options['fields']['field_name']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content: Transporter Name (field_name) */
+  /* Sort criterion: Content: Name (field_name) */
   $handler->display->display_options['sorts']['field_name_value']['id'] = 'field_name_value';
   $handler->display->display_options['sorts']['field_name_value']['table'] = 'field_data_field_name';
   $handler->display->display_options['sorts']['field_name_value']['field'] = 'field_name_value';
@@ -241,13 +241,13 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Transporter Name */
+  /* Field: Content: Name */
   $handler->display->display_options['fields']['field_name']['id'] = 'field_name';
   $handler->display->display_options['fields']['field_name']['table'] = 'field_data_field_name';
   $handler->display->display_options['fields']['field_name']['field'] = 'field_name';
   $handler->display->display_options['fields']['field_name']['label'] = '';
   $handler->display->display_options['fields']['field_name']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content: Transporter Name (field_name) */
+  /* Sort criterion: Content: Name (field_name) */
   $handler->display->display_options['sorts']['field_name_value']['id'] = 'field_name_value';
   $handler->display->display_options['sorts']['field_name_value']['table'] = 'field_data_field_name';
   $handler->display->display_options['sorts']['field_name_value']['field'] = 'field_name_value';
@@ -2650,7 +2650,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_company_name']['field'] = 'field_company_name';
   $handler->display->display_options['fields']['field_company_name']['relationship'] = 'field_company_target_id';
   $handler->display->display_options['fields']['field_company_name']['label'] = 'Company';
-  /* Field: Content: Transporter Name */
+  /* Field: Content: Name */
   $handler->display->display_options['fields']['field_name']['id'] = 'field_name';
   $handler->display->display_options['fields']['field_name']['table'] = 'field_data_field_name';
   $handler->display->display_options['fields']['field_name']['field'] = 'field_name';
@@ -2771,7 +2771,7 @@ function dis_core_features_views_default_views() {
     2 => array(),
     3 => array(),
   );
-  /* Filter criterion: Content: Transporter Name (field_name) */
+  /* Filter criterion: Content: Name (field_name) */
   $handler->display->display_options['filters']['field_name_value']['id'] = 'field_name_value';
   $handler->display->display_options['filters']['field_name_value']['table'] = 'field_data_field_name';
   $handler->display->display_options['filters']['field_name_value']['field'] = 'field_name_value';
@@ -2797,7 +2797,7 @@ function dis_core_features_views_default_views() {
     5 => 0,
     13 => 0,
   );
-  /* Filter criterion: Content: Transporter Name (field_name) */
+  /* Filter criterion: Content: Name (field_name) */
   $handler->display->display_options['filters']['field_name_value_1']['id'] = 'field_name_value_1';
   $handler->display->display_options['filters']['field_name_value_1']['table'] = 'field_data_field_name';
   $handler->display->display_options['filters']['field_name_value_1']['field'] = 'field_name_value';
@@ -2971,7 +2971,7 @@ function dis_core_features_views_default_views() {
     5 => 0,
     13 => 0,
   );
-  /* Filter criterion: Content: Transporter Name (field_name) */
+  /* Filter criterion: Content: Name (field_name) */
   $handler->display->display_options['filters']['field_name_value']['id'] = 'field_name_value';
   $handler->display->display_options['filters']['field_name_value']['table'] = 'field_data_field_name';
   $handler->display->display_options['filters']['field_name_value']['field'] = 'field_name_value';
@@ -3125,7 +3125,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_company_name']['field'] = 'field_company_name';
   $handler->display->display_options['fields']['field_company_name']['relationship'] = 'field_company_target_id';
   $handler->display->display_options['fields']['field_company_name']['label'] = 'Company';
-  /* Field: Content: Transporter Name */
+  /* Field: Content: Name */
   $handler->display->display_options['fields']['field_name']['id'] = 'field_name';
   $handler->display->display_options['fields']['field_name']['table'] = 'field_data_field_name';
   $handler->display->display_options['fields']['field_name']['field'] = 'field_name';
@@ -3151,7 +3151,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = 'Edit';
   $handler->display->display_options['fields']['edit_node']['text'] = 'Edit';
-  /* Sort criterion: Content: Transporter Name (field_name:format) */
+  /* Sort criterion: Content: Name (field_name:format) */
   $handler->display->display_options['sorts']['field_name_format']['id'] = 'field_name_format';
   $handler->display->display_options['sorts']['field_name_format']['table'] = 'field_data_field_name';
   $handler->display->display_options['sorts']['field_name_format']['field'] = 'field_name_format';
@@ -3199,7 +3199,7 @@ function dis_core_features_views_default_views() {
     5 => 0,
     13 => 0,
   );
-  /* Filter criterion: Content: Transporter Name (field_name) */
+  /* Filter criterion: Content: Name (field_name) */
   $handler->display->display_options['filters']['field_name_value']['id'] = 'field_name_value';
   $handler->display->display_options['filters']['field_name_value']['table'] = 'field_data_field_name';
   $handler->display->display_options['filters']['field_name_value']['field'] = 'field_name_value';
@@ -3368,7 +3368,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'table';
-  /* Field: Content: Transporter Name */
+  /* Field: Content: Name */
   $handler->display->display_options['fields']['field_name']['id'] = 'field_name';
   $handler->display->display_options['fields']['field_name']['table'] = 'field_data_field_name';
   $handler->display->display_options['fields']['field_name']['field'] = 'field_name';
@@ -3449,7 +3449,7 @@ function dis_core_features_views_default_views() {
     5 => 0,
     13 => 0,
   );
-  /* Filter criterion: Content: Transporter Name (field_name) */
+  /* Filter criterion: Content: Name (field_name) */
   $handler->display->display_options['filters']['field_name_value']['id'] = 'field_name_value';
   $handler->display->display_options['filters']['field_name_value']['table'] = 'field_data_field_name';
   $handler->display->display_options['filters']['field_name_value']['field'] = 'field_name_value';
