@@ -230,7 +230,7 @@ function dis_core_features_field_default_field_bases() {
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
-            'status' => 1,
+            'status' => 0,
           ),
         ),
         'view' => array(

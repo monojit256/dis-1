@@ -710,6 +710,10 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_dispatch_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_dispatch_node']['field'] = 'reverse_field_dispatch_node';
   $handler->display->display_options['relationships']['reverse_field_dispatch_node']['relationship'] = 'reverse_field_packing_node';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_consignee_target_id']['id'] = 'field_consignee_target_id';
+  $handler->display->display_options['relationships']['field_consignee_target_id']['table'] = 'field_data_field_consignee';
+  $handler->display->display_options['relationships']['field_consignee_target_id']['field'] = 'field_consignee_target_id';
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
@@ -1018,6 +1022,316 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'outward_invoice' => 'outward_invoice',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Company (field_company) */
+  $handler->display->display_options['filters']['field_company_target_id']['id'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['table'] = 'field_data_field_company';
+  $handler->display->display_options['filters']['field_company_target_id']['field'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_company_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['operator_id'] = 'field_company_target_id_op';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['label'] = 'Company';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['operator'] = 'field_company_target_id_op';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['identifier'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Division (field_division) */
+  $handler->display->display_options['filters']['field_division_target_id']['id'] = 'field_division_target_id';
+  $handler->display->display_options['filters']['field_division_target_id']['table'] = 'field_data_field_division';
+  $handler->display->display_options['filters']['field_division_target_id']['field'] = 'field_division_target_id';
+  $handler->display->display_options['filters']['field_division_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_division_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['operator_id'] = 'field_division_target_id_op';
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['label'] = 'Division';
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['operator'] = 'field_division_target_id_op';
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['identifier'] = 'field_division_target_id';
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Outward Type (field_outward_type) */
+  $handler->display->display_options['filters']['field_outward_type_value']['id'] = 'field_outward_type_value';
+  $handler->display->display_options['filters']['field_outward_type_value']['table'] = 'field_data_field_outward_type';
+  $handler->display->display_options['filters']['field_outward_type_value']['field'] = 'field_outward_type_value';
+  $handler->display->display_options['filters']['field_outward_type_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_outward_type_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_outward_type_value']['expose']['operator_id'] = 'field_outward_type_value_op';
+  $handler->display->display_options['filters']['field_outward_type_value']['expose']['label'] = 'Outward Type';
+  $handler->display->display_options['filters']['field_outward_type_value']['expose']['operator'] = 'field_outward_type_value_op';
+  $handler->display->display_options['filters']['field_outward_type_value']['expose']['identifier'] = 'field_outward_type_value';
+  $handler->display->display_options['filters']['field_outward_type_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Name (field_name) */
+  $handler->display->display_options['filters']['field_name_value']['id'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['table'] = 'field_data_field_name';
+  $handler->display->display_options['filters']['field_name_value']['field'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['relationship'] = 'field_consignee_target_id';
+  $handler->display->display_options['filters']['field_name_value']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_name_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_name_value']['expose']['operator_id'] = 'field_name_value_op';
+  $handler->display->display_options['filters']['field_name_value']['expose']['label'] = 'Consignee';
+  $handler->display->display_options['filters']['field_name_value']['expose']['operator'] = 'field_name_value_op';
+  $handler->display->display_options['filters']['field_name_value']['expose']['identifier'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Status (field_status) */
+  $handler->display->display_options['filters']['field_status_value']['id'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['table'] = 'field_data_field_status';
+  $handler->display->display_options['filters']['field_status_value']['field'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_status_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_status_value']['expose']['operator_id'] = 'field_status_value_op';
+  $handler->display->display_options['filters']['field_status_value']['expose']['label'] = 'Status';
+  $handler->display->display_options['filters']['field_status_value']['expose']['operator'] = 'field_status_value_op';
+  $handler->display->display_options['filters']['field_status_value']['expose']['identifier'] = 'field_status_value';
+  $handler->display->display_options['filters']['field_status_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_status_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Invoice No (field_invoice_no) */
+  $handler->display->display_options['filters']['field_invoice_no_value']['id'] = 'field_invoice_no_value';
+  $handler->display->display_options['filters']['field_invoice_no_value']['table'] = 'field_data_field_invoice_no';
+  $handler->display->display_options['filters']['field_invoice_no_value']['field'] = 'field_invoice_no_value';
+  $handler->display->display_options['filters']['field_invoice_no_value']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_invoice_no_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_invoice_no_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_invoice_no_value']['expose']['operator_id'] = 'field_invoice_no_value_op';
+  $handler->display->display_options['filters']['field_invoice_no_value']['expose']['label'] = 'Invoice No';
+  $handler->display->display_options['filters']['field_invoice_no_value']['expose']['operator'] = 'field_invoice_no_value_op';
+  $handler->display->display_options['filters']['field_invoice_no_value']['expose']['identifier'] = 'field_invoice_no_value';
+  $handler->display->display_options['filters']['field_invoice_no_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Financial Year (field_financial_year) */
+  $handler->display->display_options['filters']['field_financial_year_target_id']['id'] = 'field_financial_year_target_id';
+  $handler->display->display_options['filters']['field_financial_year_target_id']['table'] = 'field_data_field_financial_year';
+  $handler->display->display_options['filters']['field_financial_year_target_id']['field'] = 'field_financial_year_target_id';
+  $handler->display->display_options['filters']['field_financial_year_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_financial_year_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_financial_year_target_id']['expose']['operator_id'] = 'field_financial_year_target_id_op';
+  $handler->display->display_options['filters']['field_financial_year_target_id']['expose']['label'] = 'Financial Year';
+  $handler->display->display_options['filters']['field_financial_year_target_id']['expose']['operator'] = 'field_financial_year_target_id_op';
+  $handler->display->display_options['filters']['field_financial_year_target_id']['expose']['identifier'] = 'field_financial_year_target_id';
+  $handler->display->display_options['filters']['field_financial_year_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Quarter (field_quarter) */
+  $handler->display->display_options['filters']['field_quarter_value']['id'] = 'field_quarter_value';
+  $handler->display->display_options['filters']['field_quarter_value']['table'] = 'field_data_field_quarter';
+  $handler->display->display_options['filters']['field_quarter_value']['field'] = 'field_quarter_value';
+  $handler->display->display_options['filters']['field_quarter_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_quarter_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_quarter_value']['expose']['operator_id'] = 'field_quarter_value_op';
+  $handler->display->display_options['filters']['field_quarter_value']['expose']['label'] = 'Quarter';
+  $handler->display->display_options['filters']['field_quarter_value']['expose']['operator'] = 'field_quarter_value_op';
+  $handler->display->display_options['filters']['field_quarter_value']['expose']['identifier'] = 'field_quarter_value';
+  $handler->display->display_options['filters']['field_quarter_value']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_quarter_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Invoice Date (field_invoice_date) */
+  $handler->display->display_options['filters']['field_invoice_date_value']['id'] = 'field_invoice_date_value';
+  $handler->display->display_options['filters']['field_invoice_date_value']['table'] = 'field_data_field_invoice_date';
+  $handler->display->display_options['filters']['field_invoice_date_value']['field'] = 'field_invoice_date_value';
+  $handler->display->display_options['filters']['field_invoice_date_value']['operator'] = 'between';
+  $handler->display->display_options['filters']['field_invoice_date_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_invoice_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_invoice_date_value']['expose']['operator_id'] = 'field_invoice_date_value_op';
+  $handler->display->display_options['filters']['field_invoice_date_value']['expose']['label'] = 'Invoice Date';
+  $handler->display->display_options['filters']['field_invoice_date_value']['expose']['operator'] = 'field_invoice_date_value_op';
+  $handler->display->display_options['filters']['field_invoice_date_value']['expose']['identifier'] = 'field_invoice_date_value';
+  $handler->display->display_options['filters']['field_invoice_date_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  $handler->display->display_options['filters']['field_invoice_date_value']['form_type'] = 'date_popup';
+  /* Filter criterion: Content: Transporter (field_transporter) */
+  $handler->display->display_options['filters']['field_transporter_target_id']['id'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['table'] = 'field_data_field_transporter';
+  $handler->display->display_options['filters']['field_transporter_target_id']['field'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['operator_id'] = 'field_transporter_target_id_op';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['label'] = 'Transporter';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['operator'] = 'field_transporter_target_id_op';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['identifier'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: LR Date (field_lr_date) */
+  $handler->display->display_options['filters']['field_lr_date_value']['id'] = 'field_lr_date_value';
+  $handler->display->display_options['filters']['field_lr_date_value']['table'] = 'field_data_field_lr_date';
+  $handler->display->display_options['filters']['field_lr_date_value']['field'] = 'field_lr_date_value';
+  $handler->display->display_options['filters']['field_lr_date_value']['operator'] = 'between';
+  $handler->display->display_options['filters']['field_lr_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_lr_date_value']['expose']['operator_id'] = 'field_lr_date_value_op';
+  $handler->display->display_options['filters']['field_lr_date_value']['expose']['label'] = 'LR Date';
+  $handler->display->display_options['filters']['field_lr_date_value']['expose']['operator'] = 'field_lr_date_value_op';
+  $handler->display->display_options['filters']['field_lr_date_value']['expose']['identifier'] = 'field_lr_date_value';
+  $handler->display->display_options['filters']['field_lr_date_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  $handler->display->display_options['filters']['field_lr_date_value']['form_type'] = 'date_popup';
+  /* Filter criterion: Content: LR No (field_lr_no:format) */
+  $handler->display->display_options['filters']['field_lr_no_format']['id'] = 'field_lr_no_format';
+  $handler->display->display_options['filters']['field_lr_no_format']['table'] = 'field_data_field_lr_no';
+  $handler->display->display_options['filters']['field_lr_no_format']['field'] = 'field_lr_no_format';
+  $handler->display->display_options['filters']['field_lr_no_format']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_lr_no_format']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_lr_no_format']['expose']['operator_id'] = 'field_lr_no_format_op';
+  $handler->display->display_options['filters']['field_lr_no_format']['expose']['label'] = 'LR No';
+  $handler->display->display_options['filters']['field_lr_no_format']['expose']['operator'] = 'field_lr_no_format_op';
+  $handler->display->display_options['filters']['field_lr_no_format']['expose']['identifier'] = 'field_lr_no_format';
+  $handler->display->display_options['filters']['field_lr_no_format']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -1068,6 +1382,11 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_dispatch_node']['id'] = 'reverse_field_dispatch_node';
   $handler->display->display_options['relationships']['reverse_field_dispatch_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_dispatch_node']['field'] = 'reverse_field_dispatch_node';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_consignee_target_id']['id'] = 'field_consignee_target_id';
+  $handler->display->display_options['relationships']['field_consignee_target_id']['table'] = 'field_data_field_consignee';
+  $handler->display->display_options['relationships']['field_consignee_target_id']['field'] = 'field_consignee_target_id';
+  $handler->display->display_options['relationships']['field_consignee_target_id']['relationship'] = 'field_outward_invoices_target_id';
   /* Field: Content: Company */
   $handler->display->display_options['fields']['field_company']['id'] = 'field_company';
   $handler->display->display_options['fields']['field_company']['table'] = 'field_data_field_company';
@@ -1228,6 +1547,132 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['field_lr_no_value']['table'] = 'field_data_field_lr_no';
   $handler->display->display_options['filters']['field_lr_no_value']['field'] = 'field_lr_no_value';
   $handler->display->display_options['filters']['field_lr_no_value']['operator'] = 'not empty';
+  /* Filter criterion: Content: Company (field_company) */
+  $handler->display->display_options['filters']['field_company_target_id']['id'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['table'] = 'field_data_field_company';
+  $handler->display->display_options['filters']['field_company_target_id']['field'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['operator_id'] = 'field_company_target_id_op';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['label'] = 'Company';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['operator'] = 'field_company_target_id_op';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['identifier'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Name (field_name) */
+  $handler->display->display_options['filters']['field_name_value']['id'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['table'] = 'field_data_field_name';
+  $handler->display->display_options['filters']['field_name_value']['field'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['relationship'] = 'field_consignee_target_id';
+  $handler->display->display_options['filters']['field_name_value']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_name_value']['expose']['operator_id'] = 'field_name_value_op';
+  $handler->display->display_options['filters']['field_name_value']['expose']['label'] = 'Consignee';
+  $handler->display->display_options['filters']['field_name_value']['expose']['operator'] = 'field_name_value_op';
+  $handler->display->display_options['filters']['field_name_value']['expose']['identifier'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Transporter (field_transporter) */
+  $handler->display->display_options['filters']['field_transporter_target_id']['id'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['table'] = 'field_data_field_transporter';
+  $handler->display->display_options['filters']['field_transporter_target_id']['field'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['operator_id'] = 'field_transporter_target_id_op';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['label'] = 'Transporter';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['operator'] = 'field_transporter_target_id_op';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['identifier'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: LR No (field_lr_no) */
+  $handler->display->display_options['filters']['field_lr_no_value_1']['id'] = 'field_lr_no_value_1';
+  $handler->display->display_options['filters']['field_lr_no_value_1']['table'] = 'field_data_field_lr_no';
+  $handler->display->display_options['filters']['field_lr_no_value_1']['field'] = 'field_lr_no_value';
+  $handler->display->display_options['filters']['field_lr_no_value_1']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_lr_no_value_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_lr_no_value_1']['expose']['operator_id'] = 'field_lr_no_value_1_op';
+  $handler->display->display_options['filters']['field_lr_no_value_1']['expose']['label'] = 'LR No';
+  $handler->display->display_options['filters']['field_lr_no_value_1']['expose']['operator'] = 'field_lr_no_value_1_op';
+  $handler->display->display_options['filters']['field_lr_no_value_1']['expose']['identifier'] = 'field_lr_no_value_1';
+  $handler->display->display_options['filters']['field_lr_no_value_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: LR Date (field_lr_date) */
+  $handler->display->display_options['filters']['field_lr_date_value_1']['id'] = 'field_lr_date_value_1';
+  $handler->display->display_options['filters']['field_lr_date_value_1']['table'] = 'field_data_field_lr_date';
+  $handler->display->display_options['filters']['field_lr_date_value_1']['field'] = 'field_lr_date_value';
+  $handler->display->display_options['filters']['field_lr_date_value_1']['operator'] = 'between';
+  $handler->display->display_options['filters']['field_lr_date_value_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_lr_date_value_1']['expose']['operator_id'] = 'field_lr_date_value_1_op';
+  $handler->display->display_options['filters']['field_lr_date_value_1']['expose']['label'] = 'LR Date';
+  $handler->display->display_options['filters']['field_lr_date_value_1']['expose']['operator'] = 'field_lr_date_value_1_op';
+  $handler->display->display_options['filters']['field_lr_date_value_1']['expose']['identifier'] = 'field_lr_date_value_1';
+  $handler->display->display_options['filters']['field_lr_date_value_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  $handler->display->display_options['filters']['field_lr_date_value_1']['form_type'] = 'date_popup';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -1440,6 +1885,11 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_packing_node']['id'] = 'reverse_field_packing_node';
   $handler->display->display_options['relationships']['reverse_field_packing_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_packing_node']['field'] = 'reverse_field_packing_node';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_consignee_target_id']['id'] = 'field_consignee_target_id';
+  $handler->display->display_options['relationships']['field_consignee_target_id']['table'] = 'field_data_field_consignee';
+  $handler->display->display_options['relationships']['field_consignee_target_id']['field'] = 'field_consignee_target_id';
+  $handler->display->display_options['relationships']['field_consignee_target_id']['relationship'] = 'field_outward_invoices_target_id';
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
@@ -1658,17 +2108,98 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'packing' => 'packing',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Invoices (field_outward_invoices:delta) */
   $handler->display->display_options['filters']['delta']['id'] = 'delta';
   $handler->display->display_options['filters']['delta']['table'] = 'field_data_field_outward_invoices';
   $handler->display->display_options['filters']['delta']['field'] = 'delta';
   $handler->display->display_options['filters']['delta']['value']['value'] = '0';
+  $handler->display->display_options['filters']['delta']['group'] = 1;
   /* Filter criterion: Content: Nid */
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'node';
   $handler->display->display_options['filters']['nid']['field'] = 'nid';
   $handler->display->display_options['filters']['nid']['relationship'] = 'reverse_field_packing_node';
   $handler->display->display_options['filters']['nid']['operator'] = 'empty';
+  $handler->display->display_options['filters']['nid']['group'] = 1;
+  /* Filter criterion: Content: Company (field_company) */
+  $handler->display->display_options['filters']['field_company_target_id']['id'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['table'] = 'field_data_field_company';
+  $handler->display->display_options['filters']['field_company_target_id']['field'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_company_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['operator_id'] = 'field_company_target_id_op';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['label'] = 'Company';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['operator'] = 'field_company_target_id_op';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['identifier'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Name (field_name) */
+  $handler->display->display_options['filters']['field_name_value']['id'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['table'] = 'field_data_field_name';
+  $handler->display->display_options['filters']['field_name_value']['field'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['relationship'] = 'field_consignee_target_id';
+  $handler->display->display_options['filters']['field_name_value']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_name_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_name_value']['expose']['operator_id'] = 'field_name_value_op';
+  $handler->display->display_options['filters']['field_name_value']['expose']['label'] = 'Consignee';
+  $handler->display->display_options['filters']['field_name_value']['expose']['operator'] = 'field_name_value_op';
+  $handler->display->display_options['filters']['field_name_value']['expose']['identifier'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Transporter (field_transporter) */
+  $handler->display->display_options['filters']['field_transporter_target_id']['id'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['table'] = 'field_data_field_transporter';
+  $handler->display->display_options['filters']['field_transporter_target_id']['field'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_transporter_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['operator_id'] = 'field_transporter_target_id_op';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['label'] = 'Transporter';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['operator'] = 'field_transporter_target_id_op';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['identifier'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -2035,6 +2566,11 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['relationships']['field_company_target_id']['table'] = 'field_data_field_company';
   $handler->display->display_options['relationships']['field_company_target_id']['field'] = 'field_company_target_id';
   $handler->display->display_options['relationships']['field_company_target_id']['relationship'] = 'field_outward_invoices_target_id';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_consignee_target_id']['id'] = 'field_consignee_target_id';
+  $handler->display->display_options['relationships']['field_consignee_target_id']['table'] = 'field_data_field_consignee';
+  $handler->display->display_options['relationships']['field_consignee_target_id']['field'] = 'field_consignee_target_id';
+  $handler->display->display_options['relationships']['field_consignee_target_id']['relationship'] = 'field_outward_invoices_target_id';
   /* Field: Content: Company */
   $handler->display->display_options['fields']['field_company']['id'] = 'field_company';
   $handler->display->display_options['fields']['field_company']['table'] = 'field_data_field_company';
@@ -2140,6 +2676,112 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['delta']['relationship'] = 'field_packing_target_id';
   $handler->display->display_options['filters']['delta']['value']['value'] = '0';
   $handler->display->display_options['filters']['delta']['group'] = 1;
+  /* Filter criterion: Content: Company (field_company) */
+  $handler->display->display_options['filters']['field_company_target_id']['id'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['table'] = 'field_data_field_company';
+  $handler->display->display_options['filters']['field_company_target_id']['field'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_company_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['operator_id'] = 'field_company_target_id_op';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['label'] = 'Company';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['operator'] = 'field_company_target_id_op';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['identifier'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Name (field_name) */
+  $handler->display->display_options['filters']['field_name_value']['id'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['table'] = 'field_data_field_name';
+  $handler->display->display_options['filters']['field_name_value']['field'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['relationship'] = 'field_consignee_target_id';
+  $handler->display->display_options['filters']['field_name_value']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_name_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_name_value']['expose']['operator_id'] = 'field_name_value_op';
+  $handler->display->display_options['filters']['field_name_value']['expose']['label'] = 'Consignee';
+  $handler->display->display_options['filters']['field_name_value']['expose']['operator'] = 'field_name_value_op';
+  $handler->display->display_options['filters']['field_name_value']['expose']['identifier'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Transporter (field_transporter) */
+  $handler->display->display_options['filters']['field_transporter_target_id']['id'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['table'] = 'field_data_field_transporter';
+  $handler->display->display_options['filters']['field_transporter_target_id']['field'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['relationship'] = 'field_packing_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_transporter_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['operator_id'] = 'field_transporter_target_id_op';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['label'] = 'Transporter';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['operator'] = 'field_transporter_target_id_op';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['identifier'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Dispatch Date (field_dispatch_date) */
+  $handler->display->display_options['filters']['field_dispatch_date_value']['id'] = 'field_dispatch_date_value';
+  $handler->display->display_options['filters']['field_dispatch_date_value']['table'] = 'field_data_field_dispatch_date';
+  $handler->display->display_options['filters']['field_dispatch_date_value']['field'] = 'field_dispatch_date_value';
+  $handler->display->display_options['filters']['field_dispatch_date_value']['operator'] = 'between';
+  $handler->display->display_options['filters']['field_dispatch_date_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_dispatch_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_dispatch_date_value']['expose']['operator_id'] = 'field_dispatch_date_value_op';
+  $handler->display->display_options['filters']['field_dispatch_date_value']['expose']['label'] = 'Dispatch Date';
+  $handler->display->display_options['filters']['field_dispatch_date_value']['expose']['operator'] = 'field_dispatch_date_value_op';
+  $handler->display->display_options['filters']['field_dispatch_date_value']['expose']['identifier'] = 'field_dispatch_date_value';
+  $handler->display->display_options['filters']['field_dispatch_date_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  $handler->display->display_options['filters']['field_dispatch_date_value']['form_type'] = 'date_popup';
   /* Filter criterion: Content: LR No (field_lr_no) */
   $handler->display->display_options['filters']['field_lr_no_value']['id'] = 'field_lr_no_value';
   $handler->display->display_options['filters']['field_lr_no_value']['table'] = 'field_data_field_lr_no';
@@ -2198,6 +2840,11 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['relationships']['field_company_target_id']['table'] = 'field_data_field_company';
   $handler->display->display_options['relationships']['field_company_target_id']['field'] = 'field_company_target_id';
   $handler->display->display_options['relationships']['field_company_target_id']['relationship'] = 'field_outward_invoices_target_id';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_consignee_target_id']['id'] = 'field_consignee_target_id';
+  $handler->display->display_options['relationships']['field_consignee_target_id']['table'] = 'field_data_field_consignee';
+  $handler->display->display_options['relationships']['field_consignee_target_id']['field'] = 'field_consignee_target_id';
+  $handler->display->display_options['relationships']['field_consignee_target_id']['relationship'] = 'field_outward_invoices_target_id';
   /* Field: Content: Company */
   $handler->display->display_options['fields']['field_company']['id'] = 'field_company';
   $handler->display->display_options['fields']['field_company']['table'] = 'field_data_field_company';
@@ -2303,6 +2950,165 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['delta']['relationship'] = 'field_packing_target_id';
   $handler->display->display_options['filters']['delta']['value']['value'] = '0';
   $handler->display->display_options['filters']['delta']['group'] = 1;
+  /* Filter criterion: Content: Company (field_company) */
+  $handler->display->display_options['filters']['field_company_target_id']['id'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['table'] = 'field_data_field_company';
+  $handler->display->display_options['filters']['field_company_target_id']['field'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_company_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['operator_id'] = 'field_company_target_id_op';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['label'] = 'Company';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['operator'] = 'field_company_target_id_op';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['identifier'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Name (field_name) */
+  $handler->display->display_options['filters']['field_name_value']['id'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['table'] = 'field_data_field_name';
+  $handler->display->display_options['filters']['field_name_value']['field'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['relationship'] = 'field_consignee_target_id';
+  $handler->display->display_options['filters']['field_name_value']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_name_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_name_value']['expose']['operator_id'] = 'field_name_value_op';
+  $handler->display->display_options['filters']['field_name_value']['expose']['label'] = 'Consignee';
+  $handler->display->display_options['filters']['field_name_value']['expose']['operator'] = 'field_name_value_op';
+  $handler->display->display_options['filters']['field_name_value']['expose']['identifier'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Transporter (field_transporter) */
+  $handler->display->display_options['filters']['field_transporter_target_id']['id'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['table'] = 'field_data_field_transporter';
+  $handler->display->display_options['filters']['field_transporter_target_id']['field'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['relationship'] = 'field_packing_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_transporter_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['operator_id'] = 'field_transporter_target_id_op';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['label'] = 'Transporter';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['operator'] = 'field_transporter_target_id_op';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['identifier'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Dispatch Date (field_dispatch_date) */
+  $handler->display->display_options['filters']['field_dispatch_date_value']['id'] = 'field_dispatch_date_value';
+  $handler->display->display_options['filters']['field_dispatch_date_value']['table'] = 'field_data_field_dispatch_date';
+  $handler->display->display_options['filters']['field_dispatch_date_value']['field'] = 'field_dispatch_date_value';
+  $handler->display->display_options['filters']['field_dispatch_date_value']['operator'] = 'between';
+  $handler->display->display_options['filters']['field_dispatch_date_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_dispatch_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_dispatch_date_value']['expose']['operator_id'] = 'field_dispatch_date_value_op';
+  $handler->display->display_options['filters']['field_dispatch_date_value']['expose']['label'] = 'Dispatch Date';
+  $handler->display->display_options['filters']['field_dispatch_date_value']['expose']['operator'] = 'field_dispatch_date_value_op';
+  $handler->display->display_options['filters']['field_dispatch_date_value']['expose']['identifier'] = 'field_dispatch_date_value';
+  $handler->display->display_options['filters']['field_dispatch_date_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  $handler->display->display_options['filters']['field_dispatch_date_value']['form_type'] = 'date_popup';
+  /* Filter criterion: Content: LR No (field_lr_no) */
+  $handler->display->display_options['filters']['field_lr_no_value']['id'] = 'field_lr_no_value';
+  $handler->display->display_options['filters']['field_lr_no_value']['table'] = 'field_data_field_lr_no';
+  $handler->display->display_options['filters']['field_lr_no_value']['field'] = 'field_lr_no_value';
+  $handler->display->display_options['filters']['field_lr_no_value']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_lr_no_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_lr_no_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_lr_no_value']['expose']['operator_id'] = 'field_lr_no_value_op';
+  $handler->display->display_options['filters']['field_lr_no_value']['expose']['label'] = 'LR No';
+  $handler->display->display_options['filters']['field_lr_no_value']['expose']['operator'] = 'field_lr_no_value_op';
+  $handler->display->display_options['filters']['field_lr_no_value']['expose']['identifier'] = 'field_lr_no_value';
+  $handler->display->display_options['filters']['field_lr_no_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: LR Date (field_lr_date) */
+  $handler->display->display_options['filters']['field_lr_date_value']['id'] = 'field_lr_date_value';
+  $handler->display->display_options['filters']['field_lr_date_value']['table'] = 'field_data_field_lr_date';
+  $handler->display->display_options['filters']['field_lr_date_value']['field'] = 'field_lr_date_value';
+  $handler->display->display_options['filters']['field_lr_date_value']['operator'] = 'between';
+  $handler->display->display_options['filters']['field_lr_date_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_lr_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_lr_date_value']['expose']['operator_id'] = 'field_lr_date_value_op';
+  $handler->display->display_options['filters']['field_lr_date_value']['expose']['label'] = 'LR Date';
+  $handler->display->display_options['filters']['field_lr_date_value']['expose']['operator'] = 'field_lr_date_value_op';
+  $handler->display->display_options['filters']['field_lr_date_value']['expose']['identifier'] = 'field_lr_date_value';
+  $handler->display->display_options['filters']['field_lr_date_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  $handler->display->display_options['filters']['field_lr_date_value']['form_type'] = 'date_popup';
   /* Filter criterion: Content: LR Value (field_lr_value) */
   $handler->display->display_options['filters']['field_lr_value_value']['id'] = 'field_lr_value_value';
   $handler->display->display_options['filters']['field_lr_value_value']['table'] = 'field_data_field_lr_value';
@@ -2344,6 +3150,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'table';
@@ -2601,12 +3408,14 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'outward_invoice' => 'outward_invoice',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Nid */
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'node';
   $handler->display->display_options['filters']['nid']['field'] = 'nid';
   $handler->display->display_options['filters']['nid']['relationship'] = 'reverse_field_outward_invoices_node';
   $handler->display->display_options['filters']['nid']['operator'] = 'empty';
+  $handler->display->display_options['filters']['nid']['group'] = 1;
   /* Filter criterion: Content: Status (field_status) */
   $handler->display->display_options['filters']['field_status_value']['id'] = 'field_status_value';
   $handler->display->display_options['filters']['field_status_value']['table'] = 'field_data_field_status';
@@ -2615,6 +3424,164 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['field_status_value']['value'] = array(
     'Reversed' => 'Reversed',
   );
+  $handler->display->display_options['filters']['field_status_value']['group'] = 1;
+  /* Filter criterion: Content: Company (field_company) */
+  $handler->display->display_options['filters']['field_company_target_id']['id'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['table'] = 'field_data_field_company';
+  $handler->display->display_options['filters']['field_company_target_id']['field'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_company_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['operator_id'] = 'field_company_target_id_op';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['label'] = 'Company';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['operator'] = 'field_company_target_id_op';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['identifier'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Division (field_division) */
+  $handler->display->display_options['filters']['field_division_target_id']['id'] = 'field_division_target_id';
+  $handler->display->display_options['filters']['field_division_target_id']['table'] = 'field_data_field_division';
+  $handler->display->display_options['filters']['field_division_target_id']['field'] = 'field_division_target_id';
+  $handler->display->display_options['filters']['field_division_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_division_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['operator_id'] = 'field_division_target_id_op';
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['label'] = 'Division';
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['operator'] = 'field_division_target_id_op';
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['identifier'] = 'field_division_target_id';
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_division_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Outward Type (field_outward_type) */
+  $handler->display->display_options['filters']['field_outward_type_value']['id'] = 'field_outward_type_value';
+  $handler->display->display_options['filters']['field_outward_type_value']['table'] = 'field_data_field_outward_type';
+  $handler->display->display_options['filters']['field_outward_type_value']['field'] = 'field_outward_type_value';
+  $handler->display->display_options['filters']['field_outward_type_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_outward_type_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_outward_type_value']['expose']['operator_id'] = 'field_outward_type_value_op';
+  $handler->display->display_options['filters']['field_outward_type_value']['expose']['label'] = 'Outward Type';
+  $handler->display->display_options['filters']['field_outward_type_value']['expose']['operator'] = 'field_outward_type_value_op';
+  $handler->display->display_options['filters']['field_outward_type_value']['expose']['identifier'] = 'field_outward_type_value';
+  $handler->display->display_options['filters']['field_outward_type_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Name (field_name) */
+  $handler->display->display_options['filters']['field_name_value']['id'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['table'] = 'field_data_field_name';
+  $handler->display->display_options['filters']['field_name_value']['field'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['relationship'] = 'field_consignee_target_id';
+  $handler->display->display_options['filters']['field_name_value']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_name_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_name_value']['expose']['operator_id'] = 'field_name_value_op';
+  $handler->display->display_options['filters']['field_name_value']['expose']['label'] = 'Consignee';
+  $handler->display->display_options['filters']['field_name_value']['expose']['operator'] = 'field_name_value_op';
+  $handler->display->display_options['filters']['field_name_value']['expose']['identifier'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Invoice No (field_invoice_no) */
+  $handler->display->display_options['filters']['field_invoice_no_value']['id'] = 'field_invoice_no_value';
+  $handler->display->display_options['filters']['field_invoice_no_value']['table'] = 'field_data_field_invoice_no';
+  $handler->display->display_options['filters']['field_invoice_no_value']['field'] = 'field_invoice_no_value';
+  $handler->display->display_options['filters']['field_invoice_no_value']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_invoice_no_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_invoice_no_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_invoice_no_value']['expose']['operator_id'] = 'field_invoice_no_value_op';
+  $handler->display->display_options['filters']['field_invoice_no_value']['expose']['label'] = 'Invoice No';
+  $handler->display->display_options['filters']['field_invoice_no_value']['expose']['operator'] = 'field_invoice_no_value_op';
+  $handler->display->display_options['filters']['field_invoice_no_value']['expose']['identifier'] = 'field_invoice_no_value';
+  $handler->display->display_options['filters']['field_invoice_no_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Invoice Date (field_invoice_date) */
+  $handler->display->display_options['filters']['field_invoice_date_value']['id'] = 'field_invoice_date_value';
+  $handler->display->display_options['filters']['field_invoice_date_value']['table'] = 'field_data_field_invoice_date';
+  $handler->display->display_options['filters']['field_invoice_date_value']['field'] = 'field_invoice_date_value';
+  $handler->display->display_options['filters']['field_invoice_date_value']['operator'] = 'between';
+  $handler->display->display_options['filters']['field_invoice_date_value']['group'] = 1;
+  $handler->display->display_options['filters']['field_invoice_date_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_invoice_date_value']['expose']['operator_id'] = 'field_invoice_date_value_op';
+  $handler->display->display_options['filters']['field_invoice_date_value']['expose']['label'] = 'Invoice Date';
+  $handler->display->display_options['filters']['field_invoice_date_value']['expose']['operator'] = 'field_invoice_date_value_op';
+  $handler->display->display_options['filters']['field_invoice_date_value']['expose']['identifier'] = 'field_invoice_date_value';
+  $handler->display->display_options['filters']['field_invoice_date_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  $handler->display->display_options['filters']['field_invoice_date_value']['form_type'] = 'date_popup';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
