@@ -184,6 +184,15 @@ function dis_ruleaction_update_dispatch($packings, $dispatch_date, $dispatch_mod
 
             $node->field_vehicle_no[$node->language][]['value'] = $vehicle_no;
 
+            //In case of hand delivery, update LR No as NA and LR Date as dispatch date
+            $mode_term = taxonomy_term_load($dispatch_mode[0]);
+
+            if($mode_term->name == 'Hand Delivery'){
+                $node->field_lr_no[$node->language][]['value'] = 'NA';
+                $node->field_lr_date[$node->language][]['value'] = format_date($dispatch_date, 'custom', 'Y-m-d');
+                $node->field_lr_value[$node->language][]['value'] = 0;
+            }
+
             $node = node_submit($node); // Prepare node for saving
             node_save($node);
         
