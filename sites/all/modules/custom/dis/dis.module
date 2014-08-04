@@ -130,16 +130,31 @@ function dis_form_views_form_update_dispatch_page_alter(&$form, &$form_state, $f
       $modes = entity_load('taxonomy_term', array_keys($mode_result['taxonomy_term']));
     }
     $options = array();
+    
+    //Restrict Dispatch Mode options based on Hand Delivery or Transporter delivery.
     foreach($modes as $mode){
+        if($mode->name == 'Hand Delivery'){
+            $hand_delivery_tid = $mode->tid;
+        } 
         $options[$mode->tid] = $mode->name;
-    }
+    }    
     $form['parameter']['dispatch_mode']['settings']['dispatch_mode']['#options'] = $options;
+
+    $packing_nid = $form_state['input']['views_bulk_operations'];
+    $packing_node = node_load($packing_nid);
+    $transporter = node_load($packing_node->field_transporter['und'][0]['target_id'])->title;
+    if($transporter == 'HAND DELIVERY'){
+        $form['parameter']['dispatch_mode']['settings']['dispatch_mode']['#default_value'] = $hand_delivery_tid;
+        $form['parameter']['dispatch_mode']['settings']['dispatch_mode']['#disabled'] = TRUE;
+    }    
+
     $form['parameter']['dispatch_mode']['settings']['dispatch_mode']['#description'] = "";
     unset( $form['parameter']['dispatch_mode']['settings']['help']);
 
     //Alter the field Vehcicle No
     $form['parameter']['vehicle_no']['settings']['vehicle_no']['#type'] = "textfield";
     unset( $form['parameter']['vehicle_no']['settings']['help']);
+
 }
 }
 
