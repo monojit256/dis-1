@@ -183,17 +183,21 @@ function dis_element_info_alter(&$type) {
  */
 function dis_form_views_exposed_form_alter(&$form, &$form_state){
   
-  if ($form['#id'] == 'views-exposed-form-view-edit-associate-executive-mapping-page') {
+  if ($form['#id'] == 'views-exposed-form-view-edit-associate-executive-mapping-page' || $form['#id'] == 'views-exposed-form-update-packing-page' || $form['#id'] == 'views-exposed-form-outward-register-page') {
     
-    $viewResults = views_get_view_result('division_list', 'entityreference_1', $form_state['input']['field_company_target_id']);
+    if(array_key_exists(0, $form_state['input']['field_company_target_id'])){
+        $viewResults = views_get_view_result('division_list', 'entityreference_1', $form_state['input']['field_company_target_id'][0]);
 
-    $associativeArray = array();
-    $associativeArray['All'] = t('- Any -');
+        $associativeArray = array();
+        $associativeArray['All'] = t('- Any -');
 
-    foreach($viewResults as $viewRow) {
-      $associativeArray[$viewRow->nid] = $viewRow->field_field_division_name[0]['raw']['value'];
-    }
+        foreach($viewResults as $viewRow) {
+            $associativeArray[$viewRow->nid] = $viewRow->field_field_division_name[0]['raw']['value'];
+        }
        
-    $form['field_division_target_id']['#options'] = $associativeArray;
+        $form['field_division_target_id']['#options'] = $associativeArray;
+
+    }
+   
   }
 }
