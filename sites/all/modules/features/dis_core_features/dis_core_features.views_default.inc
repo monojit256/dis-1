@@ -4263,6 +4263,10 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_division_name']['id'] = 'field_division_name';
   $handler->display->display_options['fields']['field_division_name']['table'] = 'field_data_field_division_name';
   $handler->display->display_options['fields']['field_division_name']['field'] = 'field_division_name';
+  /* Field: Content: Email */
+  $handler->display->display_options['fields']['field_email']['id'] = 'field_email';
+  $handler->display->display_options['fields']['field_email']['table'] = 'field_data_field_email';
+  $handler->display->display_options['fields']['field_email']['field'] = 'field_email';
   /* Field: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
