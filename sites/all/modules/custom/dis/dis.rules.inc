@@ -90,13 +90,13 @@ function dis_rules_action_info() {
             ),
             'module' => 'dis',
         ),
-        'dis_ruleaction_get_LR_email_recipients' => array(
-            'label' => t('Get LR Email Recipients'),
+        'dis_ruleaction_get_email_recipients' => array(
+            'label' => t('Get Email Recipients'),
             'group' => t('DIS'),
             'parameter' => array(
                 'packing' => array(
-                    'label' => t('Packing'),
-                    'type' => 'node',
+                    'label' => t('Invoices'),
+                    'type' => 'list<node>',
                 ),
             ),
             'provides' => array(
@@ -309,12 +309,13 @@ function dis_ruleaction_set_invoice_reversed($invoice, $reason){
         node_save($invoice);
 }
 
-function dis_ruleaction_get_LR_email_recipients($packing) {
+function dis_ruleaction_get_email_recipients($invoices) {
 
+    $recipients = array();
+    
     //Get customer and company recipients
-    $first_invoice = node_load($packing->field_outward_invoices['und']['0']['target_id']);
-    $consignee = node_load($first_invoice->field_consignee['und']['0']['target_id']);
-    $division = node_load($first_invoice->field_division['und']['0']['target_id']);
+    $consignee = node_load($invoices[0]->field_consignee['und']['0']['target_id']);
+    $division = node_load($invoices[0]->field_division['und']['0']['target_id']);
     if (isset($consignee->field_email['und'])) {
         $recipients[] = $consignee->field_email['und']['0']['email'];
     }
@@ -323,9 +324,8 @@ function dis_ruleaction_get_LR_email_recipients($packing) {
     }
     
     //Get marketing recipients
-    foreach($packing->field_outward_invoices['und'] as $invoice){
-        $invoice_node = node_load($invoice['target_id']);
-        $recipients_mkt = dis_get_marketing_recipients($invoice_node->field_consignee['und']['0']['target_id'], $invoice_node->field_division['und']['0']['target_id']);
+    foreach($invoices as $invoice){
+        $recipients_mkt = dis_get_marketing_recipients($invoice->field_consignee['und']['0']['target_id'], $invoice->field_division['und']['0']['target_id']);
         $recipients = array_merge($recipients, $recipients_mkt);        
     }
     
