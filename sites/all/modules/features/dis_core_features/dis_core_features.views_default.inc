@@ -1402,6 +1402,15 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_consignee']['settings'] = array(
     'link' => 1,
   );
+  /* Field: Content: Invoices */
+  $handler->display->display_options['fields']['field_outward_invoices']['id'] = 'field_outward_invoices';
+  $handler->display->display_options['fields']['field_outward_invoices']['table'] = 'field_data_field_outward_invoices';
+  $handler->display->display_options['fields']['field_outward_invoices']['field'] = 'field_outward_invoices';
+  $handler->display->display_options['fields']['field_outward_invoices']['relationship'] = 'field_packing_target_id';
+  $handler->display->display_options['fields']['field_outward_invoices']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['fields']['field_outward_invoices']['delta_offset'] = '0';
   /* Field: Content: Transporter */
   $handler->display->display_options['fields']['field_transporter']['id'] = 'field_transporter';
   $handler->display->display_options['fields']['field_transporter']['table'] = 'field_data_field_transporter';
