@@ -13,16 +13,40 @@ function dis_pdc_feature_default_rules_configuration() {
       "LABEL" : "PDC Deposit Email",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "REQUIRES" : [ "mimemail", "rules" ],
-      "ON" : { "node_insert--pdc_utilization" : { "bundle" : "pdc_utilization" } },
+      "REQUIRES" : [ "dis", "dis_pdc", "rules", "mimemail" ],
+      "ON" : {
+        "node_insert--pdc_utilization" : { "bundle" : "pdc_utilization" },
+        "node_update--pdc_utilization" : { "bundle" : "pdc_utilization" }
+      },
       "DO" : [
+        { "dis_ruleaction_get_email_recipients" : {
+            "USING" : { "packing" : [ "node:field-pdc-invoices" ] },
+            "PROVIDE" : { "recipients" : { "recipients" : "Recipients" } }
+          }
+        },
+        { "dis_ruleaction_get_first_node_in_list" : {
+            "USING" : { "node_list" : [ "node:field-pdc-invoices" ] },
+            "PROVIDE" : { "first_node" : { "first_node" : "First Node" } }
+          }
+        },
+        { "dis_pdc_ruleaction_get_PDC_invoices_data" : {
+            "USING" : { "invoices" : [ "node:field-pdc-invoices" ] },
+            "PROVIDE" : {
+              "html_table" : { "html_table" : "HTML Table" },
+              "total_value" : { "total_value" : "Total Value" }
+            }
+          }
+        },
+        { "drupal_message" : { "message" : [ "html-table:summary" ] } },
         { "mimemail" : {
             "key" : "pdc-deposit-email",
-            "to" : "ankur@apollomedi.com",
-            "subject" : "Cheque Deposit Email",
+            "to" : [ "recipients" ],
+            "subject" : "[first-node:field-consignee]: Deposit of Cheque No [node:field-pdc:field-cheque-no] of Rs. [node:field-cheque-amount]",
+            "body" : "We will be depositing your Cheque No [node:field-pdc:field-cheque-no] dated [node:field-cheque-date] of Rs. [node:field-cheque-amount] on [node:field-deposit-date] against the following invoices:\\r\\n\\r\\n\\u003Ctable\\u003E\\r\\n        \\u003Cthead\\u003E\\r\\n        \\u003Ctr\\u003E\\r\\n        \\u003Cth\\u003EDivision Name\\u003C\\/th\\u003E\\r\\n        \\u003Cth\\u003EInvoice No\\u003C\\/th\\u003E\\r\\n        \\u003Cth\\u003EInvoice Date\\u003C\\/th\\u003E\\r\\n        \\u003Cth\\u003EInvoice Amount (Rs)\\u003C\\/th\\u003E\\r\\n        \\u003C\\/tr\\u003E\\u003C\\/thead\\u003E\\u003C\\/table\\u003E\\r\\n\\r\\n[html_table:value]\\r\\n\\r\\nTotal value of Invoices: \\u003Cb\\u003ERs. [total_value:value]\\u003C\\/b\\u003E\\r\\n\\r\\nRemarks: \\u003Cb\\u003E[node:field-remarks]\\u003C\\/b\\u003E\\r\\n\\r\\n\\u003Ci\\u003EThis is a system generated email. Please do not reply to this email.\\u003C\\/i\\u003E",
             "language" : [ "" ]
           }
-        }
+        },
+        { "drupal_message" : { "message" : "PDC Deposit Mail sent to: [recipients:value]" } }
       ]
     }
   }');
@@ -73,7 +97,8 @@ function dis_pdc_feature_default_rules_configuration() {
         "pdc" : { "label" : "PDC", "type" : "node" },
         "cheque_date" : { "label" : "Cheque Date", "type" : "date" },
         "cheque_amount" : { "label" : "Cheque Amount", "type" : "decimal" },
-        "deposit_date" : { "label" : "Deposit Date", "type" : "date" }
+        "deposit_date" : { "label" : "Deposit Date", "type" : "date" },
+        "remarks" : { "label" : "Remarks", "type" : "text" }
       },
       "IF" : [
         { "entity_has_field" : { "entity" : [ "pdc" ], "field" : "field_company" } }
@@ -115,6 +140,7 @@ function dis_pdc_feature_default_rules_configuration() {
           }
         },
         { "data_set" : { "data" : [ "entity-created:field-pdc" ], "value" : [ "pdc" ] } },
+        { "data_set" : { "data" : [ "entity-created:field-remarks" ], "value" : [ "remarks" ] } },
         { "entity_save" : { "data" : [ "entity-created" ] } }
       ]
     }

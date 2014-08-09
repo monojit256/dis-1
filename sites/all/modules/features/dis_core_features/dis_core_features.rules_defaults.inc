@@ -279,8 +279,8 @@ function dis_core_features_default_rules_configuration() {
         { "NOT data_is_empty" : { "data" : [ "node:field-lr-date" ] } }
       ],
       "DO" : [
-        { "dis_ruleaction_get_LR_email_recipients" : {
-            "USING" : { "packing" : [ "node:field-packing" ] },
+        { "dis_ruleaction_get_email_recipients" : {
+            "USING" : { "packing" : [ "node:field-packing:field-outward-invoices" ] },
             "PROVIDE" : { "recipients" : { "recipients" : "Recipients" } }
           }
         },

@@ -107,6 +107,23 @@ function dis_rules_action_info() {
             ),
             'module' => 'dis',
         ),
+        'dis_ruleaction_get_first_node_in_list' => array(
+            'label' => t('Get First Node in a List of Nodes'),
+            'group' => t('DIS'),
+            'parameter' => array(
+                'node_list' => array(
+                    'label' => t('Node List'),
+                    'type' => 'list<node>',
+                ),
+            ),
+            'provides' => array(
+                'first_node' => array(
+                    'type' => 'node',
+                    'label' => t('First Node'),
+                ),
+            ),
+            'module' => 'dis',
+        ),
     );
 }
 
@@ -314,8 +331,9 @@ function dis_ruleaction_get_email_recipients($invoices) {
     $recipients = array();
     
     //Get customer and company recipients
-    $consignee = node_load($invoices[0]->field_consignee['und']['0']['target_id']);
-    $division = node_load($invoices[0]->field_division['und']['0']['target_id']);
+    $first_invoice = array_shift($invoices);
+    $consignee = node_load($first_invoice->field_consignee['und']['0']['target_id']);
+    $division = node_load($first_invoice->field_division['und']['0']['target_id']);
     if (isset($consignee->field_email['und'])) {
         $recipients[] = $consignee->field_email['und']['0']['email'];
     }
@@ -356,4 +374,7 @@ function dis_get_marketing_recipients($associate_id, $division_id){
     return $email;
 }
 
+function dis_ruleaction_get_first_node_in_list($node_list){
+    return array('first_node' => array_shift($node_list));
+}
 
