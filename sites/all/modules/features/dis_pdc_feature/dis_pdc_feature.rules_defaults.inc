@@ -37,12 +37,11 @@ function dis_pdc_feature_default_rules_configuration() {
             }
           }
         },
-        { "drupal_message" : { "message" : [ "html-table:summary" ] } },
         { "mimemail" : {
             "key" : "pdc-deposit-email",
             "to" : [ "recipients" ],
             "subject" : "[first-node:field-consignee]: Deposit of Cheque No [node:field-pdc:field-cheque-no] of Rs. [node:field-cheque-amount]",
-            "body" : "We will be depositing your Cheque No [node:field-pdc:field-cheque-no] dated [node:field-cheque-date] of Rs. [node:field-cheque-amount] on [node:field-deposit-date] against the following invoices:\\r\\n\\r\\n\\u003Ctable\\u003E\\r\\n        \\u003Cthead\\u003E\\r\\n        \\u003Ctr\\u003E\\r\\n        \\u003Cth\\u003EDivision Name\\u003C\\/th\\u003E\\r\\n        \\u003Cth\\u003EInvoice No\\u003C\\/th\\u003E\\r\\n        \\u003Cth\\u003EInvoice Date\\u003C\\/th\\u003E\\r\\n        \\u003Cth\\u003EInvoice Amount (Rs)\\u003C\\/th\\u003E\\r\\n        \\u003C\\/tr\\u003E\\u003C\\/thead\\u003E\\u003C\\/table\\u003E\\r\\n\\r\\n[html_table:value]\\r\\n\\r\\nTotal value of Invoices: \\u003Cb\\u003ERs. [total_value:value]\\u003C\\/b\\u003E\\r\\n\\r\\nRemarks: \\u003Cb\\u003E[node:field-remarks]\\u003C\\/b\\u003E\\r\\n\\r\\n\\u003Ci\\u003EThis is a system generated email. Please do not reply to this email.\\u003C\\/i\\u003E",
+            "body" : "We will be depositing your Cheque No [node:field-pdc:field-cheque-no] dated [node:field-cheque-date] of Rs. [node:field-cheque-amount] on [node:field-deposit-date] against the following invoices:\\r\\n\\r\\n[html-table:value]\\r\\n\\r\\nTotal value of Invoices: \\u003Cb\\u003ERs. [total_value:value]\\u003C\\/b\\u003E\\r\\n\\r\\nRemarks: \\u003Cb\\u003E[node:field-remarks]\\u003C\\/b\\u003E\\r\\n\\r\\n\\u003Ci\\u003EThis is a system generated email. Please do not reply to this email.\\u003C\\/i\\u003E",
             "language" : [ "" ]
           }
         },

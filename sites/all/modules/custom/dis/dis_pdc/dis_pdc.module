@@ -70,7 +70,6 @@ function dis_pdc_form_views_form_utilize_pdc_page_alter(&$form, $form_state, $fo
 
 
             //Alter PDC field
-            //Alter the field Dispatch Mode
             $form['parameter']['pdc']['settings']['pdc']['#type'] = "select";
 
             $invoices = $form_state['input']['views_bulk_operations'];
@@ -102,6 +101,26 @@ function dis_pdc_form_views_form_utilize_pdc_page_alter(&$form, $form_state, $fo
                 $options[$pdc->nid] = $pdc->title;
             }    
             $form['parameter']['pdc']['settings']['pdc']['#options'] = $options;
+
+            //Alter remarks field
+            unset($form['parameter']['remarks']['settings']['help']['token']);
+
+            //Alter PDC field
+            unset($form['parameter']['pdc']['settings']['pdc']['#description']);
         }
 
+}
+
+
+/*
+ * By default, text_formatted fields token are not being replaced. Altering through hooks
+ */
+function dis_pdc_tokens_alter(&$replacements, $context){   
+
+    if($context['type'] == 'text_formatted'){
+        if($context['tokens']['value'] == '[html-table:value]'){
+            $b = $context['data']['text_formatted']['value'];
+            $replacements[$context['tokens']['value']] = $b;
+        }
+    }
 }

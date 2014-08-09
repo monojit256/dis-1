@@ -68,41 +68,29 @@ function dis_pdc_ruleaction_redirect_edit_pdc($pdc){
 
 
 function dis_pdc_ruleaction_get_PDC_invoices_data($invoices){
-    /*
-    $html_table = '
-        <table style="width:auto; border:1px solid black; border-collapse:collapse;">
-        <thead>
-        <tr>
-        <th style="border:1px solid black; background-color: #747474; color: #FFFFFFF">Division Name</th>
-        <th style="border:1px solid black; background-color: #747474; color: #FFFFFFF">Invoice No</th>
-        <th style="border:1px solid black; background-color: #747474; color: #FFFFFFF">Invoice Date</th>
-        <th style="border:1px solid black; background-color: #747474; color: #FFFFFFF">Invoice Amount (Rs)</th>
-        </tr></thead><tbody>';
-        */
+    
 
-$html_table = '<table>
-        <thead>
+    $html_table = '<table style="width:auto; border:1px solid black; border-collapse:collapse;"><thead>
         <tr>
-        <th>Division Name</th>
-        <th>Invoice No</th>
-        <th>Invoice Date</th>
-        <th>Invoice Amount (Rs)</th>
+        <th style="border:1px solid black; background-color: #747474; color: #FFFFFFF; padding: 5px">Division Name</th>
+        <th style="border:1px solid black; background-color: #747474; color: #FFFFFFF; padding: 5px">Invoice No</th>
+        <th style="border:1px solid black; background-color: #747474; color: #FFFFFFF; padding: 5px">Invoice Date</th>
+        <th style="border:1px solid black; background-color: #747474; color: #FFFFFFF; padding: 5px">Invoice Amount (Rs)</th>
         </tr></thead><tbody>';
-
 
     $total_value = 0.00;
+
     
     foreach ($invoices as $invoice){
-        /*
+        
         //Form Invoice HTM Table
         $div_node = node_load($invoice->field_division['und']['0']['target_id']);
         $html_table = $html_table.'<tr>';
-        $html_table = $html_table.'<td style="border:1px solid black; background-color: #FFFFFF; color: #747474">'.$div_node->field_division_name['und']['0']['value'].'</td>';
-        $html_table = $html_table.'<td style="border:1px solid black; background-color: #FFFFFF; color: #747474">'.$invoice->field_invoice_no['und']['0']['value'].'</td>';
-        $html_table = $html_table.'<td style="border:1px solid black; background-color: #FFFFFF; color: #747474">'.date("d-m-Y", strtotime($invoice->field_invoice_date['und']['0']['value'])).'</td>';
-        $html_table = $html_table.'<td style="border:1px solid black; background-color: #FFFFFF; color: #747474">'.$invoice->field_invoice_value['und']['0']['value'].'</td>';
+        $html_table = $html_table.'<td style="border:1px solid black; background-color: #FFFFFF; color: #000000; padding: 5px">'.$div_node->field_division_name['und']['0']['value'].'</td>';
+        $html_table = $html_table.'<td style="border:1px solid black; background-color: #FFFFFF; color: #000000; padding: 5px">'.$invoice->field_invoice_no['und']['0']['value'].'</td>';
+        $html_table = $html_table.'<td style="border:1px solid black; background-color: #FFFFFF; color: #000000; padding: 5px">'.date("d-m-Y", strtotime($invoice->field_invoice_date['und']['0']['value'])).'</td>';
+        $html_table = $html_table.'<td style="border:1px solid black; background-color: #FFFFFF; color: #000000; padding: 5px">'.$invoice->field_invoice_value['und']['0']['value'].'</td>';
         $html_table = $html_table.'</tr>';
-*/
 
         //Calculate total Invoice Value
         $total_value += $invoice->field_invoice_value['und']['0']['value'];
@@ -114,8 +102,9 @@ $html_table = '<table>
             'html_table' => array(
                 'value' => $html_table,
                 'summary' => $html_table,
-                'format' => 'full_html'),
+                'format' => 'plain_text'),
             'total_value' => $total_value,
         );
 
 }
+
