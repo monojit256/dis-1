@@ -51,6 +51,7 @@ features[field_instance][] = node-pdc_utilization-field_remarks
 features[menu_links][] = main-menu_add-pdc:add-pdc
 features[menu_links][] = main-menu_pdc-register:pdc-register
 features[menu_links][] = main-menu_pdc:pdc
+features[menu_links][] = main-menu_utilize-pdc:utilize-pdc
 features[node][] = pdc
 features[node][] = pdc_utilization
 features[page_manager_pages][] = pdc

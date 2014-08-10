@@ -70,11 +70,33 @@ function dis_pdc_feature_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_miscellaneous:miscellaneous',
   );
+  // Exported menu link: main-menu_utilize-pdc:utilize-pdc
+  $menu_links['main-menu_utilize-pdc:utilize-pdc'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'utilize-pdc',
+    'router_path' => 'utilize-pdc',
+    'link_title' => 'Utilize PDC',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_utilize-pdc:utilize-pdc',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_pdc:pdc',
+  );
   // Translatables
   // Included for use with string extractors like potx.
   t('Add PDC');
   t('PDC');
   t('PDC Register');
+  t('Utilize PDC');
 
 
   return $menu_links;
