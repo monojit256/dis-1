@@ -56,6 +56,26 @@ function dis_form_outward_invoice_node_form_alter(&$form, &$form_state, $form_id
     }
 }
 
+/**
+ * Implementation of hook_form_BASE_FORM_ID_alter() - BASE ID = outward_invoice_node_form
+ * This hook used to set the default value of outward type and disbale the field in add/edit forms of Inward Invoice type
+ */
+function dis_form_inward_invoice_node_form_alter(&$form, &$form_state, $form_id){
+   
+    if(array_key_exists('field_inward_type', $_GET)){
+        $outward_type = $_GET['field_inward_type'];
+        if($outward_type == 'Purchase' || $outward_type == 'Stock Transfer In' || $outward_type == 'Sales Return'){
+            $form['field_inward_type']['und']['#default_value'][0] = $outward_type;
+            $form['field_inward_type']['und']['#disabled'] = TRUE;
+        }
+    }
+
+    if(array_key_exists('#node_edit_form', $form) && $form['#node_edit_form'] == TRUE){
+        $form['field_inward_type']['und']['#disabled'] = TRUE;
+    }
+}
+
+
 /*
  * Function to return the financial year and quarter for a given date
  * Compatible with 'Set Quarter and FY' Rules Action
@@ -169,7 +189,7 @@ function dis_element_info_alter(&$type) {
 }
 
 /**
- * Function to remove the description from date_popup * 
+ * Function to remove the description from date_popup
  */
  function dis_date_popup_process_alter(&$element, &$form_state, $context) {
   unset($element['date']['#description']);

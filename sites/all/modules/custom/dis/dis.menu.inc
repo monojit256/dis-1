@@ -83,7 +83,7 @@ function add_outward_invoice_form_submit($form, &$form_state) {
     } elseif($outward_type == 'Purchase Return') {
         $associate_type = 'Supplier';
     } elseif($outward_type == 'Stock Transfer Out') {
-        $associate_type == 'Branch';
+        $associate_type = 'Branch';
     }
 
     $form_state['redirect'] = array(
@@ -121,22 +121,21 @@ function add_inward_invoice_form_submit($form, &$form_state) {
 
     $company_nid = $form_state['input']['field_company']['und'];
     $inward_type = $form_state['input']['field_inward_type']['und'];
-
+    
     if($inward_type == 'Sales Return') {
         $associate_type = 'Customer';
     } elseif($inward_type == 'Purchase') {
         $associate_type = 'Supplier';
     } elseif($inward_type == 'Stock Transfer In') {
-        $associate_type == 'Branch';
+        $associate_type = 'Branch';
     }
 
     $form_state['redirect'] = array(
-        'node/add/inward-invoice/',
+        'node/add/inward-invoice/'.$form_state['input']['field_company']['und'].'/'.$associate_type,
         array(
             'query' => array(
                 'field_company' => $form_state['input']['field_company']['und'],
                 'field_inward_type' => $form_state['input']['field_inward_type']['und'],
-                'field_associate_type' => $associate_type
             )
         )
     );
