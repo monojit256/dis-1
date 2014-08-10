@@ -14,10 +14,7 @@ function dis_pdc_feature_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "dis", "dis_pdc", "rules", "mimemail" ],
-      "ON" : {
-        "node_insert--pdc_utilization" : { "bundle" : "pdc_utilization" },
-        "node_update--pdc_utilization" : { "bundle" : "pdc_utilization" }
-      },
+      "ON" : { "node_insert--pdc_utilization" : { "bundle" : "pdc_utilization" } },
       "DO" : [
         { "dis_ruleaction_get_email_recipients" : {
             "USING" : { "packing" : [ "node:field-pdc-invoices" ] },
