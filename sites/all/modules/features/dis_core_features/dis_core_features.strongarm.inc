@@ -41,6 +41,13 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ant_consignment_details';
+  $strongarm->value = '1';
+  $export['ant_consignment_details'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'ant_delivery_confirmation';
   $strongarm->value = '1';
   $export['ant_delivery_confirmation'] = $strongarm;
@@ -58,6 +65,13 @@ function dis_core_features_strongarm() {
   $strongarm->name = 'ant_division';
   $strongarm->value = '0';
   $export['ant_division'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_inward_invoice';
+  $strongarm->value = '1';
+  $export['ant_inward_invoice'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -104,6 +118,13 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_consignment_details';
+  $strongarm->value = '[node:field-transporter] - [node:field-lr-no]';
+  $export['ant_pattern_consignment_details'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'ant_pattern_delivery_confirmation';
   $strongarm->value = '';
   $export['ant_pattern_delivery_confirmation'] = $strongarm;
@@ -121,6 +142,13 @@ function dis_core_features_strongarm() {
   $strongarm->name = 'ant_pattern_division';
   $strongarm->value = '';
   $export['ant_pattern_division'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_pattern_inward_invoice';
+  $strongarm->value = '[node:field-invoice-no]';
+  $export['ant_pattern_inward_invoice'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -174,6 +202,13 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_consignment_details';
+  $strongarm->value = 0;
+  $export['ant_php_consignment_details'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'ant_php_delivery_confirmation';
   $strongarm->value = 0;
   $export['ant_php_delivery_confirmation'] = $strongarm;
@@ -191,6 +226,13 @@ function dis_core_features_strongarm() {
   $strongarm->name = 'ant_php_division';
   $strongarm->value = 0;
   $export['ant_php_division'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'ant_php_inward_invoice';
+  $strongarm->value = 0;
+  $export['ant_php_inward_invoice'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -329,6 +371,26 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_node__consignment_details';
+  $strongarm->value = array(
+    'view_modes' => array(),
+    'extra_fields' => array(
+      'form' => array(
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '11',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_node__consignment_details'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__outward_invoice';
   $strongarm->value = array(
     'view_modes' => array(),
@@ -397,6 +459,13 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_consignment_details';
+  $strongarm->value = array();
+  $export['menu_options_consignment_details'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_delivery_confirmation';
   $strongarm->value = array();
   $export['menu_options_delivery_confirmation'] = $strongarm;
@@ -414,6 +483,13 @@ function dis_core_features_strongarm() {
   $strongarm->name = 'menu_options_division';
   $strongarm->value = array();
   $export['menu_options_division'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_options_inward_invoice';
+  $strongarm->value = array();
+  $export['menu_options_inward_invoice'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -467,6 +543,13 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_consignment_details';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_consignment_details'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_parent_delivery_confirmation';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_delivery_confirmation'] = $strongarm;
@@ -484,6 +567,13 @@ function dis_core_features_strongarm() {
   $strongarm->name = 'menu_parent_division';
   $strongarm->value = 'main-menu:0';
   $export['menu_parent_division'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_parent_inward_invoice';
+  $strongarm->value = 'main-menu:0';
+  $export['menu_parent_inward_invoice'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -545,6 +635,15 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_consignment_details';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_consignment_details'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_delivery_confirmation';
   $strongarm->value = array(
     0 => 'status',
@@ -568,6 +667,15 @@ function dis_core_features_strongarm() {
     0 => 'status',
   );
   $export['node_options_division'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_options_inward_invoice';
+  $strongarm->value = array(
+    0 => 'status',
+  );
+  $export['node_options_inward_invoice'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -628,6 +736,13 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_consignment_details';
+  $strongarm->value = '0';
+  $export['node_preview_consignment_details'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_preview_delivery_confirmation';
   $strongarm->value = '0';
   $export['node_preview_delivery_confirmation'] = $strongarm;
@@ -645,6 +760,13 @@ function dis_core_features_strongarm() {
   $strongarm->name = 'node_preview_division';
   $strongarm->value = '0';
   $export['node_preview_division'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_preview_inward_invoice';
+  $strongarm->value = '0';
+  $export['node_preview_inward_invoice'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -698,6 +820,13 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_consignment_details';
+  $strongarm->value = 0;
+  $export['node_submitted_consignment_details'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_delivery_confirmation';
   $strongarm->value = 0;
   $export['node_submitted_delivery_confirmation'] = $strongarm;
@@ -715,6 +844,13 @@ function dis_core_features_strongarm() {
   $strongarm->name = 'node_submitted_division';
   $strongarm->value = 0;
   $export['node_submitted_division'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'node_submitted_inward_invoice';
+  $strongarm->value = 0;
+  $export['node_submitted_inward_invoice'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -782,6 +918,13 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_consignment_details_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_consignment_details_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_node_delivery_confirmation_pattern';
   $strongarm->value = '';
   $export['pathauto_node_delivery_confirmation_pattern'] = $strongarm;
@@ -827,13 +970,6 @@ function dis_core_features_strongarm() {
   $strongarm->name = 'pathauto_node_pattern';
   $strongarm->value = 'content/[node:title]';
   $export['pathauto_node_pattern'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'pathauto_node_receipt_details_pattern';
-  $strongarm->value = '';
-  $export['pathauto_node_receipt_details_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -943,6 +1079,13 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_comp_consignment_details';
+  $strongarm->value = 'each';
+  $export['unique_field_comp_consignment_details'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'unique_field_comp_delivery_confirmation';
   $strongarm->value = 'each';
   $export['unique_field_comp_delivery_confirmation'] = $strongarm;
@@ -960,6 +1103,13 @@ function dis_core_features_strongarm() {
   $strongarm->name = 'unique_field_comp_division';
   $strongarm->value = 'all';
   $export['unique_field_comp_division'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_comp_inward_invoice';
+  $strongarm->value = 'all';
+  $export['unique_field_comp_inward_invoice'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1025,6 +1175,15 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_fields_consignment_details';
+  $strongarm->value = array(
+    0 => 'field_inward_invoices',
+  );
+  $export['unique_field_fields_consignment_details'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'unique_field_fields_delivery_confirmation';
   $strongarm->value = array(
     0 => 'field_dispatch',
@@ -1047,6 +1206,17 @@ function dis_core_features_strongarm() {
     1 => 'field_company',
   );
   $export['unique_field_fields_division'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_fields_inward_invoice';
+  $strongarm->value = array(
+    0 => 'field_company',
+    1 => 'field_invoice_date',
+    2 => 'field_invoice_no',
+  );
+  $export['unique_field_fields_inward_invoice'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1108,6 +1278,13 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_scope_consignment_details';
+  $strongarm->value = 'type';
+  $export['unique_field_scope_consignment_details'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'unique_field_scope_delivery_confirmation';
   $strongarm->value = 'type';
   $export['unique_field_scope_delivery_confirmation'] = $strongarm;
@@ -1125,6 +1302,13 @@ function dis_core_features_strongarm() {
   $strongarm->name = 'unique_field_scope_division';
   $strongarm->value = 'type';
   $export['unique_field_scope_division'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_scope_inward_invoice';
+  $strongarm->value = 'type';
+  $export['unique_field_scope_inward_invoice'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1178,6 +1362,13 @@ function dis_core_features_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_show_matches_consignment_details';
+  $strongarm->value = array();
+  $export['unique_field_show_matches_consignment_details'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'unique_field_show_matches_delivery_confirmation';
   $strongarm->value = array();
   $export['unique_field_show_matches_delivery_confirmation'] = $strongarm;
@@ -1195,6 +1386,13 @@ function dis_core_features_strongarm() {
   $strongarm->name = 'unique_field_show_matches_division';
   $strongarm->value = array();
   $export['unique_field_show_matches_division'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'unique_field_show_matches_inward_invoice';
+  $strongarm->value = array();
+  $export['unique_field_show_matches_inward_invoice'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

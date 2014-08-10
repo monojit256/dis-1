@@ -9,6 +9,17 @@
  */
 function dis_core_features_default_rules_configuration() {
   $items = array();
+  $items['rules_add_consignment_details'] = entity_import('rules_config', '{ "rules_add_consignment_details" : {
+      "LABEL" : "Add Consignment Details",
+      "PLUGIN" : "action set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "dis" ],
+      "USES VARIABLES" : { "invoices" : { "label" : "Invoices", "type" : "list\\u003Cnode\\u003E" } },
+      "ACTION SET" : [
+        { "dis_ruleaction_redirect_consignment_details_page" : { "invoices" : [ "invoices" ] } }
+      ]
+    }
+  }');
   $items['rules_invoice_status_rule_node_creation'] = entity_import('rules_config', '{ "rules_invoice_status_rule_node_creation" : {
       "LABEL" : "Invoice Status Rule - Node Creation",
       "PLUGIN" : "reaction rule",
@@ -318,7 +329,9 @@ function dis_core_features_default_rules_configuration() {
       "REQUIRES" : [ "dis", "rules" ],
       "ON" : {
         "node_insert--outward_invoice" : { "bundle" : "outward_invoice" },
-        "node_update--outward_invoice" : { "bundle" : "outward_invoice" }
+        "node_update--outward_invoice" : { "bundle" : "outward_invoice" },
+        "node_insert--inward_invoice" : { "bundle" : "inward_invoice" },
+        "node_update--inward_invoice" : { "bundle" : "inward_invoice" }
       },
       "DO" : [
         { "dis_ruleaction_get_quarter_fy" : {

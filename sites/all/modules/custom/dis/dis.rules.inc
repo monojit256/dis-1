@@ -41,6 +41,17 @@ function dis_rules_action_info() {
             ),
             'module' => 'dis',
         ),
+        'dis_ruleaction_redirect_consignment_details_page' => array(
+            'label' => t('Redirect to Add Consignment Dettails Page'),
+            'group' => 'DIS',
+            'parameter' => array(
+                'invoices' => array(
+                    'label' => t('Invoices'),
+                    'type' => 'list<node>',
+                ),
+            ),
+            'module' => 'dis',
+        ),
         'dis_ruleaction_update_dispatch' => array(
             'label' => t('Update Dispatch'),
             'group' => 'DIS',
@@ -378,3 +389,35 @@ function dis_ruleaction_get_first_node_in_list($node_list){
     return array('first_node' => array_shift($node_list));
 }
 
+
+function dis_ruleaction_redirect_consignment_details_page($invoices){
+
+    $counter = 0;
+    $first_invoice_company_tid = 0;
+    $first_invoice_consignor_nid = 0;
+    $invoices_valid = TRUE;
+    $array_ids = array();
+
+    foreach ($invoices as $invoice) {
+        if ($counter == 0) {
+            $first_invoice_company_nid = $invoice->field_company['und']['0']['target_id'];
+            $first_invoice_consignor_nid = $invoice->field_consignor['und']['0']['target_id'];
+        } else {
+            if ($first_invoice_consignor_nid != $invoice->field_consignor['und']['0']['target_id']) {
+                $invoices_valid = FALSE;
+            }
+        }
+        $array_ids[] = $invoice->vid;
+        $counter++;
+    }
+
+    if ($invoices_valid == FALSE) {
+        drupal_set_message('Multiple consignors in selected invoices. Please select invoices pertaining to one consignor only.', 'error');
+    } else {
+        $inward_invoices = implode(',', $array_ids);
+        $q = array();
+        $q['field_company'] = $first_invoice_company_nid;
+        $q['field_inward_invoices'] = $inward_invoices;
+        drupal_goto('node/add/consignment-details', array('query' => $q));
+    }
+}

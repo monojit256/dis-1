@@ -94,6 +94,27 @@ function dis_core_features_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_master-data:master-data',
   );
+  // Exported menu link: main-menu_add-consignment-details:add-consignment-details
+  $menu_links['main-menu_add-consignment-details:add-consignment-details'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'add-consignment-details',
+    'router_path' => 'add-consignment-details',
+    'link_title' => 'Add Consignment Details',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_add-consignment-details:add-consignment-details',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_goods-inward:goods-inward',
+  );
   // Exported menu link: main-menu_add-division:node/add/division
   $menu_links['main-menu_add-division:node/add/division'] = array(
     'menu_name' => 'main-menu',
@@ -132,7 +153,7 @@ function dis_core_features_menu_default_menu_links() {
     'external' => 0,
     'has_children' => 0,
     'expanded' => 0,
-    'weight' => 0,
+    'weight' => -50,
     'customized' => 1,
     'parent_identifier' => 'main-menu_goods-inward:goods-inward',
   );
@@ -455,6 +476,27 @@ function dis_core_features_menu_default_menu_links() {
     'weight' => -41,
     'customized' => 1,
     'parent_identifier' => 'main-menu_admin-home:admin-home',
+  );
+  // Exported menu link: main-menu_inward-register:inward-register
+  $menu_links['main-menu_inward-register:inward-register'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'inward-register',
+    'router_path' => 'inward-register',
+    'link_title' => 'Inward register',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_inward-register:inward-register',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_goods-inward:goods-inward',
   );
   // Exported menu link: main-menu_manage-invoices:manage-invoices
   $menu_links['main-menu_manage-invoices:manage-invoices'] = array(
@@ -790,6 +832,7 @@ function dis_core_features_menu_default_menu_links() {
   t('Add Business Associate');
   t('Add Company');
   t('Add Company Executive');
+  t('Add Consignment Details');
   t('Add Division');
   t('Add Inward Invoice');
   t('Add Outward Invoice');
@@ -808,6 +851,7 @@ function dis_core_features_menu_default_menu_links() {
   t('Import Packing');
   t('Import Transporters');
   t('Imported Outward Invoices');
+  t('Inward register');
   t('Manage Invoices');
   t('Master Data');
   t('Miscellaneous');

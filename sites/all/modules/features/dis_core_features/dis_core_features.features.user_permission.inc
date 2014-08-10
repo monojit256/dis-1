@@ -621,6 +621,21 @@ function dis_core_features_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create consignment_details content'.
+  $permissions['create consignment_details content'] = array(
+    'name' => 'create consignment_details content',
+    'roles' => array(
+      'Billing Executive' => 'Billing Executive',
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Executive' => 'Distribution Executive',
+      'Distribution Supervisor' => 'Distribution Supervisor',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create delivery_confirmation content'.
   $permissions['create delivery_confirmation content'] = array(
     'name' => 'create delivery_confirmation content',
@@ -733,21 +748,6 @@ function dis_core_features_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create receipt_details content'.
-  $permissions['create receipt_details content'] = array(
-    'name' => 'create receipt_details content',
-    'roles' => array(
-      'Billing Executive' => 'Billing Executive',
-      'Billing Supervisor' => 'Billing Supervisor',
-      'DIS Administrator' => 'DIS Administrator',
-      'Distribution Executive' => 'Distribution Executive',
-      'Distribution Supervisor' => 'Distribution Supervisor',
-      'Master Maintainer' => 'Master Maintainer',
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'create transporter content'.
   $permissions['create transporter content'] = array(
     'name' => 'create transporter content',
@@ -814,6 +814,19 @@ function dis_core_features_user_default_permissions() {
     'name' => 'delete any company_executive content',
     'roles' => array(
       'DIS Administrator' => 'DIS Administrator',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any consignment_details content'.
+  $permissions['delete any consignment_details content'] = array(
+    'name' => 'delete any consignment_details content',
+    'roles' => array(
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Supervisor' => 'Distribution Supervisor',
       'Master Maintainer' => 'Master Maintainer',
       'administrator' => 'administrator',
     ),
@@ -895,19 +908,6 @@ function dis_core_features_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any receipt_details content'.
-  $permissions['delete any receipt_details content'] = array(
-    'name' => 'delete any receipt_details content',
-    'roles' => array(
-      'Billing Supervisor' => 'Billing Supervisor',
-      'DIS Administrator' => 'DIS Administrator',
-      'Distribution Supervisor' => 'Distribution Supervisor',
-      'Master Maintainer' => 'Master Maintainer',
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
   // Exported permission: 'delete any transporter content'.
   $permissions['delete any transporter content'] = array(
     'name' => 'delete any transporter content',
@@ -956,6 +956,19 @@ function dis_core_features_user_default_permissions() {
     'name' => 'delete own company_executive content',
     'roles' => array(
       'DIS Administrator' => 'DIS Administrator',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own consignment_details content'.
+  $permissions['delete own consignment_details content'] = array(
+    'name' => 'delete own consignment_details content',
+    'roles' => array(
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Supervisor' => 'Distribution Supervisor',
       'Master Maintainer' => 'Master Maintainer',
       'administrator' => 'administrator',
     ),
@@ -1031,19 +1044,6 @@ function dis_core_features_user_default_permissions() {
       'DIS Administrator' => 'DIS Administrator',
       'Distribution Supervisor' => 'Distribution Supervisor',
       'Godown Supervisor' => 'Godown Supervisor',
-      'Master Maintainer' => 'Master Maintainer',
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'delete own receipt_details content'.
-  $permissions['delete own receipt_details content'] = array(
-    'name' => 'delete own receipt_details content',
-    'roles' => array(
-      'Billing Supervisor' => 'Billing Supervisor',
-      'DIS Administrator' => 'DIS Administrator',
-      'Distribution Supervisor' => 'Distribution Supervisor',
       'Master Maintainer' => 'Master Maintainer',
       'administrator' => 'administrator',
     ),
@@ -1142,6 +1142,21 @@ function dis_core_features_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit any consignment_details content'.
+  $permissions['edit any consignment_details content'] = array(
+    'name' => 'edit any consignment_details content',
+    'roles' => array(
+      'Billing Executive' => 'Billing Executive',
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Executive' => 'Distribution Executive',
+      'Distribution Supervisor' => 'Distribution Supervisor',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit any delivery_confirmation content'.
   $permissions['edit any delivery_confirmation content'] = array(
     'name' => 'edit any delivery_confirmation content',
@@ -1221,21 +1236,6 @@ function dis_core_features_user_default_permissions() {
       'Distribution Supervisor' => 'Distribution Supervisor',
       'Godown Executive' => 'Godown Executive',
       'Godown Supervisor' => 'Godown Supervisor',
-      'Master Maintainer' => 'Master Maintainer',
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit any receipt_details content'.
-  $permissions['edit any receipt_details content'] = array(
-    'name' => 'edit any receipt_details content',
-    'roles' => array(
-      'Billing Executive' => 'Billing Executive',
-      'Billing Supervisor' => 'Billing Supervisor',
-      'DIS Administrator' => 'DIS Administrator',
-      'Distribution Executive' => 'Distribution Executive',
-      'Distribution Supervisor' => 'Distribution Supervisor',
       'Master Maintainer' => 'Master Maintainer',
       'administrator' => 'administrator',
     ),
@@ -1326,6 +1326,21 @@ function dis_core_features_user_default_permissions() {
     'name' => 'edit own company_executive content',
     'roles' => array(
       'DIS Administrator' => 'DIS Administrator',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own consignment_details content'.
+  $permissions['edit own consignment_details content'] = array(
+    'name' => 'edit own consignment_details content',
+    'roles' => array(
+      'Billing Executive' => 'Billing Executive',
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Executive' => 'Distribution Executive',
+      'Distribution Supervisor' => 'Distribution Supervisor',
       'Master Maintainer' => 'Master Maintainer',
       'administrator' => 'administrator',
     ),
@@ -1438,21 +1453,6 @@ function dis_core_features_user_default_permissions() {
       'Distribution Supervisor' => 'Distribution Supervisor',
       'Godown Executive' => 'Godown Executive',
       'Godown Supervisor' => 'Godown Supervisor',
-      'Master Maintainer' => 'Master Maintainer',
-      'administrator' => 'administrator',
-    ),
-    'module' => 'node',
-  );
-
-  // Exported permission: 'edit own receipt_details content'.
-  $permissions['edit own receipt_details content'] = array(
-    'name' => 'edit own receipt_details content',
-    'roles' => array(
-      'Billing Executive' => 'Billing Executive',
-      'Billing Supervisor' => 'Billing Supervisor',
-      'DIS Administrator' => 'DIS Administrator',
-      'Distribution Executive' => 'Distribution Executive',
-      'Distribution Supervisor' => 'Distribution Supervisor',
       'Master Maintainer' => 'Master Maintainer',
       'administrator' => 'administrator',
     ),
