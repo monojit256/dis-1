@@ -534,6 +534,15 @@ function dis_core_features_default_page_manager_handlers() {
           'context' => 'argument_node_edit_1',
           'not' => FALSE,
         ),
+        1 => array(
+          'name' => 'path_visibility',
+          'settings' => array(
+            'visibility_setting' => '1',
+            'paths' => 'node/*/edit',
+          ),
+          'context' => 'empty',
+          'not' => FALSE,
+        ),
       ),
       'logic' => 'and',
     ),
@@ -576,13 +585,17 @@ function dis_core_features_default_page_manager_handlers() {
     $display->content['new-3f060195-3901-4ccc-99e1-cd0ee6a1e916'] = $pane;
     $display->panels['center'][0] = 'new-3f060195-3901-4ccc-99e1-cd0ee6a1e916';
     $pane = new stdClass();
-    $pane->pid = 'new-bd21f1cc-022a-44ba-979f-25e3b53d6cc6';
+    $pane->pid = 'new-7ef7102f-1255-47d9-a573-b99f05afa67e';
     $pane->panel = 'center';
     $pane->type = 'views_panes';
     $pane->subtype = 'manage_inward_invoices-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_node_edit_1',
+      ),
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -591,9 +604,9 @@ function dis_core_features_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = 'bd21f1cc-022a-44ba-979f-25e3b53d6cc6';
-    $display->content['new-bd21f1cc-022a-44ba-979f-25e3b53d6cc6'] = $pane;
-    $display->panels['center'][1] = 'new-bd21f1cc-022a-44ba-979f-25e3b53d6cc6';
+    $pane->uuid = '7ef7102f-1255-47d9-a573-b99f05afa67e';
+    $display->content['new-7ef7102f-1255-47d9-a573-b99f05afa67e'] = $pane;
+    $display->panels['center'][1] = 'new-7ef7102f-1255-47d9-a573-b99f05afa67e';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

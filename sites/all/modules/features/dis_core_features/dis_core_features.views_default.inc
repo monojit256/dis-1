@@ -1567,6 +1567,14 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_inward_invoices_node']['id'] = 'reverse_field_inward_invoices_node';
   $handler->display->display_options['relationships']['reverse_field_inward_invoices_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_inward_invoices_node']['field'] = 'reverse_field_inward_invoices_node';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_consignor_target_id']['id'] = 'field_consignor_target_id';
+  $handler->display->display_options['relationships']['field_consignor_target_id']['table'] = 'field_data_field_consignor';
+  $handler->display->display_options['relationships']['field_consignor_target_id']['field'] = 'field_consignor_target_id';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_company_target_id']['id'] = 'field_company_target_id';
+  $handler->display->display_options['relationships']['field_company_target_id']['table'] = 'field_data_field_company';
+  $handler->display->display_options['relationships']['field_company_target_id']['field'] = 'field_company_target_id';
   /* Field: Content: Inward Type */
   $handler->display->display_options['fields']['field_inward_type']['id'] = 'field_inward_type';
   $handler->display->display_options['fields']['field_inward_type']['table'] = 'field_data_field_inward_type';
@@ -1578,10 +1586,11 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_consignor']['settings'] = array(
     'link' => 1,
   );
-  /* Field: Content: Invoice No */
-  $handler->display->display_options['fields']['field_invoice_no']['id'] = 'field_invoice_no';
-  $handler->display->display_options['fields']['field_invoice_no']['table'] = 'field_data_field_invoice_no';
-  $handler->display->display_options['fields']['field_invoice_no']['field'] = 'field_invoice_no';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'Invoice No';
   /* Field: Content: Invoice Date */
   $handler->display->display_options['fields']['field_invoice_date']['id'] = 'field_invoice_date';
   $handler->display->display_options['fields']['field_invoice_date']['table'] = 'field_data_field_invoice_date';
@@ -1603,6 +1612,37 @@ function dis_core_features_views_default_views() {
     'scale' => '2',
     'prefix_suffix' => 1,
   );
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Content: Associate Type */
+  $handler->display->display_options['fields']['field_associate_type']['id'] = 'field_associate_type';
+  $handler->display->display_options['fields']['field_associate_type']['table'] = 'field_data_field_associate_type';
+  $handler->display->display_options['fields']['field_associate_type']['field'] = 'field_associate_type';
+  $handler->display->display_options['fields']['field_associate_type']['relationship'] = 'field_consignor_target_id';
+  $handler->display->display_options['fields']['field_associate_type']['exclude'] = TRUE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_1']['relationship'] = 'field_company_target_id';
+  $handler->display->display_options['fields']['nid_1']['exclude'] = TRUE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Edit';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Edit';
+  $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/[nid]/edit/[nid_1]/[field_associate_type]';
+  /* Field: Content: Delete link */
+  $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['label'] = 'Delete';
+  $handler->display->display_options['fields']['delete_node']['text'] = 'Delete';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -1643,6 +1683,16 @@ function dis_core_features_views_default_views() {
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['argument_input'] = array(
+    'nid' => array(
+      'type' => 'context',
+      'context' => 'entity:node.nid',
+      'context_optional' => 0,
+      'panel' => '0',
+      'fixed' => '',
+      'label' => 'Content: Nid',
+    ),
+  );
   $export['manage_inward_invoices'] = $view;
 
   $view = new view();
