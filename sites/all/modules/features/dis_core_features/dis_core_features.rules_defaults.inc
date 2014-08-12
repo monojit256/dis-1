@@ -262,6 +262,17 @@ function dis_core_features_default_rules_configuration() {
       "ACTION SET" : [ { "dis_ruleaction_redirect_edit_invoice" : [] } ]
     }
   }');
+  $items['rules_redirect_edit_inward_invoice'] = entity_import('rules_config', '{ "rules_redirect_edit_inward_invoice" : {
+      "LABEL" : "Redirect Edit Inward Invoice",
+      "PLUGIN" : "action set",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "dis" ],
+      "USES VARIABLES" : { "invoice" : { "label" : "Invoice", "type" : "node" } },
+      "ACTION SET" : [
+        { "dis_ruleaction_redirect_edit_inward_invoice" : { "invoice" : [ "invoice" ] } }
+      ]
+    }
+  }');
   $items['rules_send_lr_email'] = entity_import('rules_config', '{ "rules_send_lr_email" : {
       "LABEL" : "Send LR Email",
       "PLUGIN" : "reaction rule",

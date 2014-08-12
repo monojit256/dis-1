@@ -22,56 +22,112 @@ function dis_pdc_feature_user_default_permissions() {
   // Exported permission: 'create pdc content'.
   $permissions['create pdc content'] = array(
     'name' => 'create pdc content',
-    'roles' => array(),
+    'roles' => array(
+      'Billing Executive' => 'Billing Executive',
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Executive' => 'Distribution Executive',
+      'Distribution Supervisor' => 'Distribution Supervisor',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'create pdc_utilization content'.
   $permissions['create pdc_utilization content'] = array(
     'name' => 'create pdc_utilization content',
-    'roles' => array(),
+    'roles' => array(
+      'Billing Executive' => 'Billing Executive',
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Executive' => 'Distribution Executive',
+      'Distribution Supervisor' => 'Distribution Supervisor',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any pdc content'.
   $permissions['delete any pdc content'] = array(
     'name' => 'delete any pdc content',
-    'roles' => array(),
+    'roles' => array(
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Supervisor' => 'Distribution Supervisor',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any pdc_utilization content'.
   $permissions['delete any pdc_utilization content'] = array(
     'name' => 'delete any pdc_utilization content',
-    'roles' => array(),
+    'roles' => array(
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Supervisor' => 'Distribution Supervisor',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own pdc content'.
   $permissions['delete own pdc content'] = array(
     'name' => 'delete own pdc content',
-    'roles' => array(),
+    'roles' => array(
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Supervisor' => 'Distribution Supervisor',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete own pdc_utilization content'.
   $permissions['delete own pdc_utilization content'] = array(
     'name' => 'delete own pdc_utilization content',
-    'roles' => array(),
+    'roles' => array(
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Supervisor' => 'Distribution Supervisor',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any pdc content'.
   $permissions['edit any pdc content'] = array(
     'name' => 'edit any pdc content',
-    'roles' => array(),
+    'roles' => array(
+      'Billing Executive' => 'Billing Executive',
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Executive' => 'Distribution Executive',
+      'Distribution Supervisor' => 'Distribution Supervisor',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any pdc_utilization content'.
   $permissions['edit any pdc_utilization content'] = array(
     'name' => 'edit any pdc_utilization content',
-    'roles' => array(),
+    'roles' => array(
+      'Billing Executive' => 'Billing Executive',
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Executive' => 'Distribution Executive',
+      'Distribution Supervisor' => 'Distribution Supervisor',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -96,14 +152,30 @@ function dis_pdc_feature_user_default_permissions() {
   // Exported permission: 'edit own pdc content'.
   $permissions['edit own pdc content'] = array(
     'name' => 'edit own pdc content',
-    'roles' => array(),
+    'roles' => array(
+      'Billing Executive' => 'Billing Executive',
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Executive' => 'Distribution Executive',
+      'Distribution Supervisor' => 'Distribution Supervisor',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit own pdc_utilization content'.
   $permissions['edit own pdc_utilization content'] = array(
     'name' => 'edit own pdc_utilization content',
-    'roles' => array(),
+    'roles' => array(
+      'Billing Executive' => 'Billing Executive',
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Executive' => 'Distribution Executive',
+      'Distribution Supervisor' => 'Distribution Supervisor',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 

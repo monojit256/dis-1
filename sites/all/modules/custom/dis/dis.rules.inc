@@ -86,6 +86,17 @@ function dis_rules_action_info() {
             ),
             'module' => 'dis',
         ),
+        'dis_ruleaction_redirect_edit_inward_invoice' => array(
+            'label' => t('Redirect Edit Inward Invoice'),
+            'group' => 'DIS',
+            'parameter' => array(
+                'invoice' => array(
+                    'label' => t('Invoice'),
+                    'type' => 'node',
+                ),
+            ),
+            'module' => 'dis',
+        ),
         'dis_ruleaction_set_invoice_reversed' => array(
             'label' => t('Set Invoice Reversed'),
             'group' => 'DIS',
@@ -234,12 +245,14 @@ function dis_ruleaction_redirect_edit_invoice($invoice){
         $status = $invoice->field_status['und'][0]['value'];
         $q = array();
         $redirect_nid = $nid;  
+        $arg = "";
+
+        $q['field_company'] = $invoice->field_company['und'][0]['target_id'];
 
         if($status == 'Created'){           
-            
-            $q['field_company'] = $invoice->field_company['und'][0]['target_id'];
+                        
             $consignee = node_load($invoice->field_consignee['und'][0]['target_id']);
-            $q['field_associate_type'] = $consignee->field_associate_type['und'][0]['value'];                      
+            $arg = '/' . $invoice->field_company['und'][0]['target_id'] . '/' . $consignee->field_associate_type['und'][0]['value'];                     
         } 
 
         if($status == 'Packed' || $status == 'Dispatched' || $status == 'Delivered'){
@@ -275,7 +288,7 @@ function dis_ruleaction_redirect_edit_invoice($invoice){
             }
         }
 
-        drupal_goto('node/' . $redirect_nid . '/edit', array('query' => $q));
+        drupal_goto('node/' . $redirect_nid . '/edit' . $arg, array('query' => $q));
 }
 
 function dis_ruleaction_set_invoice_reversed($invoice, $reason){
@@ -420,4 +433,29 @@ function dis_ruleaction_redirect_consignment_details_page($invoices){
         $q['field_inward_invoices'] = $inward_invoices;
         drupal_goto('node/add/consignment-details', array('query' => $q));
     }
+}
+
+
+function dis_ruleaction_redirect_edit_inward_invoice($invoice){
+    
+    $nid = $invoice->vid;
+    $q = array();
+    $redirect_nid = $nid;  
+    $arg = "";
+
+    $q['field_company'] = $invoice->field_company['und'][0]['target_id'];    
+    
+    $invoice_cn_query = new EntityFieldQuery();
+    $invoice_cn_query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'consignment_details')
+        ->fieldCondition('field_inward_invoices', 'target_id', $redirect_nid, '=');
+    $invoice_cn_result = $invoice_cn_query->execute();
+    if (!empty($invoice_cn_result)) {
+        $redirect_nid = array_shift($invoice_cn_result['node'])->nid;
+    } else {
+        $consignor = node_load($invoice->field_consignor['und'][0]['target_id']);
+        $arg = '/' . $invoice->field_company['und'][0]['target_id'] . '/' . $consignor->field_associate_type['und'][0]['value'];
+    }
+
+    drupal_goto('node/' . $redirect_nid . '/edit' . $arg, array('query' => $q));
 }

@@ -35,6 +35,10 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['relationships']['field_consignor_target_id']['id'] = 'field_consignor_target_id';
   $handler->display->display_options['relationships']['field_consignor_target_id']['table'] = 'field_data_field_consignor';
   $handler->display->display_options['relationships']['field_consignor_target_id']['field'] = 'field_consignor_target_id';
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_inward_invoices_node']['id'] = 'reverse_field_inward_invoices_node';
+  $handler->display->display_options['relationships']['reverse_field_inward_invoices_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_inward_invoices_node']['field'] = 'reverse_field_inward_invoices_node';
   /* Field: Bulk operations: Content */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
@@ -347,6 +351,12 @@ function dis_core_features_views_default_views() {
     5 => 0,
     13 => 0,
   );
+  /* Filter criterion: Content: Nid */
+  $handler->display->display_options['filters']['nid']['id'] = 'nid';
+  $handler->display->display_options['filters']['nid']['table'] = 'node';
+  $handler->display->display_options['filters']['nid']['field'] = 'nid';
+  $handler->display->display_options['filters']['nid']['relationship'] = 'reverse_field_inward_invoices_node';
+  $handler->display->display_options['filters']['nid']['operator'] = 'empty';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -806,6 +816,188 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['relationships']['field_consignor_target_id']['id'] = 'field_consignor_target_id';
   $handler->display->display_options['relationships']['field_consignor_target_id']['table'] = 'field_data_field_consignor';
   $handler->display->display_options['relationships']['field_consignor_target_id']['field'] = 'field_consignor_target_id';
+  /* Field: Bulk operations: Content */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '1';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'rules_component::rules_add_consignment_details' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_assign_owner_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_delete_revision' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_script_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_make_sticky_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_make_unsticky_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::views_bulk_operations_modify_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'show_all_tokens' => 1,
+        'display_values' => array(
+          '_all_' => '_all_',
+        ),
+      ),
+    ),
+    'action::views_bulk_operations_argument_selector_action' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+      'settings' => array(
+        'url' => '',
+      ),
+    ),
+    'action::node_promote_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_publish_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_redirect_edit_invoice' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_redirect_edit_inward_invoice' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 1,
+      'label' => 'Edit Inward Invoice',
+    ),
+    'rules_component::rules_redirect_edit_pdc' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpromote_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_save_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::system_send_email_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_set_invoice_reversed' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpublish_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::node_unpublish_by_keyword_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_update_dispatch' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'action::pathauto_node_update_action' => array(
+      'selected' => 0,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_update_packing' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_utilize_pdc' => array(
+      'selected' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
   /* Field: Content: Company */
   $handler->display->display_options['fields']['field_company']['id'] = 'field_company';
   $handler->display->display_options['fields']['field_company']['table'] = 'field_data_field_company';
@@ -855,6 +1047,18 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_internal_ref_no']['field'] = 'field_internal_ref_no';
   $handler->display->display_options['fields']['field_internal_ref_no']['relationship'] = 'reverse_field_inward_invoices_node';
   $handler->display->display_options['fields']['field_internal_ref_no']['label'] = 'Ref No';
+  /* Field: Content: Internal Ref Date */
+  $handler->display->display_options['fields']['field_internal_ref_date']['id'] = 'field_internal_ref_date';
+  $handler->display->display_options['fields']['field_internal_ref_date']['table'] = 'field_data_field_internal_ref_date';
+  $handler->display->display_options['fields']['field_internal_ref_date']['field'] = 'field_internal_ref_date';
+  $handler->display->display_options['fields']['field_internal_ref_date']['relationship'] = 'reverse_field_inward_invoices_node';
+  $handler->display->display_options['fields']['field_internal_ref_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
   /* Field: Content: Cases */
   $handler->display->display_options['fields']['field_cases']['id'] = 'field_cases';
   $handler->display->display_options['fields']['field_cases']['table'] = 'field_data_field_cases';
@@ -1326,6 +1530,120 @@ function dis_core_features_views_default_views() {
     ),
   );
   $export['manage_invoices'] = $view;
+
+  $view = new view();
+  $view->name = 'manage_inward_invoices';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Manage Inward Invoices';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'title' => 'title',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'title' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_inward_invoices_node']['id'] = 'reverse_field_inward_invoices_node';
+  $handler->display->display_options['relationships']['reverse_field_inward_invoices_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_inward_invoices_node']['field'] = 'reverse_field_inward_invoices_node';
+  /* Field: Content: Inward Type */
+  $handler->display->display_options['fields']['field_inward_type']['id'] = 'field_inward_type';
+  $handler->display->display_options['fields']['field_inward_type']['table'] = 'field_data_field_inward_type';
+  $handler->display->display_options['fields']['field_inward_type']['field'] = 'field_inward_type';
+  /* Field: Content: Consignor */
+  $handler->display->display_options['fields']['field_consignor']['id'] = 'field_consignor';
+  $handler->display->display_options['fields']['field_consignor']['table'] = 'field_data_field_consignor';
+  $handler->display->display_options['fields']['field_consignor']['field'] = 'field_consignor';
+  $handler->display->display_options['fields']['field_consignor']['settings'] = array(
+    'link' => 1,
+  );
+  /* Field: Content: Invoice No */
+  $handler->display->display_options['fields']['field_invoice_no']['id'] = 'field_invoice_no';
+  $handler->display->display_options['fields']['field_invoice_no']['table'] = 'field_data_field_invoice_no';
+  $handler->display->display_options['fields']['field_invoice_no']['field'] = 'field_invoice_no';
+  /* Field: Content: Invoice Date */
+  $handler->display->display_options['fields']['field_invoice_date']['id'] = 'field_invoice_date';
+  $handler->display->display_options['fields']['field_invoice_date']['table'] = 'field_data_field_invoice_date';
+  $handler->display->display_options['fields']['field_invoice_date']['field'] = 'field_invoice_date';
+  $handler->display->display_options['fields']['field_invoice_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Invoice Value */
+  $handler->display->display_options['fields']['field_invoice_value']['id'] = 'field_invoice_value';
+  $handler->display->display_options['fields']['field_invoice_value']['table'] = 'field_data_field_invoice_value';
+  $handler->display->display_options['fields']['field_invoice_value']['field'] = 'field_invoice_value';
+  $handler->display->display_options['fields']['field_invoice_value']['settings'] = array(
+    'thousand_separator' => '',
+    'decimal_separator' => '.',
+    'scale' => '2',
+    'prefix_suffix' => 1,
+  );
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_inward_invoices_node';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['nid']['default_argument_options']['index'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'inward_invoice' => 'inward_invoice',
+  );
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['relationship'] = 'reverse_field_inward_invoices_node';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'consignment_details' => 'consignment_details',
+  );
+
+  /* Display: Content pane */
+  $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $export['manage_inward_invoices'] = $view;
 
   $view = new view();
   $view->name = 'outward_register';
@@ -2063,14 +2381,6 @@ function dis_core_features_views_default_views() {
     'link' => 1,
   );
   $handler->display->display_options['fields']['field_outward_invoices']['delta_offset'] = '0';
-  /* Field: Content: Transporter */
-  $handler->display->display_options['fields']['field_transporter']['id'] = 'field_transporter';
-  $handler->display->display_options['fields']['field_transporter']['table'] = 'field_data_field_transporter';
-  $handler->display->display_options['fields']['field_transporter']['field'] = 'field_transporter';
-  $handler->display->display_options['fields']['field_transporter']['relationship'] = 'field_packing_target_id';
-  $handler->display->display_options['fields']['field_transporter']['settings'] = array(
-    'link' => 1,
-  );
   /* Field: Content: Cases */
   $handler->display->display_options['fields']['field_cases']['id'] = 'field_cases';
   $handler->display->display_options['fields']['field_cases']['table'] = 'field_data_field_cases';
@@ -2079,6 +2389,14 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_cases']['settings'] = array(
     'thousand_separator' => '',
     'prefix_suffix' => 1,
+  );
+  /* Field: Content: Transporter */
+  $handler->display->display_options['fields']['field_transporter']['id'] = 'field_transporter';
+  $handler->display->display_options['fields']['field_transporter']['table'] = 'field_data_field_transporter';
+  $handler->display->display_options['fields']['field_transporter']['field'] = 'field_transporter';
+  $handler->display->display_options['fields']['field_transporter']['relationship'] = 'field_packing_target_id';
+  $handler->display->display_options['fields']['field_transporter']['settings'] = array(
+    'link' => 1,
   );
   /* Field: Content: Dispatch Mode */
   $handler->display->display_options['fields']['field_dispatch_mode']['id'] = 'field_dispatch_mode';
@@ -3247,6 +3565,14 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_consignee']['settings'] = array(
     'link' => 1,
   );
+  /* Field: Content: Invoices */
+  $handler->display->display_options['fields']['field_outward_invoices']['id'] = 'field_outward_invoices';
+  $handler->display->display_options['fields']['field_outward_invoices']['table'] = 'field_data_field_outward_invoices';
+  $handler->display->display_options['fields']['field_outward_invoices']['field'] = 'field_outward_invoices';
+  $handler->display->display_options['fields']['field_outward_invoices']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['fields']['field_outward_invoices']['delta_offset'] = '0';
   /* Field: Content: Transporter */
   $handler->display->display_options['fields']['field_transporter']['id'] = 'field_transporter';
   $handler->display->display_options['fields']['field_transporter']['table'] = 'field_data_field_transporter';
