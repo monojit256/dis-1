@@ -2513,7 +2513,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = 'Update Delivery Confirmation';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = 'Update';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/add/delivery-confirmation?field_company=[nid_1]&field_dispatch=[nid]';
+  $handler->display->display_options['fields']['nothing']['alter']['path'] = 'node/add/delivery-confirmation?field_company=[nid_1]&field_dispatch=[nid]&destination=update-delivery-confirmation';
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
