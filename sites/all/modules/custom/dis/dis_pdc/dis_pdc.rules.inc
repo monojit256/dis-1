@@ -49,8 +49,8 @@ function dis_pdc_ruleaction_redirect_edit_pdc($pdc){
         
         $nid = $pdc->vid;
         $status = $pdc->field_pdc_status['und'][0]['value'];
-        $q = array();
-        $redirect_nid = $nid;  
+        $redirect_nid = $nid;
+        $arg = "";
 
         if($status == 'Utilized'){
             $pdc_utilization_query = new EntityFieldQuery();
@@ -61,9 +61,11 @@ function dis_pdc_ruleaction_redirect_edit_pdc($pdc){
             if (!empty($pdc_utilization_result)) {
                 $redirect_nid = array_shift($pdc_utilization_result['node'])->nid;
             }
+        } else {
+            $arg = '/' . $pdc->field_company['und'][0]['target_id'];
         }
 
-        drupal_goto('node/' . $redirect_nid . '/edit', array('query' => $q));
+        drupal_goto('node/' . $redirect_nid . '/edit' . $arg);
 }
 
 

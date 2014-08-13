@@ -179,6 +179,21 @@ function dis_pdc_feature_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'use Rules component rules_utilize_pdc'.
+  $permissions['use Rules component rules_utilize_pdc'] = array(
+    'name' => 'use Rules component rules_utilize_pdc',
+    'roles' => array(
+      'Billing Executive' => 'Billing Executive',
+      'Billing Supervisor' => 'Billing Supervisor',
+      'DIS Administrator' => 'DIS Administrator',
+      'Distribution Executive' => 'Distribution Executive',
+      'Distribution Supervisor' => 'Distribution Supervisor',
+      'Master Maintainer' => 'Master Maintainer',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
+  );
+
   // Exported permission: 'view field_pdc_status'.
   $permissions['view field_pdc_status'] = array(
     'name' => 'view field_pdc_status',

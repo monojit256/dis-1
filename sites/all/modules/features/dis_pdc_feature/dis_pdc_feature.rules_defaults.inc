@@ -88,6 +88,7 @@ function dis_pdc_feature_default_rules_configuration() {
       "PLUGIN" : "rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "rules" ],
+      "ACCESS_EXPOSED" : "1",
       "USES VARIABLES" : {
         "invoices" : { "label" : "Invoices", "type" : "list\\u003Cnode\\u003E" },
         "pdc" : { "label" : "PDC", "type" : "node" },
