@@ -2028,6 +2028,23 @@ function dis_core_features_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
+  /* Sort criterion: Content: Company (field_company) */
+  $handler->display->display_options['sorts']['field_company_target_id']['id'] = 'field_company_target_id';
+  $handler->display->display_options['sorts']['field_company_target_id']['table'] = 'field_data_field_company';
+  $handler->display->display_options['sorts']['field_company_target_id']['field'] = 'field_company_target_id';
+  /* Sort criterion: Content: Outward Type (field_outward_type) */
+  $handler->display->display_options['sorts']['field_outward_type_value']['id'] = 'field_outward_type_value';
+  $handler->display->display_options['sorts']['field_outward_type_value']['table'] = 'field_data_field_outward_type';
+  $handler->display->display_options['sorts']['field_outward_type_value']['field'] = 'field_outward_type_value';
+  /* Sort criterion: Content: Financial Year (field_financial_year) */
+  $handler->display->display_options['sorts']['field_financial_year_target_id']['id'] = 'field_financial_year_target_id';
+  $handler->display->display_options['sorts']['field_financial_year_target_id']['table'] = 'field_data_field_financial_year';
+  $handler->display->display_options['sorts']['field_financial_year_target_id']['field'] = 'field_financial_year_target_id';
+  $handler->display->display_options['sorts']['field_financial_year_target_id']['order'] = 'DESC';
+  /* Sort criterion: Content: Invoice No (field_invoice_no) */
+  $handler->display->display_options['sorts']['field_invoice_no_value']['id'] = 'field_invoice_no_value';
+  $handler->display->display_options['sorts']['field_invoice_no_value']['table'] = 'field_data_field_invoice_no';
+  $handler->display->display_options['sorts']['field_invoice_no_value']['field'] = 'field_invoice_no_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -2281,6 +2298,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['field_transporter_target_id']['id'] = 'field_transporter_target_id';
   $handler->display->display_options['filters']['field_transporter_target_id']['table'] = 'field_data_field_transporter';
   $handler->display->display_options['filters']['field_transporter_target_id']['field'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['relationship'] = 'reverse_field_outward_invoices_node';
   $handler->display->display_options['filters']['field_transporter_target_id']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_transporter_target_id']['expose']['operator_id'] = 'field_transporter_target_id_op';
   $handler->display->display_options['filters']['field_transporter_target_id']['expose']['label'] = 'Transporter';
@@ -2305,6 +2323,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['field_lr_date_value']['id'] = 'field_lr_date_value';
   $handler->display->display_options['filters']['field_lr_date_value']['table'] = 'field_data_field_lr_date';
   $handler->display->display_options['filters']['field_lr_date_value']['field'] = 'field_lr_date_value';
+  $handler->display->display_options['filters']['field_lr_date_value']['relationship'] = 'reverse_field_packing_node';
   $handler->display->display_options['filters']['field_lr_date_value']['operator'] = 'between';
   $handler->display->display_options['filters']['field_lr_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_lr_date_value']['expose']['operator_id'] = 'field_lr_date_value_op';
@@ -2327,17 +2346,18 @@ function dis_core_features_views_default_views() {
     13 => 0,
   );
   $handler->display->display_options['filters']['field_lr_date_value']['form_type'] = 'date_popup';
-  /* Filter criterion: Content: LR No (field_lr_no:format) */
-  $handler->display->display_options['filters']['field_lr_no_format']['id'] = 'field_lr_no_format';
-  $handler->display->display_options['filters']['field_lr_no_format']['table'] = 'field_data_field_lr_no';
-  $handler->display->display_options['filters']['field_lr_no_format']['field'] = 'field_lr_no_format';
-  $handler->display->display_options['filters']['field_lr_no_format']['operator'] = 'starts';
-  $handler->display->display_options['filters']['field_lr_no_format']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_lr_no_format']['expose']['operator_id'] = 'field_lr_no_format_op';
-  $handler->display->display_options['filters']['field_lr_no_format']['expose']['label'] = 'LR No';
-  $handler->display->display_options['filters']['field_lr_no_format']['expose']['operator'] = 'field_lr_no_format_op';
-  $handler->display->display_options['filters']['field_lr_no_format']['expose']['identifier'] = 'field_lr_no_format';
-  $handler->display->display_options['filters']['field_lr_no_format']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: LR No (field_lr_no) */
+  $handler->display->display_options['filters']['field_lr_no_value']['id'] = 'field_lr_no_value';
+  $handler->display->display_options['filters']['field_lr_no_value']['table'] = 'field_data_field_lr_no';
+  $handler->display->display_options['filters']['field_lr_no_value']['field'] = 'field_lr_no_value';
+  $handler->display->display_options['filters']['field_lr_no_value']['relationship'] = 'reverse_field_packing_node';
+  $handler->display->display_options['filters']['field_lr_no_value']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_lr_no_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_lr_no_value']['expose']['operator_id'] = 'field_lr_no_value_op';
+  $handler->display->display_options['filters']['field_lr_no_value']['expose']['label'] = 'LR No';
+  $handler->display->display_options['filters']['field_lr_no_value']['expose']['operator'] = 'field_lr_no_value_op';
+  $handler->display->display_options['filters']['field_lr_no_value']['expose']['identifier'] = 'field_lr_no_value';
+  $handler->display->display_options['filters']['field_lr_no_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     10 => 0,
@@ -2361,6 +2381,21 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['menu']['name'] = 'main-menu';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Data export */
+  $handler = $view->new_display('views_data_export', 'Data export', 'views_data_export_1');
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_xls';
+  $handler->display->display_options['style_options']['provide_file'] = 1;
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['path'] = 'outward-register-xls';
+  $handler->display->display_options['displays'] = array(
+    'page' => 'page',
+    'default' => 0,
+  );
+  $handler->display->display_options['use_batch'] = 'batch';
+  $handler->display->display_options['segment_size'] = '100';
   $export['outward_register'] = $view;
 
   $view = new view();
