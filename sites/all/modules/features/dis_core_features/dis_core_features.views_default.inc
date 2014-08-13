@@ -3619,6 +3619,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['field_outward_invoices']['id'] = 'field_outward_invoices';
   $handler->display->display_options['fields']['field_outward_invoices']['table'] = 'field_data_field_outward_invoices';
   $handler->display->display_options['fields']['field_outward_invoices']['field'] = 'field_outward_invoices';
+  $handler->display->display_options['fields']['field_outward_invoices']['relationship'] = 'field_packing_target_id';
   $handler->display->display_options['fields']['field_outward_invoices']['settings'] = array(
     'link' => 1,
   );
@@ -3650,31 +3651,6 @@ function dis_core_features_views_default_views() {
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
-  );
-  /* Field: Content: LR No */
-  $handler->display->display_options['fields']['field_lr_no']['id'] = 'field_lr_no';
-  $handler->display->display_options['fields']['field_lr_no']['table'] = 'field_data_field_lr_no';
-  $handler->display->display_options['fields']['field_lr_no']['field'] = 'field_lr_no';
-  /* Field: Content: LR Date */
-  $handler->display->display_options['fields']['field_lr_date']['id'] = 'field_lr_date';
-  $handler->display->display_options['fields']['field_lr_date']['table'] = 'field_data_field_lr_date';
-  $handler->display->display_options['fields']['field_lr_date']['field'] = 'field_lr_date';
-  $handler->display->display_options['fields']['field_lr_date']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Field: Content: LR Value */
-  $handler->display->display_options['fields']['field_lr_value']['id'] = 'field_lr_value';
-  $handler->display->display_options['fields']['field_lr_value']['table'] = 'field_data_field_lr_value';
-  $handler->display->display_options['fields']['field_lr_value']['field'] = 'field_lr_value';
-  $handler->display->display_options['fields']['field_lr_value']['settings'] = array(
-    'thousand_separator' => '',
-    'decimal_separator' => '.',
-    'scale' => '2',
-    'prefix_suffix' => 1,
   );
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
