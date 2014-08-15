@@ -3111,6 +3111,19 @@ function dis_core_features_default_page_manager_pages() {
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 13,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
   );
   $page->menu = array(
     'type' => 'normal',
@@ -3177,6 +3190,29 @@ function dis_core_features_default_page_manager_pages() {
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 10,
+            1 => 6,
+            2 => 3,
+            3 => 11,
+            4 => 7,
+            5 => 4,
+            6 => 8,
+            7 => 9,
+            8 => 12,
+            9 => 5,
+            10 => 13,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
   );
   $page->menu = array(
     'type' => 'normal',
@@ -3243,6 +3279,29 @@ function dis_core_features_default_page_manager_pages() {
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 10,
+            1 => 6,
+            2 => 3,
+            3 => 11,
+            4 => 7,
+            5 => 4,
+            6 => 8,
+            7 => 9,
+            8 => 12,
+            9 => 5,
+            10 => 13,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
   );
   $page->menu = array(
     'type' => 'normal',
@@ -3309,6 +3368,27 @@ function dis_core_features_default_page_manager_pages() {
   $page->access = array(
     'type' => 'none',
     'settings' => NULL,
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 11,
+            2 => 7,
+            3 => 4,
+            4 => 8,
+            5 => 9,
+            6 => 12,
+            7 => 5,
+            8 => 13,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
   );
   $page->menu = array(
     'type' => 'normal',
@@ -3372,7 +3452,27 @@ function dis_core_features_default_page_manager_pages() {
   $page->admin_title = 'Miscellaneous';
   $page->admin_description = '';
   $page->path = 'miscellaneous';
-  $page->access = array();
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 4,
+            2 => 8,
+            3 => 9,
+            4 => 12,
+            5 => 5,
+            6 => 13,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'Miscellaneous',

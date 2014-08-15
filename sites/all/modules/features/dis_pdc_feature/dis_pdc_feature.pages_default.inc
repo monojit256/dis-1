@@ -133,7 +133,27 @@ function dis_pdc_feature_default_page_manager_pages() {
   $page->admin_title = 'PDC';
   $page->admin_description = '';
   $page->path = 'pdc';
-  $page->access = array();
+  $page->access = array(
+    'plugins' => array(
+      0 => array(
+        'name' => 'role',
+        'settings' => array(
+          'rids' => array(
+            0 => 3,
+            1 => 4,
+            2 => 8,
+            3 => 9,
+            4 => 12,
+            5 => 5,
+            6 => 13,
+          ),
+        ),
+        'context' => 'logged-in-user',
+        'not' => FALSE,
+      ),
+    ),
+    'logic' => 'and',
+  );
   $page->menu = array(
     'type' => 'normal',
     'title' => 'PDC',
