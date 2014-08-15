@@ -11,7 +11,8 @@ function dis_pdc_menu() {
         'title' => 'Add PDC - Select Company',
         'page callback' => 'drupal_get_form',
         'page arguments' => array('add_pdc_form'),
-        'access callback' => TRUE,
+        'access callback' => 'user_access',
+        'access arguments' => array('create pdc content'),
         'type' => MENU_CALLBACK,
         'file' => 'dis_pdc.menu.inc',
     ); 	

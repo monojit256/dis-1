@@ -11,7 +11,8 @@ function dis_menu() {
         'title' => 'Add Associate Executive Mapping - Select Company and Associate Type',
         'page callback' => 'drupal_get_form',
         'page arguments' => array('add_associate_executive_mapping_form'),
-        'access callback' => TRUE,
+        'access callback' => 'user_access',
+        'access arguments' => array('create associate_executive_mapping content'),
         'type' => MENU_CALLBACK,
         'file' => 'dis.menu.inc',
     ); 	
@@ -20,7 +21,8 @@ function dis_menu() {
         'title' => 'Add Outward Invoice- Select Company and Invoice Type',
         'page callback' => 'drupal_get_form',
         'page arguments' => array('add_outward_invoice_form'),
-        'access callback' => TRUE,
+        'access callback' => 'user_access',
+        'access arguments' => array('create outward_invoice content'),
         'type' => MENU_CALLBACK,
         'file' => 'dis.menu.inc',
     );  
@@ -29,7 +31,8 @@ function dis_menu() {
         'title' => 'Add Inward Invoice- Select Company and Invoice Type',
         'page callback' => 'drupal_get_form',
         'page arguments' => array('add_inward_invoice_form'),
-        'access callback' => TRUE,
+        'access callback' => 'user_access',
+        'access arguments' => array('create inward_invoice content'),
         'type' => MENU_CALLBACK,
         'file' => 'dis.menu.inc',
     );     
