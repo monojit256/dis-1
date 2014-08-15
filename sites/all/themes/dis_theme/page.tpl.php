@@ -224,7 +224,19 @@
             
 			<?php print render($title_prefix); ?>
             <?php if ($title): ?>
-            <h1><?php print $title ?></h1>
+            <!-- Custom Changes: For user pages, change of title -->
+            <h1><?php if (arg(0) == 'user' && arg(1) == 'register') : ?>
+            Create an Account
+          <?php elseif (arg(0) == 'user' && arg(1) == 'password') : ?>
+            Retrieve lost password
+          <?php elseif (arg(0) == 'user' && arg(1) == 'login') : ?>
+            User Login
+          <?php elseif (arg(0) == 'user') : ?>
+            User Account
+          <?php else : ?>
+            <?php print $title ?>
+          <?php endif ; ?></h1>
+           
             <?php endif; ?>
             <?php print render($title_suffix); ?>
             
