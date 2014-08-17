@@ -571,6 +571,18 @@ ul.primary li a, ul.tabs li a { margin:0; padding: 4px 1em; display: inline-bloc
  /**
   *Custom changes for User Login
   */
-  .page-user-login .container_12 .grid_12 {
-  	width : 200px;  	
+  .page-user-login .region-content {
+  	margin-left : 50%;
+  	margin-right : 25%;
+  }
+
+  .page-user-login .region-content #edit-submit {
+  	margin-left: 25%;
+  }
+
+  .page-user-login .region-content #block-system-main {
+  	border : 2px solid #bcbcbc;
+  	padding-left: 30px;
+  	padding-top: 30px;
+  	padding-bottom: 10px;
   }

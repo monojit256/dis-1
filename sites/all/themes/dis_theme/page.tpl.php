@@ -230,7 +230,6 @@
           <?php elseif (arg(0) == 'user' && arg(1) == 'password') : ?>
             Retrieve lost password
           <?php elseif (arg(0) == 'user' && arg(1) == 'login') : ?>
-            User Login
           <?php elseif (arg(0) == 'user') : ?>
             User Account
           <?php else : ?>
