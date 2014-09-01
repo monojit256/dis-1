@@ -2082,6 +2082,51 @@ function dis_core_features_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-dispatch-field_associate_inward_permit'
+  $field_instances['node-dispatch-field_associate_inward_permit'] = array(
+    'bundle' => 'dispatch',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_associate_inward_permit',
+    'label' => 'Associate Inward Permit',
+    'required' => 1,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'node-dispatch-field_company'
   $field_instances['node-dispatch-field_company'] = array(
     'bundle' => 'dispatch',
@@ -2131,7 +2176,7 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 32,
+      'weight' => 2,
     ),
   );
 
@@ -2185,7 +2230,7 @@ function dis_core_features_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 34,
+      'weight' => 4,
     ),
   );
 
@@ -2233,7 +2278,7 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 35,
+      'weight' => 5,
     ),
   );
 
@@ -2287,7 +2332,7 @@ function dis_core_features_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 38,
+      'weight' => 11,
     ),
   );
 
@@ -2327,7 +2372,7 @@ function dis_core_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 37,
+      'weight' => 10,
     ),
   );
 
@@ -2373,7 +2418,7 @@ function dis_core_features_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 39,
+      'weight' => 12,
     ),
   );
 
@@ -2422,7 +2467,100 @@ function dis_core_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 33,
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-dispatch-field_permit_remarks'
+  $field_instances['node-dispatch-field_permit_remarks'] = array(
+    'bundle' => 'dispatch',
+    'default_value' => array(
+      0 => array(
+        'target_id' => 12,
+      ),
+    ),
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_permit_remarks',
+    'label' => 'Permit Remarks',
+    'required' => 1,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+        'taxonomy-index' => array(
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-dispatch-field_permit_required'
+  $field_instances['node-dispatch-field_permit_required'] = array(
+    'bundle' => 'dispatch',
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_permit_required',
+    'label' => 'Permit Required',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 7,
     ),
   );
 
@@ -2462,7 +2600,7 @@ function dis_core_features_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 41,
+      'weight' => 13,
     ),
   );
 
@@ -2502,7 +2640,7 @@ function dis_core_features_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 36,
+      'weight' => 6,
     ),
   );
 
@@ -4163,6 +4301,7 @@ function dis_core_features_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Address');
   t('Associate');
+  t('Associate Inward Permit');
   t('Associate Type');
   t('Cases');
   t('Company');
@@ -4198,6 +4337,8 @@ function dis_core_features_field_default_field_instances() {
   t('Outward Type');
   t('Packing');
   t('Packing Date');
+  t('Permit Remarks');
+  t('Permit Required');
   t('Phone');
   t('Quarter');
   t('Receipt Date');
