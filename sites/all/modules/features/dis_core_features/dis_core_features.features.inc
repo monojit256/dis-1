@@ -128,6 +128,22 @@ function dis_core_features_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'pdc' => array(
+      'name' => t('PDC'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'pdc_utilization' => array(
+      'name' => t('PDC Utilization'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'transporter' => array(
       'name' => t('Transporter'),
       'base' => 'node_content',

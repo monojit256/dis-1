@@ -178,6 +178,27 @@ function dis_core_features_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_goods-outward:goods-outward',
   );
+  // Exported menu link: main-menu_add-pdc:add-pdc
+  $menu_links['main-menu_add-pdc:add-pdc'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'add-pdc',
+    'router_path' => 'add-pdc',
+    'link_title' => 'Add PDC',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_add-pdc:add-pdc',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -50,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_pdc:pdc',
+  );
   // Exported menu link: main-menu_add-transporter:node/add/transporter
   $menu_links['main-menu_add-transporter:node/add/transporter'] = array(
     'menu_name' => 'main-menu',
@@ -574,6 +595,45 @@ function dis_core_features_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_goods-outward:goods-outward',
   );
+  // Exported menu link: main-menu_pdc-register:pdc-register
+  $menu_links['main-menu_pdc-register:pdc-register'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'pdc-register',
+    'router_path' => 'pdc-register',
+    'link_title' => 'PDC Register',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_pdc-register:pdc-register',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -48,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_pdc:pdc',
+  );
+  // Exported menu link: main-menu_pdc:pdc
+  $menu_links['main-menu_pdc:pdc'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'pdc',
+    'router_path' => 'pdc',
+    'link_title' => 'PDC',
+    'options' => array(
+      'identifier' => 'main-menu_pdc:pdc',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 0,
+    'weight' => -50,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_miscellaneous:miscellaneous',
+  );
   // Exported menu link: main-menu_update-delivery-confirmation:update-delivery-confirmation
   $menu_links['main-menu_update-delivery-confirmation:update-delivery-confirmation'] = array(
     'menu_name' => 'main-menu',
@@ -699,6 +759,27 @@ function dis_core_features_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
     'parent_identifier' => 'main-menu_goods-outward:goods-outward',
+  );
+  // Exported menu link: main-menu_utilize-pdc:utilize-pdc
+  $menu_links['main-menu_utilize-pdc:utilize-pdc'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'utilize-pdc',
+    'router_path' => 'utilize-pdc',
+    'link_title' => 'Utilize PDC',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_utilize-pdc:utilize-pdc',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -49,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_pdc:pdc',
   );
   // Exported menu link: main-menu_viewedit-associate-executive-mapping:view-edit-associate-executive-mapping
   $menu_links['main-menu_viewedit-associate-executive-mapping:view-edit-associate-executive-mapping'] = array(
@@ -836,6 +917,7 @@ function dis_core_features_menu_default_menu_links() {
   t('Add Division');
   t('Add Inward Invoice');
   t('Add Outward Invoice');
+  t('Add PDC');
   t('Add Transporter');
   t('Admin Home');
   t('Goods Inward');
@@ -856,12 +938,15 @@ function dis_core_features_menu_default_menu_links() {
   t('Master Data');
   t('Miscellaneous');
   t('Outward Register');
+  t('PDC');
+  t('PDC Register');
   t('Update Delivery Confirmation');
   t('Update Dispatch');
   t('Update LR Details');
   t('Update LR Value');
   t('Update Packing');
   t('Upload Outward Invoices');
+  t('Utilize PDC');
   t('View/Edit Associate Executive Mapping');
   t('View/Edit Business Associate');
   t('View/Edit Company');
