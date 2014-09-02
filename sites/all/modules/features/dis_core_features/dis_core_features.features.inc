@@ -766,12 +766,6 @@ function dis_core_features_user_default_roles_plus() {
     'permissions' => array(
       'access content' => TRUE,
       'access private fields' => TRUE,
-      'access resource file' => TRUE,
-      'access resource node' => TRUE,
-      'access resource rules_config' => TRUE,
-      'access resource taxonomy_term' => TRUE,
-      'access resource taxonomy_vocabulary' => TRUE,
-      'access resource user' => TRUE,
       'view field_financial_year' => TRUE,
       'view field_quarter' => TRUE,
       'view field_status' => TRUE,
