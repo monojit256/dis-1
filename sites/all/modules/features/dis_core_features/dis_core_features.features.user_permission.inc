@@ -28,6 +28,20 @@ function dis_core_features_user_default_permissions() {
     'module' => 'views',
   );
 
+  // Exported permission: 'access backup and migrate'.
+  $permissions['access backup and migrate'] = array(
+    'name' => 'access backup and migrate',
+    'roles' => array(),
+    'module' => 'backup_migrate',
+  );
+
+  // Exported permission: 'access backup files'.
+  $permissions['access backup files'] = array(
+    'name' => 'access backup files',
+    'roles' => array(),
+    'module' => 'backup_migrate',
+  );
+
   // Exported permission: 'access content'.
   $permissions['access content'] = array(
     'name' => 'access content',
@@ -63,6 +77,13 @@ function dis_core_features_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'dashboard',
+  );
+
+  // Exported permission: 'access print'.
+  $permissions['access print'] = array(
+    'name' => 'access print',
+    'roles' => array(),
+    'module' => 'print',
   );
 
   // Exported permission: 'access private fields'.
@@ -169,6 +190,13 @@ function dis_core_features_user_default_permissions() {
     'module' => 'panels',
   );
 
+  // Exported permission: 'administer backup and migrate'.
+  $permissions['administer backup and migrate'] = array(
+    'name' => 'administer backup and migrate',
+    'roles' => array(),
+    'module' => 'backup_migrate',
+  );
+
   // Exported permission: 'administer blocks'.
   $permissions['administer blocks'] = array(
     'name' => 'administer blocks',
@@ -185,6 +213,13 @@ function dis_core_features_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'administer dependencies'.
+  $permissions['administer dependencies'] = array(
+    'name' => 'administer dependencies',
+    'roles' => array(),
+    'module' => 'conditional_fields',
   );
 
   // Exported permission: 'administer features'.
@@ -329,6 +364,13 @@ function dis_core_features_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'user',
+  );
+
+  // Exported permission: 'administer print'.
+  $permissions['administer print'] = array(
+    'name' => 'administer print',
+    'roles' => array(),
+    'module' => 'print',
   );
 
   // Exported permission: 'administer rules'.
@@ -917,6 +959,13 @@ function dis_core_features_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'delete backup files'.
+  $permissions['delete backup files'] = array(
+    'name' => 'delete backup files',
+    'roles' => array(),
+    'module' => 'backup_migrate',
   );
 
   // Exported permission: 'delete own associate_executive_mapping content'.
@@ -1607,6 +1656,13 @@ function dis_core_features_user_default_permissions() {
     'module' => 'features',
   );
 
+  // Exported permission: 'node-specific print configuration'.
+  $permissions['node-specific print configuration'] = array(
+    'name' => 'node-specific print configuration',
+    'roles' => array(),
+    'module' => 'print_ui',
+  );
+
   // Exported permission: 'notify of path changes'.
   $permissions['notify of path changes'] = array(
     'name' => 'notify of path changes',
@@ -1614,6 +1670,20 @@ function dis_core_features_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'pathauto',
+  );
+
+  // Exported permission: 'perform backup'.
+  $permissions['perform backup'] = array(
+    'name' => 'perform backup',
+    'roles' => array(),
+    'module' => 'backup_migrate',
+  );
+
+  // Exported permission: 'restore from backup'.
+  $permissions['restore from backup'] = array(
+    'name' => 'restore from backup',
+    'roles' => array(),
+    'module' => 'backup_migrate',
   );
 
   // Exported permission: 'revert revisions'.

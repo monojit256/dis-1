@@ -916,7 +916,6 @@ function dis_pdc_feature_views_default_views() {
     5 => 0,
     13 => 0,
   );
-  $handler->display->display_options['filters']['field_invoice_date_value']['form_type'] = 'date_popup';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');

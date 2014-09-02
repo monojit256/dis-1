@@ -1230,7 +1230,6 @@ function dis_core_features_views_default_views() {
     5 => 0,
     13 => 0,
   );
-  $handler->display->display_options['filters']['field_invoice_date_value']['form_type'] = 'date_popup';
   /* Filter criterion: Content: Receipt Date (field_receipt_date) */
   $handler->display->display_options['filters']['field_receipt_date_value']['id'] = 'field_receipt_date_value';
   $handler->display->display_options['filters']['field_receipt_date_value']['table'] = 'field_data_field_receipt_date';
@@ -1257,7 +1256,6 @@ function dis_core_features_views_default_views() {
     5 => 0,
     13 => 0,
   );
-  $handler->display->display_options['filters']['field_receipt_date_value']['form_type'] = 'date_popup';
   /* Filter criterion: Content: Issues (field_issues) */
   $handler->display->display_options['filters']['field_issues_value']['id'] = 'field_issues_value';
   $handler->display->display_options['filters']['field_issues_value']['table'] = 'field_data_field_issues';
@@ -2293,7 +2291,6 @@ function dis_core_features_views_default_views() {
     5 => 0,
     13 => 0,
   );
-  $handler->display->display_options['filters']['field_invoice_date_value']['form_type'] = 'date_popup';
   /* Filter criterion: Content: Transporter (field_transporter) */
   $handler->display->display_options['filters']['field_transporter_target_id']['id'] = 'field_transporter_target_id';
   $handler->display->display_options['filters']['field_transporter_target_id']['table'] = 'field_data_field_transporter';
@@ -2345,7 +2342,6 @@ function dis_core_features_views_default_views() {
     5 => 0,
     13 => 0,
   );
-  $handler->display->display_options['filters']['field_lr_date_value']['form_type'] = 'date_popup';
   /* Filter criterion: Content: LR No (field_lr_no) */
   $handler->display->display_options['filters']['field_lr_no_value']['id'] = 'field_lr_no_value';
   $handler->display->display_options['filters']['field_lr_no_value']['table'] = 'field_data_field_lr_no';
@@ -2736,7 +2732,6 @@ function dis_core_features_views_default_views() {
     5 => 0,
     13 => 0,
   );
-  $handler->display->display_options['filters']['field_lr_date_value_1']['form_type'] = 'date_popup';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -3829,7 +3824,6 @@ function dis_core_features_views_default_views() {
     5 => 0,
     13 => 0,
   );
-  $handler->display->display_options['filters']['field_dispatch_date_value']['form_type'] = 'date_popup';
   /* Filter criterion: Content: LR No (field_lr_no) */
   $handler->display->display_options['filters']['field_lr_no_value']['id'] = 'field_lr_no_value';
   $handler->display->display_options['filters']['field_lr_no_value']['table'] = 'field_data_field_lr_no';
@@ -4103,7 +4097,6 @@ function dis_core_features_views_default_views() {
     5 => 0,
     13 => 0,
   );
-  $handler->display->display_options['filters']['field_dispatch_date_value']['form_type'] = 'date_popup';
   /* Filter criterion: Content: LR No (field_lr_no) */
   $handler->display->display_options['filters']['field_lr_no_value']['id'] = 'field_lr_no_value';
   $handler->display->display_options['filters']['field_lr_no_value']['table'] = 'field_data_field_lr_no';
@@ -4156,7 +4149,6 @@ function dis_core_features_views_default_views() {
     5 => 0,
     13 => 0,
   );
-  $handler->display->display_options['filters']['field_lr_date_value']['form_type'] = 'date_popup';
   /* Filter criterion: Content: LR Value (field_lr_value) */
   $handler->display->display_options['filters']['field_lr_value_value']['id'] = 'field_lr_value_value';
   $handler->display->display_options['filters']['field_lr_value_value']['table'] = 'field_data_field_lr_value';
@@ -4629,7 +4621,6 @@ function dis_core_features_views_default_views() {
     5 => 0,
     13 => 0,
   );
-  $handler->display->display_options['filters']['field_invoice_date_value']['form_type'] = 'date_popup';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
