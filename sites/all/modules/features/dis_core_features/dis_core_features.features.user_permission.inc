@@ -162,6 +162,13 @@ function dis_core_features_user_default_permissions() {
     'module' => 'taxonomy_access_fix',
   );
 
+  // Exported permission: 'add terms in permit_remarks'.
+  $permissions['add terms in permit_remarks'] = array(
+    'name' => 'add terms in permit_remarks',
+    'roles' => array(),
+    'module' => 'taxonomy_access_fix',
+  );
+
   // Exported permission: 'add terms in transporter_type'.
   $permissions['add terms in transporter_type'] = array(
     'name' => 'add terms in transporter_type',
@@ -631,6 +638,13 @@ function dis_core_features_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create associate_inward_permit content'.
+  $permissions['create associate_inward_permit content'] = array(
+    'name' => 'create associate_inward_permit content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create business_associate content'.
   $permissions['create business_associate content'] = array(
     'name' => 'create business_associate content',
@@ -769,6 +783,13 @@ function dis_core_features_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'create inward_permit content'.
+  $permissions['create inward_permit content'] = array(
+    'name' => 'create inward_permit content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create outward_invoice content'.
   $permissions['create outward_invoice content'] = array(
     'name' => 'create outward_invoice content',
@@ -869,6 +890,13 @@ function dis_core_features_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any associate_inward_permit content'.
+  $permissions['delete any associate_inward_permit content'] = array(
+    'name' => 'delete any associate_inward_permit content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any business_associate content'.
   $permissions['delete any business_associate content'] = array(
     'name' => 'delete any business_associate content',
@@ -963,6 +991,13 @@ function dis_core_features_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete any inward_permit content'.
+  $permissions['delete any inward_permit content'] = array(
+    'name' => 'delete any inward_permit content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete any outward_invoice content'.
   $permissions['delete any outward_invoice content'] = array(
     'name' => 'delete any outward_invoice content',
@@ -1041,6 +1076,13 @@ function dis_core_features_user_default_permissions() {
       'Master Maintainer' => 'Master Maintainer',
       'administrator' => 'administrator',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own associate_inward_permit content'.
+  $permissions['delete own associate_inward_permit content'] = array(
+    'name' => 'delete own associate_inward_permit content',
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1138,6 +1180,13 @@ function dis_core_features_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete own inward_permit content'.
+  $permissions['delete own inward_permit content'] = array(
+    'name' => 'delete own inward_permit content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'delete own outward_invoice content'.
   $permissions['delete own outward_invoice content'] = array(
     'name' => 'delete own outward_invoice content',
@@ -1229,6 +1278,13 @@ function dis_core_features_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
+  // Exported permission: 'delete terms in permit_remarks'.
+  $permissions['delete terms in permit_remarks'] = array(
+    'name' => 'delete terms in permit_remarks',
+    'roles' => array(),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'delete terms in transporter_type'.
   $permissions['delete terms in transporter_type'] = array(
     'name' => 'delete terms in transporter_type',
@@ -1247,6 +1303,13 @@ function dis_core_features_user_default_permissions() {
       'Master Maintainer' => 'Master Maintainer',
       'administrator' => 'administrator',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any associate_inward_permit content'.
+  $permissions['edit any associate_inward_permit content'] = array(
+    'name' => 'edit any associate_inward_permit content',
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1349,6 +1412,13 @@ function dis_core_features_user_default_permissions() {
       'Master Maintainer' => 'Master Maintainer',
       'administrator' => 'administrator',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any inward_permit content'.
+  $permissions['edit any inward_permit content'] = array(
+    'name' => 'edit any inward_permit content',
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1476,6 +1546,13 @@ function dis_core_features_user_default_permissions() {
       'Master Maintainer' => 'Master Maintainer',
       'administrator' => 'administrator',
     ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own associate_inward_permit content'.
+  $permissions['edit own associate_inward_permit content'] = array(
+    'name' => 'edit own associate_inward_permit content',
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -1617,6 +1694,13 @@ function dis_core_features_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'edit own inward_permit content'.
+  $permissions['edit own inward_permit content'] = array(
+    'name' => 'edit own inward_permit content',
+    'roles' => array(),
+    'module' => 'node',
+  );
+
   // Exported permission: 'edit own outward_invoice content'.
   $permissions['edit own outward_invoice content'] = array(
     'name' => 'edit own outward_invoice content',
@@ -1704,6 +1788,13 @@ function dis_core_features_user_default_permissions() {
       'DIS Administrator' => 'DIS Administrator',
       'administrator' => 'administrator',
     ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in permit_remarks'.
+  $permissions['edit terms in permit_remarks'] = array(
+    'name' => 'edit terms in permit_remarks',
+    'roles' => array(),
     'module' => 'taxonomy',
   );
 

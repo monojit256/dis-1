@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the DIS Permits Feature feature.
- */
-
-include_once 'dis_permits_feature.features.inc';

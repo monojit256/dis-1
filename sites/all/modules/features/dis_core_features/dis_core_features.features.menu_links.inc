@@ -31,6 +31,27 @@ function dis_core_features_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_master-data:master-data',
   );
+  // Exported menu link: main-menu_add-associate-inward-permit:add-associate-inward-permit
+  $menu_links['main-menu_add-associate-inward-permit:add-associate-inward-permit'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'add-associate-inward-permit',
+    'router_path' => 'add-associate-inward-permit',
+    'link_title' => 'Add Associate Inward Permit',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_add-associate-inward-permit:add-associate-inward-permit',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_associate-inward-permit:associate-inward-permit',
+  );
   // Exported menu link: main-menu_add-business-associate:node/add/business-associate
   $menu_links['main-menu_add-business-associate:node/add/business-associate'] = array(
     'menu_name' => 'main-menu',
@@ -157,6 +178,27 @@ function dis_core_features_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_goods-inward:goods-inward',
   );
+  // Exported menu link: main-menu_add-inward-permit:add-inward-permit
+  $menu_links['main-menu_add-inward-permit:add-inward-permit'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'add-inward-permit',
+    'router_path' => 'add-inward-permit',
+    'link_title' => 'Add Inward Permit',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_add-inward-permit:add-inward-permit',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_inward-permit:inward-permit',
+  );
   // Exported menu link: main-menu_add-outward-invoice:add-outward-invoice
   $menu_links['main-menu_add-outward-invoice:add-outward-invoice'] = array(
     'menu_name' => 'main-menu',
@@ -236,6 +278,27 @@ function dis_core_features_menu_default_menu_links() {
     'expanded' => 0,
     'weight' => -45,
     'customized' => 1,
+  );
+  // Exported menu link: main-menu_associate-inward-permit:associate-inward-permit
+  $menu_links['main-menu_associate-inward-permit:associate-inward-permit'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'associate-inward-permit',
+    'router_path' => 'associate-inward-permit',
+    'link_title' => 'Associate Inward Permit',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_associate-inward-permit:associate-inward-permit',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_permit:permits',
   );
   // Exported menu link: main-menu_goods-inward:goods-inward
   $menu_links['main-menu_goods-inward:goods-inward'] = array(
@@ -498,6 +561,27 @@ function dis_core_features_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_admin-home:admin-home',
   );
+  // Exported menu link: main-menu_inward-permit:inward-permit
+  $menu_links['main-menu_inward-permit:inward-permit'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'inward-permit',
+    'router_path' => 'inward-permit',
+    'link_title' => 'Inward Permit',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_inward-permit:inward-permit',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_permit:permits',
+  );
   // Exported menu link: main-menu_inward-register:inward-register
   $menu_links['main-menu_inward-register:inward-register'] = array(
     'menu_name' => 'main-menu',
@@ -631,6 +715,27 @@ function dis_core_features_menu_default_menu_links() {
     'has_children' => 1,
     'expanded' => 0,
     'weight' => -50,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_miscellaneous:miscellaneous',
+  );
+  // Exported menu link: main-menu_permit:permits
+  $menu_links['main-menu_permit:permits'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'permits',
+    'router_path' => 'permits',
+    'link_title' => 'Permit',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_permit:permits',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 1,
+    'expanded' => 0,
+    'weight' => 0,
     'customized' => 1,
     'parent_identifier' => 'main-menu_miscellaneous:miscellaneous',
   );
@@ -910,16 +1015,19 @@ function dis_core_features_menu_default_menu_links() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Add Associate Executive Mapping');
+  t('Add Associate Inward Permit');
   t('Add Business Associate');
   t('Add Company');
   t('Add Company Executive');
   t('Add Consignment Details');
   t('Add Division');
   t('Add Inward Invoice');
+  t('Add Inward Permit');
   t('Add Outward Invoice');
   t('Add PDC');
   t('Add Transporter');
   t('Admin Home');
+  t('Associate Inward Permit');
   t('Goods Inward');
   t('Goods Outward');
   t('Home');
@@ -933,6 +1041,7 @@ function dis_core_features_menu_default_menu_links() {
   t('Import Packing');
   t('Import Transporters');
   t('Imported Outward Invoices');
+  t('Inward Permit');
   t('Inward register');
   t('Manage Invoices');
   t('Master Data');
@@ -940,6 +1049,7 @@ function dis_core_features_menu_default_menu_links() {
   t('Outward Register');
   t('PDC');
   t('PDC Register');
+  t('Permit');
   t('Update Delivery Confirmation');
   t('Update Dispatch');
   t('Update LR Details');

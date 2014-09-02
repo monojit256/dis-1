@@ -48,6 +48,14 @@ function dis_core_features_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'associate_inward_permit' => array(
+      'name' => t('Associate Inward Permit'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'business_associate' => array(
       'name' => t('Business Associate'),
       'base' => 'node_content',
@@ -106,6 +114,14 @@ function dis_core_features_node_info() {
     ),
     'inward_invoice' => array(
       'name' => t('Inward Invoice'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
+    'inward_permit' => array(
+      'name' => t('Inward Permit'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
