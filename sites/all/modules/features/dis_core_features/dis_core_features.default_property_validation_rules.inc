@@ -52,7 +52,7 @@ function dis_core_features_default_property_validation_rule() {
   $rule->bundle = 'division';
   $rule->validator = 'property_validation_unique_validator';
   $rule->settings = array(
-    'data' => 'entity',
+    'data' => 'bundle',
   );
   $rule->error_message = 'Division code should be a unique three character code';
   $export['division_code_unique'] = $rule;
