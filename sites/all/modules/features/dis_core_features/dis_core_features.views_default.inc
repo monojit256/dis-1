@@ -403,6 +403,11 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_packing_node']['table'] = 'node';
   $handler->display->display_options['relationships']['reverse_field_packing_node']['field'] = 'reverse_field_packing_node';
   $handler->display->display_options['relationships']['reverse_field_packing_node']['relationship'] = 'reverse_field_outward_invoices_node';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_associate_inward_permit_target_id']['id'] = 'field_associate_inward_permit_target_id';
+  $handler->display->display_options['relationships']['field_associate_inward_permit_target_id']['table'] = 'field_data_field_associate_inward_permit';
+  $handler->display->display_options['relationships']['field_associate_inward_permit_target_id']['field'] = 'field_associate_inward_permit_target_id';
+  $handler->display->display_options['relationships']['field_associate_inward_permit_target_id']['relationship'] = 'reverse_field_packing_node';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -411,6 +416,17 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_1']['relationship'] = 'field_associate_inward_permit_target_id';
+  $handler->display->display_options['fields']['nid_1']['exclude'] = TRUE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -426,6 +442,10 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -440,6 +460,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'associate_inward_permit' => 'associate_inward_permit',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
   $handler->display->display_options['filters']['type_1']['table'] = 'node';
@@ -448,12 +469,14 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'outward_invoice' => 'outward_invoice',
   );
+  $handler->display->display_options['filters']['type_1']['group'] = 1;
   /* Filter criterion: Content: Nid */
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'node';
   $handler->display->display_options['filters']['nid']['field'] = 'nid';
   $handler->display->display_options['filters']['nid']['relationship'] = 'reverse_field_packing_node';
   $handler->display->display_options['filters']['nid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['nid']['group'] = 1;
   /* Filter criterion: Content: Permit Status (field_permit_status) */
   $handler->display->display_options['filters']['field_permit_status_value']['id'] = 'field_permit_status_value';
   $handler->display->display_options['filters']['field_permit_status_value']['table'] = 'field_data_field_permit_status';
@@ -461,6 +484,14 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['field_permit_status_value']['value'] = array(
     'Unutilized' => 'Unutilized',
   );
+  $handler->display->display_options['filters']['field_permit_status_value']['group'] = 2;
+  /* Filter criterion: Global: Fields comparison */
+  $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
+  $handler->display->display_options['filters']['fields_compare']['table'] = 'views';
+  $handler->display->display_options['filters']['fields_compare']['field'] = 'fields_compare';
+  $handler->display->display_options['filters']['fields_compare']['group'] = 2;
+  $handler->display->display_options['filters']['fields_compare']['right_field'] = 'nid_1';
+  $handler->display->display_options['filters']['fields_compare']['left_field'] = 'nid';
 
   /* Display: Entity Reference */
   $handler = $view->new_display('entityreference', 'Entity Reference', 'entityreference_1');

@@ -48,15 +48,6 @@ function dis_permits_form_dispatch_node_form_alter(&$form, &$form_state, $form_i
 
     //Custom Validate function to ensure that a permit is provided if it is required
     $form['#validate'][] = 'dis_permits_check_permit_validate';
-
-    //Add the default value to the Permit List, if it exists
-    if(array_key_exists('und', $form['#entity']->field_associate_inward_permit)){
-        $default_permit_id = array_shift($form['#entity']->field_associate_inward_permit['und'][0]);
-        $permit_node = node_load($default_permit_id);
-        $permit_title = $permit_node->title;
-        $form['field_associate_inward_permit']['und']['#options'][$default_permit_id] = $permit_title;
-        $form['field_associate_inward_permit']['und']['#default_value'] = $default_permit_id;
-    }
 }
 
 
