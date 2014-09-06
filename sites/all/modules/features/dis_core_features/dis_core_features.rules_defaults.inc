@@ -20,6 +20,57 @@ function dis_core_features_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_associate_inward_permit_utilization_rule'] = entity_import('rules_config', '{ "rules_associate_inward_permit_utilization_rule" : {
+      "LABEL" : "Associate Inward Permit Utilization Rule",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "rules_conditional" ],
+      "ON" : { "node_update--dispatch" : { "bundle" : "dispatch" } },
+      "IF" : [
+        { "NOT data_is" : {
+            "data" : [ "node-unchanged:field-associate-inward-permit" ],
+            "value" : [ "node:field-associate-inward-permit" ]
+          }
+        }
+      ],
+      "DO" : [
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "entity_has_field" : {
+                  "entity" : [ "node-unchanged:field-associate-inward-permit" ],
+                  "field" : "field_permit_status"
+                }
+              },
+              "DO" : [
+                { "data_set" : {
+                    "data" : [ "node-unchanged:field-associate-inward-permit:field-permit-status" ],
+                    "value" : "Unutilized"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "entity_has_field" : {
+                  "entity" : [ "node:field-associate-inward-permit" ],
+                  "field" : "field_permit_status"
+                }
+              },
+              "DO" : [
+                { "data_set" : {
+                    "data" : [ "node:field-associate-inward-permit:field-permit-status" ],
+                    "value" : "Utilized"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }');
   $items['rules_invoice_status_rule_node_creation'] = entity_import('rules_config', '{ "rules_invoice_status_rule_node_creation" : {
       "LABEL" : "Invoice Status Rule - Node Creation",
       "PLUGIN" : "reaction rule",
@@ -252,6 +303,79 @@ function dis_core_features_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_inward_permit_utilization_rule'] = entity_import('rules_config', '{ "rules_inward_permit_utilization_rule" : {
+      "LABEL" : "Inward Permit Utilization Rule",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "node_insert--consignment_details" : { "bundle" : "consignment_details" } },
+      "IF" : [
+        { "entity_has_field" : {
+            "entity" : [ "node:field-inward-permit" ],
+            "field" : "field_permit_status"
+          }
+        }
+      ],
+      "DO" : [
+        { "data_set" : {
+            "data" : [ "node:field-inward-permit:field-permit-status" ],
+            "value" : "Utilized"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_inward_permit_utilization_rule_2'] = entity_import('rules_config', '{ "rules_inward_permit_utilization_rule_2" : {
+      "LABEL" : "Inward Permit Utilization Rule 2",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "rules_conditional" ],
+      "ON" : { "node_update--consignment_details" : { "bundle" : "consignment_details" } },
+      "IF" : [
+        { "NOT data_is" : {
+            "data" : [ "node:field-inward-permit" ],
+            "value" : [ "node-unchanged:field-inward-permit" ]
+          }
+        }
+      ],
+      "DO" : [
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "entity_has_field" : {
+                  "entity" : [ "node-unchanged:field-inward-permit" ],
+                  "field" : "field_permit_status"
+                }
+              },
+              "DO" : [
+                { "data_set" : {
+                    "data" : [ "node-unchanged:field-inward-permit:field-permit-status" ],
+                    "value" : "Unutilized"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "entity_has_field" : {
+                  "entity" : [ "node:field-inward-permit" ],
+                  "field" : "field_permit_status"
+                }
+              },
+              "DO" : [
+                { "data_set" : {
+                    "data" : [ "node:field-inward-permit:field-permit-status" ],
+                    "value" : "Utilized"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }');
   $items['rules_pdc_deposit_email'] = entity_import('rules_config', '{ "rules_pdc_deposit_email" : {
       "LABEL" : "PDC Deposit Email",
       "PLUGIN" : "reaction rule",
@@ -314,57 +438,6 @@ function dis_core_features_default_rules_configuration() {
       ],
       "DO" : [
         { "data_set" : { "data" : [ "node:field-pdc:field-pdc-status" ], "value" : "Unused" } }
-      ]
-    }
-  }');
-  $items['rules_permit_utilization_rule'] = entity_import('rules_config', '{ "rules_permit_utilization_rule" : {
-      "LABEL" : "Permit Utilization Rule",
-      "PLUGIN" : "reaction rule",
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "rules_conditional" ],
-      "ON" : { "node_update--dispatch" : { "bundle" : "dispatch" } },
-      "IF" : [
-        { "NOT data_is" : {
-            "data" : [ "node-unchanged:field-associate-inward-permit" ],
-            "value" : [ "node:field-associate-inward-permit" ]
-          }
-        }
-      ],
-      "DO" : [
-        { "CONDITIONAL" : [
-            {
-              "IF" : { "entity_has_field" : {
-                  "entity" : [ "node-unchanged:field-associate-inward-permit" ],
-                  "field" : "field_permit_status"
-                }
-              },
-              "DO" : [
-                { "data_set" : {
-                    "data" : [ "node-unchanged:field-associate-inward-permit:field-permit-status" ],
-                    "value" : "Unutilized"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        { "CONDITIONAL" : [
-            {
-              "IF" : { "entity_has_field" : {
-                  "entity" : [ "node:field-associate-inward-permit" ],
-                  "field" : "field_permit_status"
-                }
-              },
-              "DO" : [
-                { "data_set" : {
-                    "data" : [ "node:field-associate-inward-permit:field-permit-status" ],
-                    "value" : "Utilized"
-                  }
-                }
-              ]
-            }
-          ]
-        }
       ]
     }
   }');

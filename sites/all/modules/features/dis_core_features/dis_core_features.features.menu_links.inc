@@ -582,6 +582,27 @@ function dis_core_features_menu_default_menu_links() {
     'customized' => 1,
     'parent_identifier' => 'main-menu_admin-home:admin-home',
   );
+  // Exported menu link: main-menu_inward-permit-register:inward-permit-register
+  $menu_links['main-menu_inward-permit-register:inward-permit-register'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'inward-permit-register',
+    'router_path' => 'inward-permit-register',
+    'link_title' => 'Inward Permit Register',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_inward-permit-register:inward-permit-register',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_inward-permit:inward-permit',
+  );
   // Exported menu link: main-menu_inward-permit:inward-permit
   $menu_links['main-menu_inward-permit:inward-permit'] = array(
     'menu_name' => 'main-menu',
@@ -1064,6 +1085,7 @@ function dis_core_features_menu_default_menu_links() {
   t('Import Transporters');
   t('Imported Outward Invoices');
   t('Inward Permit');
+  t('Inward Permit Register');
   t('Inward register');
   t('Manage Invoices');
   t('Master Data');

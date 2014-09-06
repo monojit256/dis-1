@@ -1237,6 +1237,333 @@ function dis_core_features_views_default_views() {
   $export['imported_outward_invoices'] = $view;
 
   $view = new view();
+  $view->name = 'inward_permit_list';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Inward Permit List';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Associate Inward Permit List';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'table';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_associate_target_id']['id'] = 'field_associate_target_id';
+  $handler->display->display_options['relationships']['field_associate_target_id']['table'] = 'field_data_field_associate';
+  $handler->display->display_options['relationships']['field_associate_target_id']['field'] = 'field_associate_target_id';
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_consignor_node']['id'] = 'reverse_field_consignor_node';
+  $handler->display->display_options['relationships']['reverse_field_consignor_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_consignor_node']['field'] = 'reverse_field_consignor_node';
+  $handler->display->display_options['relationships']['reverse_field_consignor_node']['relationship'] = 'field_associate_target_id';
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_inward_invoices_node']['id'] = 'reverse_field_inward_invoices_node';
+  $handler->display->display_options['relationships']['reverse_field_inward_invoices_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_inward_invoices_node']['field'] = 'reverse_field_inward_invoices_node';
+  $handler->display->display_options['relationships']['reverse_field_inward_invoices_node']['relationship'] = 'reverse_field_consignor_node';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_inward_permit_target_id']['id'] = 'field_inward_permit_target_id';
+  $handler->display->display_options['relationships']['field_inward_permit_target_id']['table'] = 'field_data_field_inward_permit';
+  $handler->display->display_options['relationships']['field_inward_permit_target_id']['field'] = 'field_inward_permit_target_id';
+  $handler->display->display_options['relationships']['field_inward_permit_target_id']['relationship'] = 'reverse_field_inward_invoices_node';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_1']['relationship'] = 'field_inward_permit_target_id';
+  $handler->display->display_options['fields']['nid_1']['exclude'] = TRUE;
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_inward_invoices_node';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'inward_permit' => 'inward_permit',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Permit Status (field_permit_status) */
+  $handler->display->display_options['filters']['field_permit_status_value']['id'] = 'field_permit_status_value';
+  $handler->display->display_options['filters']['field_permit_status_value']['table'] = 'field_data_field_permit_status';
+  $handler->display->display_options['filters']['field_permit_status_value']['field'] = 'field_permit_status_value';
+  $handler->display->display_options['filters']['field_permit_status_value']['value'] = array(
+    'Unutilized' => 'Unutilized',
+  );
+  $handler->display->display_options['filters']['field_permit_status_value']['group'] = 2;
+  /* Filter criterion: Global: Fields comparison */
+  $handler->display->display_options['filters']['fields_compare']['id'] = 'fields_compare';
+  $handler->display->display_options['filters']['fields_compare']['table'] = 'views';
+  $handler->display->display_options['filters']['fields_compare']['field'] = 'fields_compare';
+  $handler->display->display_options['filters']['fields_compare']['group'] = 2;
+  $handler->display->display_options['filters']['fields_compare']['right_field'] = 'nid_1';
+  $handler->display->display_options['filters']['fields_compare']['left_field'] = 'nid';
+
+  /* Display: Entity Reference */
+  $handler = $view->new_display('entityreference', 'Entity Reference', 'entityreference_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'entityreference_style';
+  $handler->display->display_options['style_options']['search_fields'] = array(
+    'title' => 'title',
+    'field_associate' => 0,
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entityreference_fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $export['inward_permit_list'] = $view;
+
+  $view = new view();
+  $view->name = 'inward_permit_register';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Inward Permit Register';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Inward Permit Register';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'table';
+  /* Relationship: Entity Reference: Referencing entity */
+  $handler->display->display_options['relationships']['reverse_field_inward_permit_node']['id'] = 'reverse_field_inward_permit_node';
+  $handler->display->display_options['relationships']['reverse_field_inward_permit_node']['table'] = 'node';
+  $handler->display->display_options['relationships']['reverse_field_inward_permit_node']['field'] = 'reverse_field_inward_permit_node';
+  /* Field: Content: Company */
+  $handler->display->display_options['fields']['field_company']['id'] = 'field_company';
+  $handler->display->display_options['fields']['field_company']['table'] = 'field_data_field_company';
+  $handler->display->display_options['fields']['field_company']['field'] = 'field_company';
+  $handler->display->display_options['fields']['field_company']['settings'] = array(
+    'link' => 1,
+  );
+  /* Field: Content: Associate */
+  $handler->display->display_options['fields']['field_associate']['id'] = 'field_associate';
+  $handler->display->display_options['fields']['field_associate']['table'] = 'field_data_field_associate';
+  $handler->display->display_options['fields']['field_associate']['field'] = 'field_associate';
+  $handler->display->display_options['fields']['field_associate']['settings'] = array(
+    'link' => 1,
+  );
+  /* Field: Content: Permit No */
+  $handler->display->display_options['fields']['field_permit_no']['id'] = 'field_permit_no';
+  $handler->display->display_options['fields']['field_permit_no']['table'] = 'field_data_field_permit_no';
+  $handler->display->display_options['fields']['field_permit_no']['field'] = 'field_permit_no';
+  /* Field: Content: Permit Date */
+  $handler->display->display_options['fields']['field_permit_date']['id'] = 'field_permit_date';
+  $handler->display->display_options['fields']['field_permit_date']['table'] = 'field_data_field_permit_date';
+  $handler->display->display_options['fields']['field_permit_date']['field'] = 'field_permit_date';
+  $handler->display->display_options['fields']['field_permit_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Permit Status */
+  $handler->display->display_options['fields']['field_permit_status']['id'] = 'field_permit_status';
+  $handler->display->display_options['fields']['field_permit_status']['table'] = 'field_data_field_permit_status';
+  $handler->display->display_options['fields']['field_permit_status']['field'] = 'field_permit_status';
+  /* Field: Content: Cases */
+  $handler->display->display_options['fields']['field_cases']['id'] = 'field_cases';
+  $handler->display->display_options['fields']['field_cases']['table'] = 'field_data_field_cases';
+  $handler->display->display_options['fields']['field_cases']['field'] = 'field_cases';
+  $handler->display->display_options['fields']['field_cases']['relationship'] = 'reverse_field_inward_permit_node';
+  $handler->display->display_options['fields']['field_cases']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Transporter */
+  $handler->display->display_options['fields']['field_transporter']['id'] = 'field_transporter';
+  $handler->display->display_options['fields']['field_transporter']['table'] = 'field_data_field_transporter';
+  $handler->display->display_options['fields']['field_transporter']['field'] = 'field_transporter';
+  $handler->display->display_options['fields']['field_transporter']['relationship'] = 'reverse_field_inward_permit_node';
+  $handler->display->display_options['fields']['field_transporter']['settings'] = array(
+    'link' => 0,
+  );
+  /* Field: Content: LR No */
+  $handler->display->display_options['fields']['field_lr_no']['id'] = 'field_lr_no';
+  $handler->display->display_options['fields']['field_lr_no']['table'] = 'field_data_field_lr_no';
+  $handler->display->display_options['fields']['field_lr_no']['field'] = 'field_lr_no';
+  $handler->display->display_options['fields']['field_lr_no']['relationship'] = 'reverse_field_inward_permit_node';
+  /* Field: Content: LR Date */
+  $handler->display->display_options['fields']['field_lr_date']['id'] = 'field_lr_date';
+  $handler->display->display_options['fields']['field_lr_date']['table'] = 'field_data_field_lr_date';
+  $handler->display->display_options['fields']['field_lr_date']['field'] = 'field_lr_date';
+  $handler->display->display_options['fields']['field_lr_date']['relationship'] = 'reverse_field_inward_permit_node';
+  $handler->display->display_options['fields']['field_lr_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Content: Inward Invoices */
+  $handler->display->display_options['fields']['field_inward_invoices']['id'] = 'field_inward_invoices';
+  $handler->display->display_options['fields']['field_inward_invoices']['table'] = 'field_data_field_inward_invoices';
+  $handler->display->display_options['fields']['field_inward_invoices']['field'] = 'field_inward_invoices';
+  $handler->display->display_options['fields']['field_inward_invoices']['relationship'] = 'reverse_field_inward_permit_node';
+  $handler->display->display_options['fields']['field_inward_invoices']['settings'] = array(
+    'link' => 1,
+  );
+  $handler->display->display_options['fields']['field_inward_invoices']['delta_offset'] = '0';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'inward_permit' => 'inward_permit',
+  );
+  /* Filter criterion: Content: Company (field_company) */
+  $handler->display->display_options['filters']['field_company_target_id']['id'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['table'] = 'field_data_field_company';
+  $handler->display->display_options['filters']['field_company_target_id']['field'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['operator_id'] = 'field_company_target_id_op';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['label'] = 'Company';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['operator'] = 'field_company_target_id_op';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['identifier'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Name (field_name) */
+  $handler->display->display_options['filters']['field_name_value']['id'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['table'] = 'field_data_field_name';
+  $handler->display->display_options['filters']['field_name_value']['field'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['relationship'] = 'field_associate_target_id';
+  $handler->display->display_options['filters']['field_name_value']['operator'] = 'starts';
+  $handler->display->display_options['filters']['field_name_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_name_value']['expose']['operator_id'] = 'field_name_value_op';
+  $handler->display->display_options['filters']['field_name_value']['expose']['label'] = 'Associate Name';
+  $handler->display->display_options['filters']['field_name_value']['expose']['operator'] = 'field_name_value_op';
+  $handler->display->display_options['filters']['field_name_value']['expose']['identifier'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+  /* Filter criterion: Content: Permit Status (field_permit_status) */
+  $handler->display->display_options['filters']['field_permit_status_value']['id'] = 'field_permit_status_value';
+  $handler->display->display_options['filters']['field_permit_status_value']['table'] = 'field_data_field_permit_status';
+  $handler->display->display_options['filters']['field_permit_status_value']['field'] = 'field_permit_status_value';
+  $handler->display->display_options['filters']['field_permit_status_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_permit_status_value']['expose']['operator_id'] = 'field_permit_status_value_op';
+  $handler->display->display_options['filters']['field_permit_status_value']['expose']['label'] = 'Permit Status';
+  $handler->display->display_options['filters']['field_permit_status_value']['expose']['operator'] = 'field_permit_status_value_op';
+  $handler->display->display_options['filters']['field_permit_status_value']['expose']['identifier'] = 'field_permit_status_value';
+  $handler->display->display_options['filters']['field_permit_status_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    10 => 0,
+    6 => 0,
+    3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'inward-permit-register';
+  $export['inward_permit_register'] = $view;
+
+  $view = new view();
   $view->name = 'inward_register';
   $view->description = '';
   $view->tag = 'default';
