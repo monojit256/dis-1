@@ -215,13 +215,6 @@ function dis_core_features_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'administer dependencies'.
-  $permissions['administer dependencies'] = array(
-    'name' => 'administer dependencies',
-    'roles' => array(),
-    'module' => 'conditional_fields',
-  );
-
   // Exported permission: 'administer features'.
   $permissions['administer features'] = array(
     'name' => 'administer features',
