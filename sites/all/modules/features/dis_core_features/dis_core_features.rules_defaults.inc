@@ -317,6 +317,57 @@ function dis_core_features_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_permit_utilization_rule'] = entity_import('rules_config', '{ "rules_permit_utilization_rule" : {
+      "LABEL" : "Permit Utilization Rule",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "rules_conditional" ],
+      "ON" : { "node_update--dispatch" : { "bundle" : "dispatch" } },
+      "IF" : [
+        { "NOT data_is" : {
+            "data" : [ "node-unchanged:field-associate-inward-permit" ],
+            "value" : [ "node:field-associate-inward-permit" ]
+          }
+        }
+      ],
+      "DO" : [
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "entity_has_field" : {
+                  "entity" : [ "node-unchanged:field-associate-inward-permit" ],
+                  "field" : "field_permit_status"
+                }
+              },
+              "DO" : [
+                { "data_set" : {
+                    "data" : [ "node-unchanged:field-associate-inward-permit:field-permit-status" ],
+                    "value" : "Unutilized"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        { "CONDITIONAL" : [
+            {
+              "IF" : { "entity_has_field" : {
+                  "entity" : [ "node:field-associate-inward-permit" ],
+                  "field" : "field_permit_status"
+                }
+              },
+              "DO" : [
+                { "data_set" : {
+                    "data" : [ "node:field-associate-inward-permit:field-permit-status" ],
+                    "value" : "Utilized"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }');
   $items['rules_redirect_edit_invoice'] = entity_import('rules_config', '{ "rules_redirect_edit_invoice" : {
       "LABEL" : "Redirect Edit Invoice",
       "PLUGIN" : "action set",

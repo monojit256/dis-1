@@ -162,13 +162,6 @@ function dis_core_features_user_default_permissions() {
     'module' => 'taxonomy_access_fix',
   );
 
-  // Exported permission: 'add terms in permit_remarks'.
-  $permissions['add terms in permit_remarks'] = array(
-    'name' => 'add terms in permit_remarks',
-    'roles' => array(),
-    'module' => 'taxonomy_access_fix',
-  );
-
   // Exported permission: 'add terms in transporter_type'.
   $permissions['add terms in transporter_type'] = array(
     'name' => 'add terms in transporter_type',
@@ -750,6 +743,13 @@ function dis_core_features_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'create field_permit_status'.
+  $permissions['create field_permit_status'] = array(
+    'name' => 'create field_permit_status',
+    'roles' => array(),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'create field_quarter'.
   $permissions['create field_quarter'] = array(
     'name' => 'create field_quarter',
@@ -1278,13 +1278,6 @@ function dis_core_features_user_default_permissions() {
     'module' => 'taxonomy',
   );
 
-  // Exported permission: 'delete terms in permit_remarks'.
-  $permissions['delete terms in permit_remarks'] = array(
-    'name' => 'delete terms in permit_remarks',
-    'roles' => array(),
-    'module' => 'taxonomy',
-  );
-
   // Exported permission: 'delete terms in transporter_type'.
   $permissions['delete terms in transporter_type'] = array(
     'name' => 'delete terms in transporter_type',
@@ -1511,6 +1504,13 @@ function dis_core_features_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'edit field_permit_status'.
+  $permissions['edit field_permit_status'] = array(
+    'name' => 'edit field_permit_status',
+    'roles' => array(),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'edit field_quarter'.
   $permissions['edit field_quarter'] = array(
     'name' => 'edit field_quarter',
@@ -1661,6 +1661,13 @@ function dis_core_features_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'edit own field_permit_status'.
+  $permissions['edit own field_permit_status'] = array(
+    'name' => 'edit own field_permit_status',
+    'roles' => array(),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'edit own field_quarter'.
   $permissions['edit own field_quarter'] = array(
     'name' => 'edit own field_quarter',
@@ -1788,13 +1795,6 @@ function dis_core_features_user_default_permissions() {
       'DIS Administrator' => 'DIS Administrator',
       'administrator' => 'administrator',
     ),
-    'module' => 'taxonomy',
-  );
-
-  // Exported permission: 'edit terms in permit_remarks'.
-  $permissions['edit terms in permit_remarks'] = array(
-    'name' => 'edit terms in permit_remarks',
-    'roles' => array(),
     'module' => 'taxonomy',
   );
 
@@ -2336,6 +2336,13 @@ function dis_core_features_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'view field_permit_status'.
+  $permissions['view field_permit_status'] = array(
+    'name' => 'view field_permit_status',
+    'roles' => array(),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'view field_quarter'.
   $permissions['view field_quarter'] = array(
     'name' => 'view field_quarter',
@@ -2378,6 +2385,13 @@ function dis_core_features_user_default_permissions() {
       'Master Maintainer' => 'Master Maintainer',
       'administrator' => 'administrator',
     ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_permit_status'.
+  $permissions['view own field_permit_status'] = array(
+    'name' => 'view own field_permit_status',
+    'roles' => array(),
     'module' => 'field_permissions',
   );
 

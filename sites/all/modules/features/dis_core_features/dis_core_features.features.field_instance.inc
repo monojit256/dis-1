@@ -408,6 +408,87 @@ function dis_core_features_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-associate_inward_permit-field_permit_status'
+  $field_instances['node-associate_inward_permit-field_permit_status'] = array(
+    'bundle' => 'associate_inward_permit',
+    'default_value' => array(
+      0 => array(
+        'value' => 'Unutilized',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_permit_status',
+    'label' => 'Permit Status',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-associate_inward_permit-field_remarks'
+  $field_instances['node-associate_inward_permit-field_remarks'] = array(
+    'bundle' => 'associate_inward_permit',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_remarks',
+    'label' => 'Remarks',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 11,
+    ),
+  );
+
   // Exported field_instance: 'node-business_associate-field_address'
   $field_instances['node-business_associate-field_address'] = array(
     'bundle' => 'business_associate',
@@ -2302,8 +2383,8 @@ function dis_core_features_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_associate_inward_permit',
-    'label' => 'Associate Inward Permit',
-    'required' => 1,
+    'label' => 'Permit',
+    'required' => 0,
     'settings' => array(
       'behaviors' => array(
         'prepopulate' => array(
@@ -2662,58 +2743,6 @@ function dis_core_features_field_default_field_instances() {
       ),
       'type' => 'entityreference_autocomplete',
       'weight' => 3,
-    ),
-  );
-
-  // Exported field_instance: 'node-dispatch-field_permit_remarks'
-  $field_instances['node-dispatch-field_permit_remarks'] = array(
-    'bundle' => 'dispatch',
-    'default_value' => array(
-      0 => array(
-        'target_id' => 12,
-      ),
-    ),
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 10,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_permit_remarks',
-    'label' => 'Permit Remarks',
-    'required' => 1,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-        'taxonomy-index' => array(
-          'status' => TRUE,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 8,
     ),
   );
 
@@ -3511,6 +3540,87 @@ function dis_core_features_field_default_field_instances() {
       ),
       'type' => 'text_textfield',
       'weight' => 36,
+    ),
+  );
+
+  // Exported field_instance: 'node-inward_permit-field_permit_status'
+  $field_instances['node-inward_permit-field_permit_status'] = array(
+    'bundle' => 'inward_permit',
+    'default_value' => array(
+      0 => array(
+        'value' => 'Unutilized',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_permit_status',
+    'label' => 'Permit Status',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 39,
+    ),
+  );
+
+  // Exported field_instance: 'node-inward_permit-field_remarks'
+  $field_instances['node-inward_permit-field_remarks'] = array(
+    'bundle' => 'inward_permit',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_remarks',
+    'label' => 'Remarks',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 41,
     ),
   );
 
@@ -5345,7 +5455,6 @@ function dis_core_features_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Address');
   t('Associate');
-  t('Associate Inward Permit');
   t('Associate Type');
   t('Bank');
   t('Cases');
@@ -5389,10 +5498,11 @@ function dis_core_features_field_default_field_instances() {
   t('PDC Status');
   t('Packing');
   t('Packing Date');
+  t('Permit');
   t('Permit Date');
   t('Permit No');
-  t('Permit Remarks');
   t('Permit Required');
+  t('Permit Status');
   t('Phone');
   t('Quarter');
   t('Receipt Date');

@@ -279,6 +279,27 @@ function dis_core_features_menu_default_menu_links() {
     'weight' => -45,
     'customized' => 1,
   );
+  // Exported menu link: main-menu_associate-inward-permit-register:associate-inward-permit-register
+  $menu_links['main-menu_associate-inward-permit-register:associate-inward-permit-register'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'associate-inward-permit-register',
+    'router_path' => 'associate-inward-permit-register',
+    'link_title' => 'Associate Inward Permit Register',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_associate-inward-permit-register:associate-inward-permit-register',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+    'parent_identifier' => 'main-menu_associate-inward-permit:associate-inward-permit',
+  );
   // Exported menu link: main-menu_associate-inward-permit:associate-inward-permit
   $menu_links['main-menu_associate-inward-permit:associate-inward-permit'] = array(
     'menu_name' => 'main-menu',
@@ -1028,6 +1049,7 @@ function dis_core_features_menu_default_menu_links() {
   t('Add Transporter');
   t('Admin Home');
   t('Associate Inward Permit');
+  t('Associate Inward Permit Register');
   t('Goods Inward');
   t('Goods Outward');
   t('Home');

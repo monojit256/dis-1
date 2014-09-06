@@ -25,14 +25,6 @@ function dis_core_features_taxonomy_default_vocabularies() {
       'module' => 'taxonomy',
       'weight' => 0,
     ),
-    'permit_remarks' => array(
-      'name' => 'Permit Remarks',
-      'machine_name' => 'permit_remarks',
-      'description' => '',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => 0,
-    ),
     'transporter_type' => array(
       'name' => 'Transporter Type',
       'machine_name' => 'transporter_type',
