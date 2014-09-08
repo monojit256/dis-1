@@ -1304,9 +1304,10 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_inward_invoices_node';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'reverse_field_consignor_node';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'raw';
+  $handler->display->display_options['arguments']['nid']['default_argument_options']['index'] = '3';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
@@ -2955,6 +2956,38 @@ function dis_core_features_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
+  /* Field: Content: Remarks */
+  $handler->display->display_options['fields']['field_remarks']['id'] = 'field_remarks';
+  $handler->display->display_options['fields']['field_remarks']['table'] = 'field_data_field_remarks';
+  $handler->display->display_options['fields']['field_remarks']['field'] = 'field_remarks';
+  $handler->display->display_options['fields']['field_remarks']['exclude'] = TRUE;
+  /* Field: Content: Remarks */
+  $handler->display->display_options['fields']['field_remarks_1']['id'] = 'field_remarks_1';
+  $handler->display->display_options['fields']['field_remarks_1']['table'] = 'field_data_field_remarks';
+  $handler->display->display_options['fields']['field_remarks_1']['field'] = 'field_remarks';
+  $handler->display->display_options['fields']['field_remarks_1']['relationship'] = 'reverse_field_outward_invoices_node';
+  $handler->display->display_options['fields']['field_remarks_1']['exclude'] = TRUE;
+  /* Field: Content: Remarks */
+  $handler->display->display_options['fields']['field_remarks_2']['id'] = 'field_remarks_2';
+  $handler->display->display_options['fields']['field_remarks_2']['table'] = 'field_data_field_remarks';
+  $handler->display->display_options['fields']['field_remarks_2']['field'] = 'field_remarks';
+  $handler->display->display_options['fields']['field_remarks_2']['relationship'] = 'reverse_field_packing_node';
+  $handler->display->display_options['fields']['field_remarks_2']['exclude'] = TRUE;
+  /* Field: Content: Remarks */
+  $handler->display->display_options['fields']['field_remarks_3']['id'] = 'field_remarks_3';
+  $handler->display->display_options['fields']['field_remarks_3']['table'] = 'field_data_field_remarks';
+  $handler->display->display_options['fields']['field_remarks_3']['field'] = 'field_remarks';
+  $handler->display->display_options['fields']['field_remarks_3']['relationship'] = 'reverse_field_dispatch_node';
+  $handler->display->display_options['fields']['field_remarks_3']['exclude'] = TRUE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = 'Remarks';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '[field_remarks]
+[field_remarks_1]
+[field_remarks_2]
+[field_remarks_3]';
   /* Sort criterion: Content: Company (field_company) */
   $handler->display->display_options['sorts']['field_company_target_id']['id'] = 'field_company_target_id';
   $handler->display->display_options['sorts']['field_company_target_id']['table'] = 'field_data_field_company';
@@ -3847,6 +3880,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['field_company_target_id']['expose']['label'] = 'Company';
   $handler->display->display_options['filters']['field_company_target_id']['expose']['operator'] = 'field_company_target_id_op';
   $handler->display->display_options['filters']['field_company_target_id']['expose']['identifier'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_company_target_id']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_company_target_id']['expose']['remember_roles'] = array(
     2 => '2',
@@ -3874,6 +3908,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['field_name_value']['expose']['label'] = 'Consignee';
   $handler->display->display_options['filters']['field_name_value']['expose']['operator'] = 'field_name_value_op';
   $handler->display->display_options['filters']['field_name_value']['expose']['identifier'] = 'field_name_value';
+  $handler->display->display_options['filters']['field_name_value']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_name_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -3893,11 +3928,13 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['field_transporter_target_id']['id'] = 'field_transporter_target_id';
   $handler->display->display_options['filters']['field_transporter_target_id']['table'] = 'field_data_field_transporter';
   $handler->display->display_options['filters']['field_transporter_target_id']['field'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['relationship'] = 'field_packing_target_id';
   $handler->display->display_options['filters']['field_transporter_target_id']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_transporter_target_id']['expose']['operator_id'] = 'field_transporter_target_id_op';
   $handler->display->display_options['filters']['field_transporter_target_id']['expose']['label'] = 'Transporter';
   $handler->display->display_options['filters']['field_transporter_target_id']['expose']['operator'] = 'field_transporter_target_id_op';
   $handler->display->display_options['filters']['field_transporter_target_id']['expose']['identifier'] = 'field_transporter_target_id';
+  $handler->display->display_options['filters']['field_transporter_target_id']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_transporter_target_id']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -3923,6 +3960,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['field_lr_no_value_1']['expose']['label'] = 'LR No';
   $handler->display->display_options['filters']['field_lr_no_value_1']['expose']['operator'] = 'field_lr_no_value_1_op';
   $handler->display->display_options['filters']['field_lr_no_value_1']['expose']['identifier'] = 'field_lr_no_value_1';
+  $handler->display->display_options['filters']['field_lr_no_value_1']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_lr_no_value_1']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -3948,6 +3986,7 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['field_lr_date_value_1']['expose']['label'] = 'LR Date';
   $handler->display->display_options['filters']['field_lr_date_value_1']['expose']['operator'] = 'field_lr_date_value_1_op';
   $handler->display->display_options['filters']['field_lr_date_value_1']['expose']['identifier'] = 'field_lr_date_value_1';
+  $handler->display->display_options['filters']['field_lr_date_value_1']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_lr_date_value_1']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -6370,11 +6409,21 @@ function dis_core_features_views_default_views() {
   $handler->display->display_options['filters']['field_company_target_id']['expose']['label'] = 'Company';
   $handler->display->display_options['filters']['field_company_target_id']['expose']['operator'] = 'field_company_target_id_op';
   $handler->display->display_options['filters']['field_company_target_id']['expose']['identifier'] = 'field_company_target_id';
+  $handler->display->display_options['filters']['field_company_target_id']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_company_target_id']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    4 => 0,
+    10 => 0,
+    6 => 0,
     3 => 0,
+    11 => 0,
+    7 => 0,
+    4 => 0,
+    8 => 0,
+    9 => 0,
+    12 => 0,
+    5 => 0,
+    13 => 0,
   );
   $handler->display->display_options['filters']['field_company_target_id']['group_info']['label'] = 'Company (field_company)';
   $handler->display->display_options['filters']['field_company_target_id']['group_info']['identifier'] = 'field_company_target_id';

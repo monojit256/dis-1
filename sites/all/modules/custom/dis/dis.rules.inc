@@ -431,7 +431,12 @@ function dis_ruleaction_redirect_consignment_details_page($invoices){
         $q = array();
         $q['field_company'] = $first_invoice_company_nid;
         $q['field_inward_invoices'] = $inward_invoices;
-        drupal_goto('node/add/consignment-details', array('query' => $q));
+
+        //For Inward Permit functionality, an invward invoice nid needs to be appended to the URL as argument
+        //TO DO
+        $argument_permit = '/' . $invoice->nid;
+
+        drupal_goto('node/add/consignment-details' . $argument_permit, array('query' => $q));
     }
 }
 
@@ -452,6 +457,10 @@ function dis_ruleaction_redirect_edit_inward_invoice($invoice){
     $invoice_cn_result = $invoice_cn_query->execute();
     if (!empty($invoice_cn_result)) {
         $redirect_nid = array_shift($invoice_cn_result['node'])->nid;
+
+        //For Inward Permit functionality, an invward invoice nid needs to be appended to the URL as argument
+        //TO DO
+        $arg = '/' . $invoice->nid;
     } else {
         $consignor = node_load($invoice->field_consignor['und'][0]['target_id']);
         $arg = '/' . $invoice->field_company['und'][0]['target_id'] . '/' . $consignor->field_associate_type['und'][0]['value'];

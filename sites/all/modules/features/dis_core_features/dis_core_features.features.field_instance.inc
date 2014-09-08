@@ -1331,7 +1331,7 @@ function dis_core_features_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_address',
     'label' => 'Address',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -2025,7 +2025,11 @@ function dis_core_features_field_default_field_instances() {
   // Exported field_instance: 'node-consignment_details-field_permit_required'
   $field_instances['node-consignment_details-field_permit_required'] = array(
     'bundle' => 'consignment_details',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 1,
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
