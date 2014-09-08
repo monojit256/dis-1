@@ -572,12 +572,12 @@ ul.primary li a, ul.tabs li a { margin:0; padding: 4px 1em; display: inline-bloc
   *Custom changes for User Login
   */
 .page-user-login .region-content {
-	margin-left : 50%;
-	margin-right : 25%;
+	margin: 0 auto;
+	width: 300px;
 }
 
 .page-user-login .region-content #edit-submit {
-	margin-left: 25%;
+	margin: 0 auto;
 }
 
 .page-user-login .region-content #block-system-main {
@@ -591,5 +591,5 @@ ul.primary li a, ul.tabs li a { margin:0; padding: 4px 1em; display: inline-bloc
  * Custom changes - View related
  */
 .view-content {
-	overflow: scroll;
+	overflow-x: scroll;
 }
