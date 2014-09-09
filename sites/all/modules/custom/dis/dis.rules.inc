@@ -353,9 +353,11 @@ function dis_ruleaction_set_invoice_reversed($invoice, $reason){
 function dis_ruleaction_get_email_recipients($invoices) {
 
     $recipients = array();
+
+    $tmp_invoices = $invoices;
     
     //Get customer and company recipients
-    $first_invoice = array_shift($invoices);
+    $first_invoice = array_shift($tmp_invoices);
     $consignee = node_load($first_invoice->field_consignee['und']['0']['target_id']);
     $division = node_load($first_invoice->field_division['und']['0']['target_id']);
     if (isset($consignee->field_email['und'])) {
